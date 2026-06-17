@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om — Rosentorn</title>
+<style>
+:root {
+--ink: #1a1a1a;
+--muted: #666;
+--accent: #2a5d9f;
+--line: #e6e6e6;
+--bg: #fafafa;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+font-family: Georgia, 'Times New Roman', serif;
+color: var(--ink);
+background: var(--bg);
+line-height: 1.7;
+display: flex;
+justify-content: center;
+padding: 8vh 24px;
+}
+main { max-width: 620px; width: 100%; }
+nav.topnav { display: flex; justify-content: center; gap: 32px; margin-bottom: 40px; padding-bottom: 16px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
+nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
+nav.topnav a:hover { color: var(--accent); }
+h1 { font-size: 2.2rem; letter-spacing: 0.04em; font-weight: 700; }
+.om-text { margin-top: 32px; font-size: 1.1rem; }
+.om-text p { margin-bottom: 20px; }
+.profile {
+margin-top: 48px;
+padding-top: 32px;
+border-top: 1px solid var(--line);
+}
+.profile img {
+display: block;
+width: 100%;
+max-width: 320px;
+height: auto;
+border-radius: 8px;
+filter: grayscale(100%);
+box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.profile .name { font-size: 1.3rem; font-weight: 700; margin-top: 20px; }
+.profile .role {
+font-family: -apple-system, system-ui, sans-serif;
+font-size: 0.95rem;
+color: var(--muted);
+text-transform: uppercase;
+letter-spacing: 0.08em;
+margin-top: 4px;
+}
+.profile .contact {
+font-family: -apple-system, system-ui, sans-serif;
+font-size: 1rem;
+margin-top: 16px;
+}
+.profile .contact a { color: var(--accent); text-decoration: none; }
+.profile .contact a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<main>
+<nav class="topnav">
+<a href="podcast.html" target="_blank" rel="noopener">Podcast</a>
+<a href="debat.html" target="_blank" rel="noopener">Debat</a>
+<a href="memes.html" target="_blank" rel="noopener">Memes</a>
+<a href="om.html" target="_blank" rel="noopener">Om</a>
+</nav>
+<h1>Om</h1>
+<div class="om-text">
+<p>Rosentorn er stedet, hvor landets skarpeste stemmer mødes.</p>
+<p>Vi tror på, at den offentlige samtale kan rumme det hele på én gang. Få spørgsmål fortjener den mere end klimaet, som vi alt for ofte enten taler ihjel eller tier om. På Rosentorn tager vi det op igen og igen, sammen med krigen, økonomien og de svære valg et samfund må træffe, og vi gør det uden at miste øjet for poesien i det helt almindelige. Den første kop kaffe. Lyset over hustagene. En samtale der pludselig tager en uventet drejning.</p>
+<p>Her gør vi alvor af det alvorlige. Men vi har også plads til livets finurligheder, til det skæve og det menneskelige, til latteren der bryder igennem midt i en hård debat. For det er netop dér, de bedste samtaler opstår, i spændet mellem det dybe og det legende.</p>
+<p>Rosentorn er en torveplads for tanker. Et sted med torne nok til at det gør ondt at blive klogere, og roser nok til at det er det værd.</p>
+</div>
+<section class="profile">
+<img src="simon-mikrofon.jpg" alt="Simon Bødker">
+<p class="name">Simon Bødker</p>
+<p class="role">Chefredaktør</p>
+<p class="contact">
+<a href="mailto:bodker@live.dk">bodker@live.dk</a><br>
+<a href="tel:+4522225844">+45 22 22 58 44</a>
+</p>
+</section>
+</main>
+</body>
+</html>
