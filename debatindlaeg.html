@@ -23,15 +23,7 @@ body {
   padding: 8vh 24px;
 }
 main { max-width: 680px; width: 100%; }
-.back {
-  font-family: -apple-system, system-ui, sans-serif;
-  font-size: 0.9rem;
-  color: var(--accent);
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: 32px;
-}
-.back:hover { text-decoration: underline; }
+
 h1 {
   font-size: 2.1rem;
   letter-spacing: 0.02em;
@@ -66,13 +58,24 @@ article p {
   color: var(--muted);
 }
 .budskab p { margin-top: 14px; font-size: 1.05rem; }
+
+nav.topnav { display:flex; justify-content:center; gap:28px; margin-bottom:40px; padding-bottom:16px; border-bottom:1px solid var(--line); font-family:-apple-system,system-ui,sans-serif; }
+nav.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95rem; color:var(--ink); text-decoration:none; }
+nav.topnav a:hover { color:var(--accent); }
+.back { font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--accent); text-decoration:none; display:inline-block; margin:0 0 32px; }
+.back:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
 <main>
-<a class="back" href="index.html">← Tilbage til forsiden</a>
-
-<article>
+    <nav class="topnav">
+      <a href="debat.html">Debat</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="memes.html">Memes</a>
+      <a href="om.html">Om</a>
+    </nav>
+    <a class="back" href="index.html">← Tilbage til forsiden</a>
+    <article>
       <h1>Drømmen om eget hjem er blevet en fælde</h1>
       <p class="manchet">Boligpriserne i København stiger hurtigere end lønningerne, og en hel generation skubbes ud af ejerboligen. Richard Sennetts analyse af det fleksible menneske rammer plet.</p>
       <p>I København er ejerlejlighedspriserne steget med omkring 17 procent det seneste år. En gennemsnitlig lejlighed på 80 kvadratmeter koster nu næsten fem millioner kroner, og en toværelses i brokvartererne handles ofte for over tre millioner. Nationalbanken advarer om risiko for overoptimisme og en mulig prisboble. Andelen af unge, der køber egen bolig, er faldet med 25 procent over det seneste årti. Gennemsnitsalderen for førstegangskøbere stiger år for år.</p>
