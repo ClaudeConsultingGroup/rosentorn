@@ -26,8 +26,7 @@ main { max-width: 620px; width: 100%; }
 nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 56px; padding-bottom: 16px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
-.back { font-family: -apple-system, system-ui, sans-serif; font-size: 0.9rem; color: var(--accent); text-decoration: none; display: inline-block; margin-top: 48px; }
-.back:hover { text-decoration: underline; }
+
 h1 { font-size: 3.4rem; letter-spacing: 0.01em; font-weight: 700; line-height: 1.05; text-align: center; }
 h1::after { content: ""; display: block; width: 56px; height: 3px; background: #c0392b; margin: 20px auto 0; }
 .om-text { margin-top: 32px; font-size: 1.1rem; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
@@ -62,6 +61,8 @@ margin-top: 16px;
 }
 .profile .contact a { color: var(--accent); text-decoration: none; }
 .profile .contact a:hover { text-decoration: underline; }
+.back { font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--accent); text-decoration:none; display:inline-block; margin:0 0 32px; }
+.back:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -72,16 +73,17 @@ margin-top: 16px;
 <a href="memes.html">Memes</a>
 <a href="om.html">Om</a>
 </nav>
+    <a class="back" href="index.html">← Tilbage til forsiden</a>
 <h1>Om</h1>
 <div class="om-text">
-<p>Rosentorn er magasinet, hvor landets førende stemmer mødes. Og hvor de næste bliver til.</p>
-<p>Vi tror på en offentlig samtale der kan rumme det hele på én gang. De store spørgsmål taler vi sjældent ordentligt om. Enten taler vi dem ihjel, eller også tier vi.</p>
-<p>Her tager vi dem op igen og igen. Krigen. Økonomien. Klimaet. De valg et samfund helst vil slippe for at træffe. Og midt i alvoren holder vi døren åben for det legende, for tanken der tager en drejning og fører et helt andet sted hen.</p>
-<p>Her gør vi alvor af det alvorlige. Men der er plads til det skæve og det menneskelige, til latteren der bryder igennem midt i en hård debat. For det er dér, de bedste samtaler bliver til. I spændet mellem det dybe og det legende.</p>
-<p>Rosentorn er også en scene for dem der endnu ikke har fundet deres stemme. Vi giver plads til de unge og de nysgerrige, til dem der har noget på hjerte men mangler ordene til at sige det. Og vi giver dem redskaberne til at blive hørt.</p>
-<p>Visionen rækker længere end den enkelte samtale. På sigt vil vi bygge et fællesskab af stemmer der deler en tro på samtalens kraft, og vi vil træne den næste generation i retorik og formidling. For en god debat begynder ikke med at have ret. Den begynder med at kunne sige det, så andre lytter.</p>
-<p>Rosentorn er en torveplads for tanker. Et sted med torne nok til at det gør ondt at blive klogere, og roser nok til at det er det værd.</p>
-</div>
+      <p>Rosentorn er stedet, hvor landets førende stemmer mødes. Og hvor de næste bliver til.</p>
+      <p>Vi tror på en offentlig samtale der kan rumme det hele på én gang. De store spørgsmål taler vi sjældent ordentligt om. Enten taler vi dem ihjel, eller også tier vi.</p>
+      <p>Her tager vi dem op igen og igen. Krigen. Økonomien. Klimaet. De valg et samfund helst vil slippe for at træffe. Og midt i alvoren holder vi døren åben for det legende, for tanken der tager en drejning og fører et helt andet sted hen.</p>
+      <p>Her gør vi alvor af det alvorlige. Men der er plads til det skæve og det menneskelige, til latteren der bryder igennem midt i en hård debat. For det er dér, de bedste samtaler bliver til. I spændet mellem det dybe og det legende.</p>
+      <p>Rosentorn er også en scene for dem der endnu ikke har fundet deres stemme. Vi giver plads til de unge og de nysgerrige, til dem der har noget på hjerte men mangler ordene til at sige det. Og vi giver dem redskaberne til at blive hørt.</p>
+      <p>Visionen rækker længere end den enkelte samtale. På sigt vil vi bygge et fællesskab af stemmer der deler en tro på samtalens kraft, og vi vil træne den næste generation i retorik og formidling. For en god debat begynder ikke med at have ret. Den begynder med at kunne sige det, så andre lytter.</p>
+      <p>Rosentorn er en torveplads for tanker. Et sted med torne nok til at det gør ondt at blive klogere, og roser nok til at det er det værd.</p>
+    </div>
 <section class="profile">
 <img src="simon-mikrofon.jpg" alt="Simon Bødker">
 <p class="name">Simon Bødker</p>
@@ -91,7 +93,6 @@ margin-top: 16px;
 <a href="tel:+4522225844">+45 22 22 58 44</a>
 </p>
 </section>
-<a class="back" href="index.html">← Tilbage til forsiden</a>
 </main>
 </body>
 </html>
