@@ -14,7 +14,14 @@ nav.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95re
 nav.topnav a:hover { color:var(--accent); }
 h1 { font-size:3.4rem; letter-spacing:0.01em; font-weight:700; line-height:1.05; text-align:center; }
 h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:20px auto 0; }
-p.intro { margin-top:24px; font-size:1.1rem; }
+p.intro { margin-top:24px; font-size:1.15rem; color:var(--muted); text-align:center; max-width:520px; margin-left:auto; margin-right:auto; }
+.podcast-photo { display:block; width:100%; border-radius:14px; margin:40px 0 8px; box-shadow:0 10px 30px rgba(0,0,0,0.12); }
+.photo-caption { font-family:-apple-system,system-ui,sans-serif; font-size:0.82rem; letter-spacing:0.04em; color:var(--muted); text-align:center; margin-bottom:40px; }
+.ig-wrap { text-align:center; margin:8px 0 12px; }
+.ig-btn { display:inline-flex; align-items:center; gap:12px; font-family:-apple-system,system-ui,sans-serif; font-size:1.05rem; font-weight:600; text-decoration:none; color:#fff; padding:16px 30px; border-radius:999px; background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); box-shadow:0 8px 22px rgba(214,41,118,0.35); transition:transform 0.15s ease, box-shadow 0.15s ease; }
+.ig-btn:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(214,41,118,0.45); }
+.ig-btn svg { width:26px; height:26px; fill:#fff; }
+.ig-handle { display:block; font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--muted); text-align:center; margin-top:14px; }
 .back { font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--accent); text-decoration:none; display:inline-block; margin-top:40px; }
 .back:hover { text-decoration:underline; }
 </style>
@@ -28,8 +35,14 @@ p.intro { margin-top:24px; font-size:1.1rem; }
   <a href="om.html">Om</a>
   </nav>
   <h1>Podcast</h1>
-  <p class="intro">Test</p>
-  <a class="back" href="index.html">Tilbage til forsiden</a>
+  <p class="intro">Fra studiet til dig — samtaler, stemmer og de gode historier. Følg med, og vær med når vi går tæt på.</p>
+  <img class="podcast-photo" src="podcast-team.jpg" alt="Podcast-holdet bag Rosentorn i studiet">
+  <p class="photo-caption">Holdet bag podcasten i studiet</p>
+  <div class="ig-wrap">
+  <a class="ig-btn" href="https://www.instagram.com/a.til.z/" target="_blank" rel="noopener" aria-label="Åbn podcasten på Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-.92.04-1.42.2-1.75.33-.44.17-.75.37-1.08.7-.33.33-.53.64-.7 1.08-.13.33-.29.83-.33 1.75-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.04.92.2 1.42.33 1.75.17.44.37.75.7 1.08.33.33.64.53 1.08.7.33.13.83.29 1.75.33 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.92-.04 1.42-.2 1.75-.33.44-.17.75-.37 1.08-.7.33-.33.53-.64.7-1.08.13-.33.29-.83.33-1.75.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.92-.2-1.42-.33-1.75a2.9 2.9 0 0 0-.7-1.08 2.9 2.9 0 0 0-1.08-.7c-.33-.13-.83-.29-1.75-.33-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6zm0 1.62a3.68 3.68 0 1 0 0 7.36 3.68 3.68 0 0 0 0-7.36zm5.5-2.86a1.24 1.24 0 1 1 0 2.48 1.24 1.24 0 0 1 0-2.48z"/></svg><span>Følg podcasten på Instagram</span></a>
+  <span class="ig-handle">@a.til.z</span>
+  </div>
+  <a class="back" href="index.html">← Tilbage til forsiden</a>
 </main>
 </body>
 </html>
