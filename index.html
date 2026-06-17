@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Bødker</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #666;
+      --accent: #2a5d9f;
+      --line: #e6e6e6;
+      --bg: #fafafa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.7;
+      display: flex;
+      justify-content: center;
+      padding: 8vh 24px;
+    }
+    main { max-width: 620px; width: 100%; }
+    h1 {
+      font-size: 2.2rem;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+    }
+    .subtitle {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 8px;
+    }
+    .intro {
+      margin-top: 32px;
+      font-size: 1.1rem;
+    }
+    .links {
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .links a {
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+    }
+    .links a:hover { text-decoration: underline; }
+    .links a::before {
+      content: "→";
+      color: var(--muted);
+    }
+    footer {
+      margin-top: 48px;
+      font-family: -apple-system, system-ui, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Simon Bødker</h1>
+    <p class="subtitle">Kandidatstuderende · Skribent · Podcastvært</p>
+
+    <p class="intro">
+      Min uge veksler mellem forelæsninger på Københavns Universitet, dataleverancer
+      til direktionen i Københavns Kommune og samtaler med meningsdannere i podcasten
+      <em>A til Z</em>. Jeg skriver debatindlæg i Jyllands-Posten og Berlingske om økonomi,
+      arbejdsmarked, klima og europæiske spørgsmål — og mit bidrag er kombinationen:
+      data, kildekritik og økonomi i samme analyse.
+    </p>
+
+    <nav class="links">
+      <a href="#" target="_blank" rel="noopener">Lyt til podcasten »A til Z«</a>
+      <a href="#" target="_blank" rel="noopener">Find mig på LinkedIn</a>
+    </nav>
+
+    <footer>Bodker@live.dk · Frederiksberg</footer>
+  </main>
+</body>
+</html>
