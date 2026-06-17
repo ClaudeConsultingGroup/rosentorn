@@ -23,21 +23,31 @@ justify-content: center;
 padding: 8vh 24px;
 }
 main { max-width: 620px; width: 100%; }
-nav.topnav { display: flex; justify-content: center; gap: 32px; margin-bottom: 40px; padding-bottom: 16px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
+nav.topnav { display: flex; justify-content: flex-start; gap: 28px; margin-bottom: 56px; padding-bottom: 16px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
+.brand { text-align: center; margin-top: 24px; }
 h1 {
-font-size: 2.2rem;
-letter-spacing: 0.04em;
+font-size: 4rem;
+letter-spacing: 0.01em;
 font-weight: 700;
+line-height: 1.05;
+}
+h1::after {
+content: "";
+display: block;
+width: 56px;
+height: 3px;
+background: #c0392b;
+margin: 20px auto 0;
 }
 .subtitle {
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.95rem;
+font-size: 1rem;
 color: var(--muted);
 text-transform: uppercase;
-letter-spacing: 0.08em;
-margin-top: 8px;
+letter-spacing: 0.16em;
+margin-top: 20px;
 }
 .debat {
 margin-top: 40px;
@@ -116,13 +126,15 @@ color: var(--muted);
 <body>
 <main>
 <nav class="topnav">
-<a href="podcast.html" target="_blank" rel="noopener">Podcast</a>
 <a href="debat.html" target="_blank" rel="noopener">Debat</a>
+<a href="podcast.html" target="_blank" rel="noopener">Podcast</a>
 <a href="memes.html" target="_blank" rel="noopener">Memes</a>
 <a href="om.html" target="_blank" rel="noopener">Om</a>
 </nav>
+<div class="brand">
 <h1>Rosentorn</h1>
 <p class="subtitle">Et sted, hvor landets førende stemmer mødes</p>
+</div>
 
 <section class="debat">
 <a class="debat-link" href="debatindlaeg.html" target="_blank" rel="noopener">
