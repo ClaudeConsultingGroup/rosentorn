@@ -23,10 +23,11 @@ justify-content: center;
 padding: 8vh 24px;
 }
 main { max-width: 620px; width: 100%; }
-nav.topnav { display: flex; justify-content: center; gap: 32px; margin-bottom: 40px; padding-bottom: 16px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
+nav.topnav { display: flex; justify-content: flex-start; gap: 28px; margin-bottom: 56px; padding-bottom: 16px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
-h1 { font-size: 2.2rem; letter-spacing: 0.04em; font-weight: 700; }
+h1 { font-size: 3.4rem; letter-spacing: 0.01em; font-weight: 700; line-height: 1.05; text-align: center; }
+h1::after { content: ""; display: block; width: 56px; height: 3px; background: #c0392b; margin: 20px auto 0; }
 .om-text { margin-top: 32px; font-size: 1.1rem; }
 .om-text p { margin-bottom: 20px; }
 .profile {
@@ -64,14 +65,14 @@ margin-top: 16px;
 <body>
 <main>
 <nav class="topnav">
-<a href="podcast.html" target="_blank" rel="noopener">Podcast</a>
 <a href="debat.html" target="_blank" rel="noopener">Debat</a>
+<a href="podcast.html" target="_blank" rel="noopener">Podcast</a>
 <a href="memes.html" target="_blank" rel="noopener">Memes</a>
 <a href="om.html" target="_blank" rel="noopener">Om</a>
 </nav>
 <h1>Om</h1>
 <div class="om-text">
-<p>Rosentorn er stedet, hvor landets skarpeste stemmer mødes.</p>
+<p>Rosentorn er stedet, hvor landets førende stemmer mødes.</p>
 <p>Vi tror på, at den offentlige samtale kan rumme det hele på én gang. Få spørgsmål fortjener den mere end klimaet, som vi alt for ofte enten taler ihjel eller tier om. På Rosentorn tager vi det op igen og igen, sammen med krigen, økonomien og de svære valg et samfund må træffe, og vi gør det uden at miste øjet for poesien i det helt almindelige. Den første kop kaffe. Lyset over hustagene. En samtale der pludselig tager en uventet drejning.</p>
 <p>Her gør vi alvor af det alvorlige. Men vi har også plads til livets finurligheder, til det skæve og det menneskelige, til latteren der bryder igennem midt i en hård debat. For det er netop dér, de bedste samtaler opstår, i spændet mellem det dybe og det legende.</p>
 <p>Rosentorn er en torveplads for tanker. Et sted med torne nok til at det gør ondt at blive klogere, og roser nok til at det er det værd.</p>
