@@ -26,15 +26,7 @@ main { max-width: 680px; width: 100%; }
 nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 56px; padding-bottom: 16px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
-.back {
-  font-family: -apple-system, system-ui, sans-serif;
-  font-size: 0.9rem;
-  color: var(--accent);
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: 32px;
-}
-.back:hover { text-decoration: underline; }
+
 h1 {
   font-size: 2.6rem;
   letter-spacing: 0.01em;
@@ -85,14 +77,24 @@ article p {
 .page-head h1 { font-size:2.6rem; font-weight:700; }
 .page-head h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:20px auto 0; }
 .page-sub { margin-top:20px; font-size:1.05rem; font-style:italic; color:var(--muted); }
-.debat-list { list-style:none; display:flex; flex-direction:column; gap:24px; }
-.debat-card { display:block; text-decoration:none; color:inherit; padding:28px 30px; background:#fff; border:1px solid var(--line); border-radius:14px; transition:box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease; }
-.debat-card:hover { box-shadow:0 10px 30px rgba(0,0,0,0.10); transform:translateY(-2px); border-color:#d8d8d8; }
-.debat-title { font-size:1.6rem; font-weight:700; line-height:1.25; }
+
+.debat-card:hover 
+
+.debat-list { list-style:none; display:flex; flex-direction:column; gap:22px; }
+.debat-card { position:relative; display:block; text-decoration:none; color:inherit; padding:30px 32px 26px; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; transition:box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease; }
+.debat-card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:#c0392b; transform:scaleY(0); transform-origin:top; transition:transform 0.25s ease; }
+.debat-card:hover { box-shadow:0 14px 38px rgba(0,0,0,0.12); transform:translateY(-3px); border-color:#e0c9c5; }
+.debat-card:hover::before { transform:scaleY(1); }
+.debat-tag { display:inline-block; font-family:-apple-system,system-ui,sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#c0392b; background:rgba(192,57,43,0.08); padding:5px 12px; border-radius:999px; margin-bottom:14px; }
+.debat-title { font-size:1.7rem; font-weight:700; line-height:1.22; }
 .debat-card:hover .debat-title { color:var(--accent); }
 .debat-manchet { margin-top:12px; font-size:1.05rem; font-style:italic; color:#333; text-align:justify; hyphens:auto; }
-.debat-meta { margin-top:16px; font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; letter-spacing:0.03em; color:var(--muted); }
-.laes-mere { color:var(--accent); font-weight:600; margin-left:6px; }
+.debat-foot { display:flex; align-items:center; justify-content:space-between; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+.debat-meta { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; letter-spacing:0.03em; color:var(--muted); }
+.debat-arrow { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:#fafafa; border:1px solid var(--line); color:var(--accent); font-size:1.1rem; transition:background 0.25s ease, transform 0.25s ease, color 0.25s ease; }
+.debat-card:hover .debat-arrow { background:var(--accent); color:#fff; transform:translateX(3px); }
+.back { font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--accent); text-decoration:none; display:inline-block; margin:0 0 32px; }
+.back:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -103,7 +105,7 @@ article p {
       <a href="memes.html">Memes</a>
       <a href="om.html">Om</a>
     </nav>
-    <a class="back" href="index.html">← Forside</a>
+    <a class="back" href="index.html">← Tilbage til forsiden</a>
     <header class="page-head">
       <h1>Debat</h1>
       <p class="page-sub">Skarpe indlæg om tidens største spørgsmål. Klik dig ind på et indlæg for at læse det fulde.</p>
@@ -111,9 +113,13 @@ article p {
     <ul class="debat-list">
       <li class="debat-item">
         <a class="debat-card" href="debatindlaeg.html">
+          <span class="debat-tag">Samfund</span>
           <h2 class="debat-title">Drømmen om eget hjem er blevet en fælde</h2>
           <p class="debat-manchet">Boligpriserne i København stiger hurtigere end lønningerne, og en hel generation skubbes ud af ejerboligen. Richard Sennetts analyse af det fleksible menneske rammer plet.</p>
-          <p class="debat-meta">Simon Bødker · Studerende, Frederiksberg <span class="laes-mere">Læs mere →</span></p>
+          <div class="debat-foot">
+            <span class="debat-meta">Simon Bødker · Studerende, Frederiksberg</span>
+            <span class="debat-arrow" aria-hidden="true">→</span>
+          </div>
         </a>
       </li>
     </ul>
