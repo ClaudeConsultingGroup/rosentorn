@@ -9,9 +9,6 @@
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--bg); line-height:1.7; display:flex; justify-content:center; padding:48px 24px; }
 main { max-width:620px; width:100%; }
-.photo-wrap { position:relative; }
-.site-logo { display:block; width:64px; height:64px; }
-.logo-overlay { position:absolute; top:54px; left:14px; z-index:2; line-height:0; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.35)); }
 nav.topnav { display:flex; justify-content:center; gap:28px; margin-bottom:56px; padding-bottom:16px; border-bottom:1px solid var(--line); font-family:-apple-system,system-ui,sans-serif; }
 nav.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95rem; color:var(--ink); text-decoration:none; }
 nav.topnav a:hover { color:var(--accent); }
@@ -33,18 +30,22 @@ p.intro { margin-top:24px; font-size:1.15rem; color:var(--muted); text-align:cen
 .btn-ig:hover { box-shadow:0 12px 28px rgba(214,41,118,0.45); }
 .handle { display:block; font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--muted); text-align:center; margin-top:4px; }
 .watermark { display:block; max-width:260px; width:60%; margin:48px auto 8px; opacity:0.9; }
-.back { font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--accent); text-decoration:none; display:inline-block; margin-top:32px; }
+
+.site-logo-link { display:block; width:fit-content; margin:24px 0 -8px; line-height:0; }
+.site-logo { display:block; width:72px; height:72px; }
+.back { font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--accent); text-decoration:none; display:inline-block; margin:0 0 32px; }
 .back:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
 <main>
 <nav class="topnav"><a href="debat.html">Debat</a><a href="podcast.html">Podcast</a><a href="memes.html">Memes</a><a href="om.html">Om</a></nav>
+    <a class="back" href="index.html">← Tilbage til forsiden</a>
 <h1>Podcast</h1>
 <p class="intro">A til Z er Netavisen Pios podcast, hvor du kan få et progressivt venstreorienteret blik på tidens aktuelle historier.</p>
-<div class="photo-wrap">
+<a class="site-logo-link" href="index.html" aria-label="Til forsiden"><img class="site-logo" src="atilz-logo.png" alt="A til Z logo"></a>
+      <div class="photo-wrap">
         <a class="photo-link" href="https://open.spotify.com/show/6ixd2OzOrQOkEz2c8xjFxn?si=c8cd778a67ae4d8c" target="_blank" rel="noopener" aria-label="Lyt til A til Z på Spotify"><img class="podcast-photo" src="podcast-team.jpg" alt="Podcast-holdet bag A til Z i studiet"></a>
-        <a class="logo-overlay" href="index.html" aria-label="Til forsiden"><img class="site-logo" src="atilz-logo.png" alt="A til Z logo"></a>
       </div>
       <p class="photo-caption">Værter Simon Bødker og Furkan Kadir Yavuz. Sammen med Malte Mathies Løcke (S) fra Frederiksberg byråd og Victoria Helene Olsen (K) fra Roskilde byråd tager vi fat om en krise, der gør drømmen om eget hjem til luksus.</p>
 <div class="actions">
@@ -53,7 +54,6 @@ p.intro { margin-top:24px; font-size:1.15rem; color:var(--muted); text-align:cen
 <span class="handle">@a.til.z</span>
 </div>
 <img class="watermark" src="atilz-watermark.png" alt="A til Z — produceret af Netavisen Pio">
-<a class="back" href="index.html">← Tilbage til forsiden</a>
 </main>
 </body>
 </html>
