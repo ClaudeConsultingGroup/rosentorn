@@ -36,7 +36,9 @@ nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9
 nav.topnav a:hover { color: var(--accent); }
 .brand { text-align: center; margin-top: 24px; }
 .brand h1 { letter-spacing: -0.02em; }
-.brand h1::first-letter { color: #c0392b; }
+.brand h1 a { color: inherit; text-decoration: none; display: inline-block; transition: transform 0.25s ease; transform-origin: center; }
+.brand h1 a:hover { transform: scale(1.06); }
+.brand h1 a:hover::first-letter { color: #c0392b; }
 h1 {
 font-size: 4rem;
 letter-spacing: 0.01em;
@@ -193,7 +195,7 @@ margin: 0 auto 40px;
 </nav>
   <div class="submit-note">Har du et indlæg? Send det til <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a></div>
 <div class="brand">
-<h1>Rosentorn</h1>
+<h1><a href="om.html">Rosentorn</a></h1>
 <p class="subtitle">Magasinet, hvor landets førende stemmer mødes</p>
 </div>
 
