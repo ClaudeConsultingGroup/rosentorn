@@ -78,6 +78,31 @@ nav.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95re
 nav.topnav a:hover { color:var(--accent); }
 .back { display:block; text-align:center; margin:0 auto 22px; font-family:Georgia,'Times New Roman',serif; font-size:1.6rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
 .back:hover { text-decoration:underline; }
+.pullquote {
+  position: relative;
+  margin: 38px 0;
+  padding-left: 30px;
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.pullquote::before {
+  content: "\201D";
+  position: absolute;
+  left: 0;
+  top: -0.15em;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #c0392b;
+}
+@media (max-width: 600px) {
+  .pullquote { font-size: 1.25rem; }
+}
 </style>
 </head>
 <body>
@@ -94,8 +119,11 @@ nav.topnav a:hover { color:var(--accent); }
       <p class="manchet">Boligpriserne i København stiger hurtigere end lønningerne, og en hel generation skubbes ud af ejerboligen. Richard Sennetts analyse af det fleksible menneske rammer plet.</p>
       <p>I København er ejerlejlighedspriserne steget med omkring 17 procent det seneste år. En gennemsnitlig lejlighed på 80 kvadratmeter koster nu næsten fem millioner kroner, og en toværelses i brokvartererne handles ofte for over tre millioner. Nationalbanken advarer om risiko for overoptimisme og en mulig prisboble. Andelen af unge, der køber egen bolig, er faldet med 25 procent over det seneste årti. Gennemsnitsalderen for førstegangskøbere stiger år for år.</p>
       <p>Richard Sennett ville genkende mønsteret. I Det fleksible menneske beskriver han, hvordan den moderne kapitalisme undergraver muligheden for at skabe en sammenhængende livsfortælling. Bogens centrale kontrast er mellem den italienske immigrant Enrico, der arbejdede som pedel i 25 år og sparede op til et hus, og hans søn Rico, en succesfuld teknologirådgiver der trods høj indkomst lever i permanent usikkerhed. Enrico kunne planlægge. Rico må tilpasse sig.</p>
+      <p class="pullquote">Enrico kunne planlægge. Rico må tilpasse sig.</p>
       <p>Det københavnske boligmarked tvinger flere og flere ind i Ricos situation. Når priserne stiger hurtigere end lønningerne, bliver evnen til at spare op meningsløs. Man kan ikke planlægge sig til en bolig gennem flid og mådehold, som Enricos generation kunne. I stedet kræves enten arv, forældrehjælp eller en villighed til at acceptere gæld, der binder én i årtier. Eller man opgiver drømmen om at eje og forbliver på et lejemarked, hvor vilkårene også bliver stadig mere usikre.</p>
+      <p class="pullquote">Man kan ikke længere planlægge sig til en bolig gennem flid og mådehold.</p>
       <p>Sennett beskriver, hvordan fleksibilitetens regime skaber en særlig form for angst. Det er ikke frygten for fattigdom, men frygten for at miste grebet om sin egen tilværelse. Når man ikke kan forudsige, hvor man bor om fem år, bliver det vanskeligt at binde sig til et sted, et fællesskab, en fremtid. De unge københavnere, der skubbes rundt mellem dyre lejeboliger og uopnåelige ejerlejligheder, kender denne angst.</p>
+      <p class="pullquote">Det er ikke frygten for fattigdom, men frygten for at miste grebet om sit eget liv.</p>
       <p>Regeringen har skrevet ind i sit grundlag, at flere danskere skal kunne eje deres egen bolig. Men markedet trækker i den modsatte retning. Udbuddet er rekordlavt, efterspørgslen høj, og nybyggeriet halter. Resultatet er et boligmarked, der i stigende grad ligner det amerikanske, hvor førstegangskøberne bliver ældre og færre, og hvor boligejerskab gradvist bliver et privilegium for dem, der allerede har. Fleksibiliteten var engang et løfte om frihed. For mange unge københavnere er den blevet en fælde.</p>
       <p class="signatur">Simon Bødker, Studerende, Frederiksberg</p>
     </article>
