@@ -106,6 +106,37 @@ font-size: 1.05rem;
 color: var(--ink);
 margin-bottom: 20px;
 }
+.debat-byline {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.debat-byline .author {
+  position: relative;
+  display: inline-block;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0 4px;
+  z-index: 0;
+}
+.debat-byline .author::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 1px;
+  height: 8px;
+  background: #c0392b;
+  opacity: 0.85;
+  transform: skewX(-12deg);
+  z-index: -1;
+  transition: height 0.2s ease, opacity 0.2s ease;
+}
+.debat-link:hover .debat-byline .author::before {
+  height: 16px;
+  opacity: 1;
+}
 .debat-cta {
 display: inline-block;
 font-family: -apple-system, system-ui, sans-serif;
@@ -148,7 +179,7 @@ margin: 0 auto 40px;
 <a href="memes.html">Memes</a>
 <a href="om.html">Om</a>
 </nav>
-  <div class="submit-note">Har du et indlæg? Send det til <a href="mailto:bodker@live.dk">bodker@live.dk</a></div>
+  <div class="submit-note">Har du et indlæg? Send det til <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a></div>
 <div class="brand">
 <h1>Rosentorn</h1>
 <p class="subtitle">Magasinet, hvor landets førende stemmer mødes</p>
@@ -159,6 +190,7 @@ margin: 0 auto 40px;
 <p class="debat-kicker">Månedens debatindlæg</p>
 <p class="debat-headline">»Drømmen om eget hjem er blevet en fælde«</p>
 <p class="debat-teaser">Boligpriserne i København stiger hurtigere end lønningerne, og en hel generation skubbes ud af ejerboligen. Et opgør med drømmen der blev en fælde.</p>
+<p class="debat-byline">Skrevet af <span class="author">Simon Bødker</span></p>
 <img src="simon-mikrofon.jpg" alt="Simon Bødker ved mikrofonen">
 <span class="debat-cta">Læs hele indlægget</span>
 </a>
