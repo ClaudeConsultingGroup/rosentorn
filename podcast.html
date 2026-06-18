@@ -24,6 +24,15 @@ nav.topnav a:hover { color:var(--accent); }
 .social a { color:var(--muted); display:inline-flex; transition:color 0.2s ease, transform 0.2s ease; }
 .social a:hover { color:#c0392b; transform:translateY(-2px); }
 .social svg { width:20px; height:20px; fill:currentColor; }
+.page-mark { text-align:center; margin:4px 0 18px; }
+.page-mark .mark-eyebrow { display:inline-block; font-family:-apple-system,system-ui,sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#c0392b; }
+.page-mark .mark-line { font-family:Georgia,'Times New Roman',serif; font-size:1.6rem; font-style:italic; line-height:1.25; color:var(--ink); margin-top:8px; }
+.page-mark .mark-stem { position:relative; display:block; width:2px; height:0; background:#c0392b; margin:14px auto 0; border-radius:2px; transition:height 0.45s cubic-bezier(.4,0,.2,1); }
+.page-mark .mark-stem::before { content:""; position:absolute; top:-7px; left:50%; width:9px; height:9px; border-radius:50%; background:#c0392b; transform:translateX(-50%) scale(0); opacity:0; transition:transform 0.35s ease 0.15s, opacity 0.35s ease 0.15s; }
+.page-mark .mark-stem::after { content:""; position:absolute; top:-2px; right:50%; margin-right:5px; width:7px; height:2px; background:#c0392b; transform-origin:right center; transform:rotate(35deg) scaleX(0); opacity:0; transition:transform 0.3s ease 0.25s, opacity 0.3s ease 0.25s; }
+.page-mark:hover .mark-stem { height:30px; }
+.page-mark:hover .mark-stem::before { transform:translateX(-50%) scale(1); opacity:1; }
+.page-mark:hover .mark-stem::after { transform:rotate(35deg) scaleX(1); opacity:1; }
 h1 { font-size:3.4rem; letter-spacing:0.01em; font-weight:700; line-height:1.05; text-align:center; }
 h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:20px auto 0; }
 p.intro { margin-top:16px; font-size:1.1rem; color:var(--muted); text-align:center; max-width:520px; margin-left:auto; margin-right:auto; }
@@ -54,7 +63,11 @@ a.back:hover::first-letter { color: #c0392b; }
 <main>
 <a class="back" href="index.html">Rosentorn</a>
 <nav class="topnav"><a href="podcast.html">Podcast</a><a href="debat.html">Debat</a><a href="memes.html">Memes</a><a href="om.html">Om</a></nav>
-<h1 class="page-title">Podcast</h1>
+<header class="page-mark">
+<span class="mark-eyebrow">Lyt med</span>
+<p class="mark-line">Stemmer der bliver hørt</p>
+<span class="mark-stem" aria-hidden="true"></span>
+</header>
 <p class="intro">A til Z er Netavisen Pios podcast, hvor du kan få et progressivt venstreorienteret blik på tidens aktuelle historier.</p>
 <div class="photo-wrap">
 <a class="photo-link" href="https://open.spotify.com/episode/5TIx0jQNMosCmWzW8wdQne?si=31hSYF4ASmSx3cnnTVv9Vg" target="_blank" rel="noopener" aria-label="Lyt til seneste afsnit om boligkrisen på Spotify"><img class="podcast-photo" src="podcast-team.jpg" alt="Podcast-holdet bag A til Z i studiet"></a>
