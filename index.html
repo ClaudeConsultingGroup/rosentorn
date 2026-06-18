@@ -117,25 +117,21 @@ margin-bottom: 20px;
   display: inline-block;
   color: var(--ink);
   font-weight: 600;
-  padding: 0 4px;
-  z-index: 0;
 }
-.debat-byline .author::before {
+.debat-byline .author::after {
   content: "";
   position: absolute;
-  left: -2px;
-  right: -2px;
-  bottom: 1px;
-  height: 8px;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
   background: #c0392b;
-  opacity: 0.85;
-  transform: skewX(-12deg);
-  z-index: -1;
-  transition: height 0.2s ease, opacity 0.2s ease;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: height 0.2s ease;
 }
-.debat-link:hover .debat-byline .author::before {
-  height: 16px;
-  opacity: 1;
+.debat-link:hover .debat-byline .author::after {
+  height: 3px;
 }
 .debat-cta {
 display: inline-block;
