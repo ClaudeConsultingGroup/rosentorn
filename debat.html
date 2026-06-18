@@ -7,87 +7,38 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23fbfbf9%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2240%22%20font-weight%3D%22700%22%20fill%3D%22%23c0392b%22%20text-anchor%3D%22middle%22%3ER%3C%2Ftext%3E%3C%2Fsvg%3E">
 <meta name="theme-color" content="#c0392b">
 <link rel="manifest" href="/manifest.webmanifest">
-<link rel="apple-touch-icon" href="data:image/png;base64,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">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Rosentorn">
 <meta name="mobile-web-app-capable" content="yes">
 <style>
 :root {
-  --ink: #1a1a1a;
-  --muted: #666;
-  --accent: #2a5d9f;
-  --line: #e6e6e6;
-  --bg: #fafafa;
+--ink: #1a1a1a;
+--muted: #666;
+--accent: #2a5d9f;
+--line: #e6e6e6;
+--bg: #fafafa;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: Georgia, 'Times New Roman', serif;
-  color: var(--ink);
-  background: var(--bg);
-  line-height: 1.7;
-  display: flex;
-  justify-content: center;
-  padding: 8vh 24px;
+font-family: Georgia, 'Times New Roman', serif;
+color: var(--ink);
+background: var(--bg);
+line-height: 1.6;
+display: flex;
+justify-content: center;
+padding: 2.5vh 24px;
 }
 main { max-width: 680px; width: 100%; }
-nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; padding-top: 16px; padding-bottom: 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
+nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 18px; padding-top: 12px; padding-bottom: 12px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
-
-h1 {
-  font-size: 2.6rem;
-  letter-spacing: 0.01em;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-}
-h1::after {
-  content: "";
-  display: block;
-  width: 56px;
-  height: 3px;
-  background: #c0392b;
-  margin: 20px auto 0;
-}
-.manchet {
-  margin-top: 20px;
-  font-size: 1.15rem;
-  font-style: italic;
-  color: #333;
-}
-article p {
-  margin-top: 20px;
-  font-size: 1.08rem;
-  text-align: justify;
-  hyphens: auto;
-}
-.signatur {
-  margin-top: 28px;
-  font-style: italic;
-  color: var(--muted);
-}
-.budskab {
-  margin-top: 44px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
-}
-.budskab h2 {
-  font-family: -apple-system, system-ui, sans-serif;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-}
-.budskab p { margin-top: 14px; font-size: 1.05rem; }
-
-.page-head { text-align:center; margin-bottom:48px; }
-.page-head h1 { font-size:1.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; }
-.page-head h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:20px auto 0; }
-.page-sub { margin-top:20px; font-size:1.05rem; font-style:italic; color:var(--muted); }
-
+.page-head { text-align:center; margin-bottom:24px; }
+.page-head h1 { font-size:1.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; }
+.page-head h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:14px auto 0; }
+.page-sub { margin-top:14px; font-size:1.05rem; font-style:italic; color:var(--muted); }
 .debat-list { list-style:none; display:flex; flex-direction:column; gap:22px; }
-.debat-card { position:relative; display:block; text-decoration:none; color:inherit; padding:30px 32px 26px; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; transition:box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease; }
+.debat-card { position:relative; display:block; text-decoration:none; color:inherit; padding:26px 32px 22px; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; transition:box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease; }
 .debat-card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:#c0392b; transform:scaleY(0); transform-origin:top; transition:transform 0.25s ease; }
 .debat-card:hover { box-shadow:0 14px 38px rgba(0,0,0,0.12); transform:translateY(-3px); border-color:#e0c9c5; }
 .debat-card:hover::before { transform:scaleY(1); }
@@ -99,47 +50,47 @@ article p {
 .debat-meta { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; letter-spacing:0.03em; color:var(--muted); }
 .debat-arrow { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:#fafafa; border:1px solid var(--line); color:var(--accent); font-size:1.1rem; transition:background 0.25s ease, transform 0.25s ease, color 0.25s ease; }
 .debat-card:hover .debat-arrow { background:var(--accent); color:#fff; transform:translateX(3px); }
-.back { display:block; text-align:center; margin:0 auto 22px; font-family:Georgia,'Times New Roman',serif; font-size:1.6rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
+.back { display:block; text-align:center; margin:0 auto 12px; font-family:Georgia,'Times New Roman',serif; font-size:1.4rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
 .back:hover { text-decoration:underline; }
-    .submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; text-align:center; color:var(--muted); margin:0 auto 48px; max-width:520px; }
-    .submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
-    .submit-note a:hover { text-decoration:underline; }
+.submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); margin:18px auto 0; max-width:520px; }
+.submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
+.submit-note a:hover { text-decoration:underline; }
 a.back:hover::first-letter { color: #c0392b; }
 </style>
 </head>
 <body>
-  <main>
-    <a class="back" href="index.html">Rosentorn</a>
-    <nav class="topnav">
-      <a href="podcast.html">Podcast</a>
-      <a href="debat.html">Debat</a>
-      <a href="memes.html">Memes</a>
-      <a href="om.html">Om</a>
-    </nav>
-    <div class="submit-note">Har du et indlæg? Send det til <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a></div>
-    <header class="page-head">
-      <h1>Debat</h1>
-      <p class="page-sub">Stærke stemmer om tidens største spørgsmål. Klik dig ind på et indlæg for at læse det fulde.</p>
-    </header>
-    <ul class="debat-list">
-      <li class="debat-item">
-        <a class="debat-card" href="debatindlaeg.html">
-          <span class="debat-tag">Samfund</span>
-          <h2 class="debat-title">Drømmen om eget hjem er blevet en fælde</h2>
-          <p class="debat-manchet">Boligpriserne i København stiger hurtigere end lønningerne, og en hel generation skubbes ud af ejerboligen. Richard Sennetts analyse af det fleksible menneske rammer plet.</p>
-          <div class="debat-foot">
-            <span class="debat-meta">Simon Bødker · Studerende, Frederiksberg</span>
-            <span class="debat-arrow" aria-hidden="true">→</span>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </main>
+<main>
+<a class="back" href="index.html">Rosentorn</a>
+<nav class="topnav">
+<a href="podcast.html">Podcast</a>
+<a href="debat.html">Debat</a>
+<a href="memes.html">Memes</a>
+<a href="om.html">Om</a>
+</nav>
+<header class="page-head">
+<h1>Debat</h1>
+<p class="page-sub">Stærke stemmer om tidens største spørgsmål. Klik dig ind på et indlæg for at læse det fulde.</p>
+</header>
+<ul class="debat-list">
+<li class="debat-item">
+<a class="debat-card" href="debatindlaeg.html">
+<span class="debat-tag">Samfund</span>
+<h2 class="debat-title">Drømmen om eget hjem er blevet en fælde</h2>
+<p class="debat-manchet">Boligpriserne i København stiger hurtigere end lønningerne, og en hel generation skubbes ud af ejerboligen. Richard Sennetts analyse af det fleksible menneske rammer plet.</p>
+<div class="debat-foot">
+<span class="debat-meta">Simon Bødker · Studerende, Frederiksberg</span>
+<span class="debat-arrow" aria-hidden="true">→</span>
+</div>
+</a>
+</li>
+</ul>
+<div class="submit-note">Har du et indlæg? Send det til <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a></div>
+</main>
 <script>
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("/sw.js").catch(function () {});
-  });
+window.addEventListener("load", function () {
+navigator.serviceWorker.register("/sw.js").catch(function () {});
+});
 }
 </script>
 </body>
