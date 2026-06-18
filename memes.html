@@ -7,7 +7,7 @@
 <style>
 :root { --ink:#1a1a1a; --muted:#666; --accent:#2a5d9f; --line:#e6e6e6; --bg:#fafafa; }
 * { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--bg); line-height:1.7; display:flex; justify-content:center; padding:8vh 24px; }
+body { font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--bg); line-height:1.7; display:flex; justify-content:center; padding:60px 24px; }
 main { max-width:620px; width:100%; }
 nav.topnav { display:flex; justify-content:center; gap:28px; margin-bottom:56px; padding-bottom:16px; border-bottom:1px solid var(--line); font-family:-apple-system,system-ui,sans-serif; }
 nav.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95rem; color:var(--ink); text-decoration:none; }
@@ -17,6 +17,10 @@ h1::after { content:""; display:block; width:56px; height:3px; background:#c0392
 p.intro { margin-top:24px; font-size:1.1rem; }
 .back { font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--accent); text-decoration:none; display:inline-block; margin:0 0 32px; }
 .back:hover { text-decoration:underline; }
+.meme { margin-top:40px; text-align:center; }
+.meme img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:4px; }
+.meme figcaption { margin-top:12px; font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--muted); }
+.meme figcaption strong { color:var(--ink); }
 </style>
 </head>
 <body>
@@ -27,9 +31,12 @@ p.intro { margin-top:24px; font-size:1.1rem; }
 <a href="memes.html">Memes</a>
 <a href="om.html">Om</a>
 </nav>
-      <a class="back" href="index.html">← Tilbage til forsiden</a>
+<a class="back" href="index.html">← Tilbage til forsiden</a>
 <h1>Memes</h1>
-<p class="intro">Test</p>
+<figure class="meme">
+<img src="meme-boomer-cykel.png" alt="Boomer der vil være sjov online laver et AI-genereret meme">
+<figcaption><strong>Simon Bødker</strong>, Chefredaktør</figcaption>
+</figure>
 </main>
 </body>
 </html>
