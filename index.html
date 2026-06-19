@@ -134,40 +134,71 @@ margin-top: 12px;
 }
 .debat-card:hover .debat-headline { color: var(--accent); }
 .debat-byline {
+display: flex;
+align-items: center;
+gap: 8px;
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.86rem;
+font-size: 0.82rem;
+letter-spacing: 0.01em;
 color: var(--muted);
-margin-top: 8px;
+margin-top: 10px;
+}
+.debat-byline .by-label {
+text-transform: uppercase;
+letter-spacing: 0.14em;
+font-size: 0.66rem;
+font-weight: 700;
+color: #b9b3ad;
 }
 .debat-byline .author {
-position: relative;
-display: inline-block;
 color: var(--ink);
 font-weight: 600;
 }
-.debat-byline .author::after {
-content: "";
-position: absolute;
-left: 0;
-right: 0;
-bottom: -3px;
-height: 2px;
+.debat-byline .by-dot {
+width: 4px;
+height: 4px;
+border-radius: 50%;
 background: #c0392b;
-transition: height 0.2s ease;
+flex: none;
 }
-.debat-card:hover .debat-byline .author::after { height: 3px; }
 .debat-cta {
 display: inline-flex;
 align-items: center;
-gap: 6px;
+gap: 9px;
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.86rem;
+font-size: 0.84rem;
 font-weight: 600;
+letter-spacing: 0.01em;
 color: var(--accent);
-margin-top: 10px;
+margin-top: 14px;
 }
-.debat-cta::after { content: "\2192"; color: var(--muted); transition: transform 0.2s ease; }
-.debat-card:hover .debat-cta::after { transform: translateX(4px); }
+.debat-cta .cta-arrow {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 26px;
+height: 26px;
+border-radius: 50%;
+background: rgba(42,93,159,0.10);
+transition: background 0.25s ease, transform 0.25s ease;
+}
+.debat-cta .cta-arrow svg { width: 13px; height: 13px; fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.debat-cta .cta-text { position: relative; }
+.debat-cta .cta-text::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -3px;
+width: 100%;
+height: 1.5px;
+background: var(--accent);
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.3s ease;
+}
+.debat-card:hover .debat-cta .cta-text::after { transform: scaleX(1); }
+.debat-card:hover .debat-cta .cta-arrow { background: var(--accent); transform: translateX(3px); }
+.debat-card:hover .debat-cta .cta-arrow svg { stroke: #fff; }
 @media (max-width: 640px) {
 body { align-items: flex-start; }
 .debat-grid { grid-template-columns: 1fr; gap: 22px; }
@@ -210,8 +241,8 @@ text-decoration: underline;
 <img src="simon-eu.jpg" alt="Simon Bødker">
 </div>
 <p class="debat-headline">»Gud døde med Nietzsche og genopstod med AI«</p>
-<p class="debat-byline">Af <span class="author">Simon Bødker</span></p>
-<span class="debat-cta">Læs indlægget</span>
+<p class="debat-byline"><span class="by-label">Af</span><span class="by-dot"></span><span class="author">Simon Bødker</span></p>
+<span class="debat-cta"><span class="cta-text">Læs indlægget</span><span class="cta-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
 </a>
 <a class="debat-card" href="debatindlaeg.html">
 <div class="debat-figure">
@@ -219,8 +250,8 @@ text-decoration: underline;
 <img src="simon-mikrofon.jpg" alt="Simon Bødker ved mikrofonen">
 </div>
 <p class="debat-headline">»Drømmen om eget hjem er blevet et fatamorgana«</p>
-<p class="debat-byline">Af <span class="author">Simon Bødker</span></p>
-<span class="debat-cta">Læs indlægget</span>
+<p class="debat-byline"><span class="by-label">Af</span><span class="by-dot"></span><span class="author">Simon Bødker</span></p>
+<span class="debat-cta"><span class="cta-text">Læs indlægget</span><span class="cta-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
 </a>
 </div>
 </section>
