@@ -33,7 +33,7 @@ p.intro { margin-top:16px; font-size:1.1rem; }
 .back:hover { text-decoration:underline; }
 .meme-gallery { margin-top:18px; display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:20px; }
 .meme { flex:1 1 300px; max-width:340px; text-align:center; }
-.meme img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s ease, box-shadow 0.2s ease; }
+.meme img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s ease, box-shadow 0.2s ease; cursor:zoom-in; }
 .meme img:hover { transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,0.12); }
 .meme-byline { margin-top:22px; text-align:center; font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--muted); }
 .meme-byline strong { color:var(--ink); }
@@ -42,6 +42,12 @@ p.intro { margin-top:16px; font-size:1.1rem; }
 .submit-note a:hover { text-decoration:underline; }
 .page-title { font-size:1.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; }
 a.back:hover::first-letter { color: #c0392b; }
+.lightbox { position:fixed; inset:0; background:rgba(20,18,16,0.88); display:flex; align-items:center; justify-content:center; padding:4vh 4vw; z-index:1000; opacity:0; visibility:hidden; transition:opacity 0.25s ease, visibility 0.25s ease; cursor:zoom-out; }
+.lightbox.open { opacity:1; visibility:visible; }
+.lightbox img { max-width:100%; max-height:92vh; width:auto; height:auto; border-radius:8px; box-shadow:0 18px 50px rgba(0,0,0,0.5); transform:scale(0.96); transition:transform 0.25s ease; }
+.lightbox.open img { transform:scale(1); }
+.lightbox-close { position:absolute; top:18px; right:24px; width:44px; height:44px; border:none; border-radius:50%; background:rgba(255,255,255,0.12); color:#fff; font-size:1.6rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s ease; }
+.lightbox-close:hover { background:rgba(255,255,255,0.25); }
 </style>
 </head>
 <body>
@@ -77,7 +83,37 @@ a.back:hover::first-letter { color: #c0392b; }
 <div class="submit-note">Har du et indlæg? Send det til <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a></div>
 </footer>
 </main>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+<button class="lightbox-close" id="lightboxClose" aria-label="Luk">&times;</button>
+<img id="lightboxImg" src="" alt="">
+</div>
 <script>
+(function () {
+  var lightbox = document.getElementById("lightbox");
+  var lightboxImg = document.getElementById("lightboxImg");
+  var closeBtn = document.getElementById("lightboxClose");
+  function open(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+  function close() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+  document.querySelectorAll(".meme img").forEach(function (img) {
+    img.addEventListener("click", function () { open(img.src, img.alt); });
+  });
+  lightbox.addEventListener("click", function () { close(); });
+  closeBtn.addEventListener("click", function (e) { e.stopPropagation(); close(); });
+  lightboxImg.addEventListener("click", function (e) { e.stopPropagation(); close(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") close();
+  });
+})();
 if ("serviceWorker" in navigator) {
 window.addEventListener("load", function () {
 navigator.serviceWorker.register("/sw.js").catch(function () {});
