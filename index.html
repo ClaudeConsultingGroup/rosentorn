@@ -29,7 +29,7 @@ display: flex;
 justify-content: center;
 padding: 2.5vh 24px;
 }
-main { max-width: 880px; width: 100%; }
+main { max-width: 920px; width: 100%; }
 nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
@@ -57,17 +57,9 @@ height: 3px;
 background: #c0392b;
 margin: 10px auto 0;
 }
-.subtitle {
-font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.8rem;
-color: var(--muted);
-text-transform: uppercase;
-letter-spacing: 0.16em;
-margin-top: 8px;
-}
 .debat {
-margin-top: 20px;
-padding-top: 18px;
+margin-top: 26px;
+padding-top: 22px;
 border-top: 1px solid var(--line);
 }
 .debat-kicker-section {
@@ -75,59 +67,82 @@ font-family: -apple-system, system-ui, sans-serif;
 font-size: 0.8rem;
 font-weight: 700;
 text-transform: uppercase;
-letter-spacing: 0.12em;
+letter-spacing: 0.18em;
 color: #c0392b;
-margin-bottom: 16px;
+margin-bottom: 22px;
 text-align: center;
 }
 .debat-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
-gap: 28px;
-align-items: start;
+gap: 32px;
+align-items: stretch;
 }
-.debat-link {
-display: block;
-width: 100%;
+.debat-card {
+display: flex;
+flex-direction: column;
 text-decoration: none;
 color: inherit;
+background: #fff;
+border: 1px solid var(--line);
+border-radius: 16px;
+overflow: hidden;
+transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.debat-link img {
+.debat-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 16px 40px rgba(0,0,0,0.13);
+border-color: #e0c9c5;
+}
+.debat-figure {
+position: relative;
+width: 100%;
+aspect-ratio: 4 / 3;
+overflow: hidden;
+}
+.debat-figure img {
 display: block;
 width: 100%;
-max-width: 150px;
-height: auto;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 12px;
+height: 100%;
+object-fit: cover;
 filter: grayscale(100%);
-transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+transition: transform 0.4s ease, filter 0.3s ease;
 }
-.debat-link:hover img {
-transform: translateY(-3px);
-box-shadow: 0 8px 22px rgba(0,0,0,0.16);
+.debat-card:hover .debat-figure img {
+transform: scale(1.05);
 filter: grayscale(0%);
 }
-.debat-headline {
-font-size: 1.25rem;
-line-height: 1.25;
+.debat-eyebrow {
+position: absolute;
+top: 14px;
+left: 14px;
+font-family: -apple-system, system-ui, sans-serif;
+font-size: 0.68rem;
 font-weight: 700;
-margin-bottom: 8px;
-text-align: center;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: #fff;
+background: #c0392b;
+padding: 6px 12px;
+border-radius: 999px;
 }
-.debat-teaser {
-font-size: 0.95rem;
-color: var(--ink);
-margin-bottom: 10px;
-text-align: center;
+.debat-text {
+display: flex;
+flex-direction: column;
+flex: 1 1 auto;
+padding: 22px 24px 24px;
 }
+.debat-headline {
+font-size: 1.5rem;
+line-height: 1.22;
+font-weight: 700;
+}
+.debat-card:hover .debat-headline { color: var(--accent); }
 .debat-byline {
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.85rem;
+font-size: 0.9rem;
 color: var(--muted);
-margin-bottom: 10px;
-text-align: center;
+margin-top: 14px;
 }
 .debat-byline .author {
 position: relative;
@@ -143,27 +158,23 @@ right: 0;
 bottom: -3px;
 height: 2px;
 background: #c0392b;
-transform: scaleX(1);
-transform-origin: left;
 transition: height 0.2s ease;
 }
-.debat-link:hover .debat-byline .author::after {
-height: 3px;
-}
+.debat-card:hover .debat-byline .author::after { height: 3px; }
 .debat-cta {
-display: block;
+display: inline-flex;
+align-items: center;
+gap: 6px;
 font-family: -apple-system, system-ui, sans-serif;
 font-size: 0.9rem;
 font-weight: 600;
 color: var(--accent);
-margin-top: 8px;
-text-align: center;
+margin-top: 18px;
 }
-.debat-cta::after { content: " \2192"; color: var(--muted); }
-.debat-link:hover .debat-cta { text-decoration: underline; }
+.debat-cta::after { content: "\2192"; color: var(--muted); transition: transform 0.2s ease; }
+.debat-card:hover .debat-cta::after { transform: translateX(4px); }
 @media (max-width: 640px) {
-.debat-grid { grid-template-columns: 1fr; gap: 24px; }
-.debat-grid .debat-link + .debat-link { padding-top: 24px; border-top: 1px solid var(--line); }
+.debat-grid { grid-template-columns: 1fr; gap: 26px; }
 }
 .submit-note {
 font-family: -apple-system, system-ui, sans-serif;
@@ -193,24 +204,31 @@ text-decoration: underline;
 </nav>
 <div class="brand">
 <h1><a href="om.html">Rosentorn</a></h1>
-<p class="subtitle">Magasinet, der samler landets førende stemmer</p>
 </div>
 <section class="debat">
 <p class="debat-kicker-section">Månedens debatindlæg</p>
 <div class="debat-grid">
-<a class="debat-link" href="debatindlaeg.html">
-<img src="simon-mikrofon.jpg" alt="Simon Bødker ved mikrofonen">
-<p class="debat-headline">»Drømmen om eget hjem er blevet et fatamorgana«</p>
-<p class="debat-teaser">Boligpriserne i København stiger hurtigere end lønningerne, og en hel generation skubbes ud af ejerboligen.</p>
-<p class="debat-byline">Skrevet af <span class="author">Simon Bødker</span></p>
-<span class="debat-cta">Læs hele indlægget</span>
-</a>
-<a class="debat-link" href="debatindlaeg-ai.html">
+<a class="debat-card" href="debatindlaeg-ai.html">
+<div class="debat-figure">
+<span class="debat-eyebrow">Teknologi</span>
 <img src="simon-eu.jpg" alt="Simon Bødker">
+</div>
+<div class="debat-text">
 <p class="debat-headline">»Gud døde med Nietzsche og genopstod med AI«</p>
-<p class="debat-teaser">En maskine fandt en fejl, ingen havde set i 27 år. Så stærk er den nye gud, vi har lukket ind i hverdagen.</p>
-<p class="debat-byline">Skrevet af <span class="author">Simon Bødker</span></p>
-<span class="debat-cta">Læs hele indlægget</span>
+<p class="debat-byline">Af <span class="author">Simon Bødker</span></p>
+<span class="debat-cta">Læs indlægget</span>
+</div>
+</a>
+<a class="debat-card" href="debatindlaeg.html">
+<div class="debat-figure">
+<span class="debat-eyebrow">Samfund</span>
+<img src="simon-mikrofon.jpg" alt="Simon Bødker ved mikrofonen">
+</div>
+<div class="debat-text">
+<p class="debat-headline">»Drømmen om eget hjem er blevet et fatamorgana«</p>
+<p class="debat-byline">Af <span class="author">Simon Bødker</span></p>
+<span class="debat-cta">Læs indlægget</span>
+</div>
 </a>
 </div>
 </section>
