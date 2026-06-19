@@ -126,11 +126,27 @@ padding: 5px 11px;
 border-radius: 999px;
 box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
+.debat-body {
+position: relative;
+margin-top: 14px;
+padding-left: 18px;
+}
+.debat-body::before {
+content: "";
+position: absolute;
+left: 0;
+top: 4px;
+bottom: 4px;
+width: 3px;
+border-radius: 3px;
+background: #c0392b;
+transition: background 0.25s ease;
+}
+.debat-card:hover .debat-body::before { background: var(--accent); }
 .debat-headline {
 font-size: 1.24rem;
 line-height: 1.22;
 font-weight: 700;
-margin-top: 12px;
 }
 .debat-card:hover .debat-headline { color: var(--accent); }
 .debat-byline {
@@ -240,18 +256,22 @@ text-decoration: underline;
 <span class="debat-eyebrow">Teknologi</span>
 <img src="simon-eu.jpg" alt="Simon Bødker">
 </div>
+<div class="debat-body">
 <p class="debat-headline">»Gud døde med Nietzsche og genopstod med AI«</p>
 <p class="debat-byline"><span class="by-label">Af</span><span class="by-dot"></span><span class="author">Simon Bødker</span></p>
 <span class="debat-cta"><span class="cta-text">Læs indlægget</span><span class="cta-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+</div>
 </a>
 <a class="debat-card" href="debatindlaeg.html">
 <div class="debat-figure">
 <span class="debat-eyebrow">Samfund</span>
 <img src="simon-mikrofon.jpg" alt="Simon Bødker ved mikrofonen">
 </div>
+<div class="debat-body">
 <p class="debat-headline">»Drømmen om eget hjem er blevet et fatamorgana«</p>
 <p class="debat-byline"><span class="by-label">Af</span><span class="by-dot"></span><span class="author">Simon Bødker</span></p>
 <span class="debat-cta"><span class="cta-text">Læs indlægget</span><span class="cta-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+</div>
 </a>
 </div>
 </section>
