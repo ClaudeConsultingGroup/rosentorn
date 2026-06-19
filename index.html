@@ -20,6 +20,7 @@
 --bg: #fafafa;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 body {
 font-family: Georgia, 'Times New Roman', serif;
 color: var(--ink);
@@ -27,13 +28,14 @@ background: var(--bg);
 line-height: 1.6;
 display: flex;
 justify-content: center;
-padding: 2.5vh 24px;
+align-items: center;
+padding: 2vh 24px;
 }
-main { max-width: 920px; width: 100%; }
-nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
+main { max-width: 880px; width: 100%; }
+nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
-.site-footer { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.site-footer { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .social { display: flex; justify-content: center; gap: 22px; }
 .social a { color: var(--muted); display: inline-flex; transition: color 0.2s ease, transform 0.2s ease; }
 .social a:hover { color: #c0392b; transform: translateY(-2px); }
@@ -44,7 +46,7 @@ nav.topnav a:hover { color: var(--accent); }
 .brand h1 a:hover { transform: scale(1.06); }
 .brand h1 a:hover::first-letter { color: #c0392b; }
 h1 {
-font-size: 2.4rem;
+font-size: 2.1rem;
 letter-spacing: 0.01em;
 font-weight: 700;
 line-height: 1.05;
@@ -52,53 +54,45 @@ line-height: 1.05;
 .brand h1::after {
 content: "";
 display: block;
-width: 44px;
+width: 40px;
 height: 3px;
 background: #c0392b;
-margin: 10px auto 0;
+margin: 8px auto 0;
 }
 .debat {
-margin-top: 26px;
-padding-top: 22px;
+margin-top: 18px;
+padding-top: 16px;
 border-top: 1px solid var(--line);
 }
 .debat-kicker-section {
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.8rem;
+font-size: 0.78rem;
 font-weight: 700;
 text-transform: uppercase;
 letter-spacing: 0.18em;
 color: #c0392b;
-margin-bottom: 22px;
+margin-bottom: 16px;
 text-align: center;
 }
 .debat-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
-gap: 32px;
-align-items: stretch;
+gap: 30px;
+align-items: start;
 }
 .debat-card {
 display: flex;
 flex-direction: column;
 text-decoration: none;
 color: inherit;
-background: #fff;
-border: 1px solid var(--line);
-border-radius: 16px;
-overflow: hidden;
-transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-.debat-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 16px 40px rgba(0,0,0,0.13);
-border-color: #e0c9c5;
 }
 .debat-figure {
 position: relative;
 width: 100%;
-aspect-ratio: 4 / 3;
+aspect-ratio: 16 / 10;
 overflow: hidden;
+border-radius: 12px;
+box-shadow: 0 3px 14px rgba(0,0,0,0.12);
 }
 .debat-figure img {
 display: block;
@@ -112,39 +106,37 @@ transition: transform 0.4s ease, filter 0.3s ease;
 transform: scale(1.05);
 filter: grayscale(0%);
 }
+.debat-card:hover .debat-figure {
+box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+}
 .debat-eyebrow {
 position: absolute;
 z-index: 2;
-top: 14px;
-left: 14px;
+top: 12px;
+left: 12px;
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.68rem;
+font-size: 0.66rem;
 font-weight: 700;
 letter-spacing: 0.14em;
 text-transform: uppercase;
 color: #fff;
 background: #c0392b;
-padding: 6px 12px;
+padding: 5px 11px;
 border-radius: 999px;
 box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
-.debat-text {
-display: flex;
-flex-direction: column;
-flex: 1 1 auto;
-padding: 22px 24px 24px;
-}
 .debat-headline {
-font-size: 1.5rem;
+font-size: 1.32rem;
 line-height: 1.22;
 font-weight: 700;
+margin-top: 14px;
 }
 .debat-card:hover .debat-headline { color: var(--accent); }
 .debat-byline {
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.9rem;
+font-size: 0.88rem;
 color: var(--muted);
-margin-top: 14px;
+margin-top: 10px;
 }
 .debat-byline .author {
 position: relative;
@@ -168,22 +160,23 @@ display: inline-flex;
 align-items: center;
 gap: 6px;
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.9rem;
+font-size: 0.88rem;
 font-weight: 600;
 color: var(--accent);
-margin-top: 18px;
+margin-top: 12px;
 }
 .debat-cta::after { content: "\2192"; color: var(--muted); transition: transform 0.2s ease; }
 .debat-card:hover .debat-cta::after { transform: translateX(4px); }
 @media (max-width: 640px) {
-.debat-grid { grid-template-columns: 1fr; gap: 26px; }
+body { align-items: flex-start; }
+.debat-grid { grid-template-columns: 1fr; gap: 22px; }
 }
 .submit-note {
 font-family: -apple-system, system-ui, sans-serif;
 font-size: 0.85rem;
 text-align: center;
 color: var(--muted);
-margin: 16px auto 0;
+margin: 14px auto 0;
 max-width: 520px;
 }
 .submit-note a {
@@ -215,22 +208,18 @@ text-decoration: underline;
 <span class="debat-eyebrow">Teknologi</span>
 <img src="simon-eu.jpg" alt="Simon Bødker">
 </div>
-<div class="debat-text">
 <p class="debat-headline">»Gud døde med Nietzsche og genopstod med AI«</p>
 <p class="debat-byline">Af <span class="author">Simon Bødker</span></p>
 <span class="debat-cta">Læs indlægget</span>
-</div>
 </a>
 <a class="debat-card" href="debatindlaeg.html">
 <div class="debat-figure">
 <span class="debat-eyebrow">Samfund</span>
 <img src="simon-mikrofon.jpg" alt="Simon Bødker ved mikrofonen">
 </div>
-<div class="debat-text">
 <p class="debat-headline">»Drømmen om eget hjem er blevet et fatamorgana«</p>
 <p class="debat-byline">Af <span class="author">Simon Bødker</span></p>
 <span class="debat-cta">Læs indlægget</span>
-</div>
 </a>
 </div>
 </section>
