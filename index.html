@@ -167,36 +167,20 @@ filter: grayscale(0%);
 .debat-card:hover .debat-figure {
 box-shadow: 0 10px 26px rgba(0,0,0,0.18);
 }
-.debat-eyebrow {
+.debat-credit {
 position: absolute;
 z-index: 2;
-top: 12px;
-left: 12px;
+left: 6px;
+bottom: 10px;
+writing-mode: vertical-rl;
+transform: rotate(180deg);
+transform-origin: center;
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 0.66rem;
-font-weight: 700;
-letter-spacing: 0.14em;
-text-transform: uppercase;
+font-size: 0.55rem;
+font-weight: 500;
+letter-spacing: 0.02em;
 color: #fff;
-background: #c0392b;
-padding: 5px 11px;
-border-radius: 999px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-}
-.debat-credit {
-  position: absolute;
-  z-index: 2;
-  left: 6px;
-  bottom: 10px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  transform-origin: center;
-  font-family: -apple-system, system-ui, sans-serif;
-  font-size: 0.55rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.85);
+text-shadow: 0 1px 3px rgba(0,0,0,0.85);
 }
 .debat-body {
 position: relative;
@@ -318,31 +302,31 @@ letter-spacing: 0.02em;
 </style>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://rosentorn.dk/#organization",
-      "name": "Rosentorn",
-      "url": "https://rosentorn.dk/",
-      "description": "Rosentorn er magasinet, der samler landets førende stemmer – og hvor de næste bliver til.",
-      "logo": "https://rosentorn.dk/atilz-logo.png",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61590837159475",
-        "https://www.instagram.com/rosentorn.dk/",
-        "https://www.tiktok.com/@rosentorn",
-        "https://www.linkedin.com/company/rosentorn/"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://rosentorn.dk/#website",
-      "url": "https://rosentorn.dk/",
-      "name": "Rosentorn",
-      "inLanguage": "da-DK",
-      "publisher": { "@id": "https://rosentorn.dk/#organization" }
-    }
-  ]
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "Organization",
+"@id": "https://rosentorn.dk/#organization",
+"name": "Rosentorn",
+"url": "https://rosentorn.dk/",
+"description": "Rosentorn er magasinet, der samler landets førende stemmer – og hvor de næste bliver til.",
+"logo": "https://rosentorn.dk/atilz-logo.png",
+"sameAs": [
+"https://www.facebook.com/profile.php?id=61590837159475",
+"https://www.instagram.com/rosentorn.dk/",
+"https://www.tiktok.com/@rosentorn",
+"https://www.linkedin.com/company/rosentorn/"
+]
+},
+{
+"@type": "WebSite",
+"@id": "https://rosentorn.dk/#website",
+"url": "https://rosentorn.dk/",
+"name": "Rosentorn",
+"inLanguage": "da-DK",
+"publisher": { "@id": "https://rosentorn.dk/#organization" }
+}
+]
 }
 </script>
 </head>
@@ -363,7 +347,6 @@ letter-spacing: 0.02em;
 <div class="debat-grid">
 <a class="debat-card debat-card--featured" href="/debatindlaeg-manosfaeren">
 <div class="debat-figure">
-<span class="debat-eyebrow">Samfund</span>
 <img loading="lazy" style="object-position: 50% 18%;" src="rasmus-dm-debat.jpg" alt="Rasmus Jungersen Emborg">
 <span class="debat-credit">Foto: Ida Guldbæk Arentsen</span>
 </div>
@@ -376,7 +359,6 @@ letter-spacing: 0.02em;
 
 <a class="debat-card" href="/debatindlaeg-ai">
 <div class="debat-figure">
-<span class="debat-eyebrow">Teknologi</span>
 <img src="simon-eu.jpg" alt="Simon Bødker">
 </div>
 <div class="debat-body">
@@ -387,7 +369,6 @@ letter-spacing: 0.02em;
 </a>
 <a class="debat-card" href="/debatindlaeg">
 <div class="debat-figure">
-<span class="debat-eyebrow">Samfund</span>
 <img loading="lazy" src="simon-mikrofon.jpg" alt="Simon Bødker ved mikrofonen">
 </div>
 <div class="debat-body">
