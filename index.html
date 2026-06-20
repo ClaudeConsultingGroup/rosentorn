@@ -94,12 +94,12 @@ text-align: center;
 }
 /* Debat-karrusel – coverflow-stil: stort midterkort med fuld tekst,
    små og nedtonede sidekort der kun viser billedet. */
-.debat-carousel { position: relative; display: block; max-width: calc(46vh * 4 / 3 + 2 * (46vh * 4 / 3 * 0.34 + 26px)); margin: 0 auto; }
-.debat-viewport { overflow: hidden; flex: 1 1 auto; padding: 10px 8px 6px; }
-.debat-track { display: flex; gap: 26px; will-change: transform; touch-action: pan-y; align-items: center; }
+.debat-carousel { position: relative; display: flex; align-items: center; justify-content: center; gap: 14px; max-width: 100%; margin: 0 auto; }
+.debat-viewport { overflow: hidden; flex: 0 1 auto; order: 1; width: calc(46vh * 4 / 3 + 2 * (46vh * 4 / 3 * 0.32) + 2 * 34px); max-width: calc(46vh * 4 / 3 + 2 * (46vh * 4 / 3 * 0.32) + 2 * 34px); padding: 10px 0 6px; }
+.debat-track { display: flex; gap: 34px; will-change: transform; touch-action: pan-y; align-items: center; }
 .debat-slide {
 flex: 0 0 auto;
-width: calc(46vh * 4 / 3 * 0.34);
+width: calc(46vh * 4 / 3 * 0.32);
 min-width: 0;
 transition: width 0.55s cubic-bezier(0.22,0.61,0.36,1), opacity 0.55s ease, filter 0.4s ease;
 transform: none;
@@ -116,11 +116,11 @@ z-index: 3;
 width: calc(46vh * 4 / 3);
 }
 .debat-arrow-btn {
-position: absolute;
-top: calc(10px + 23vh);
-transform: translateY(-50%);
-width: 42px;
-height: 42px;
+position: static;
+flex: 0 0 auto;
+transform: none;
+width: 46px;
+height: 46px;
 border-radius: 50%;
 border: 1px solid var(--line);
 background: #fff;
@@ -131,15 +131,15 @@ justify-content: center;
 cursor: pointer;
 box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 z-index: 6;
-opacity: 0.5;
+opacity: 0.9;
 transition: opacity 0.2s ease, transform 0.15s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
-.debat-arrow-btn:hover { background: var(--accent); color: #fff; opacity: 1; transform: translateY(-50%) scale(1.07); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
+.debat-arrow-btn:hover { background: var(--accent); color: #fff; opacity: 1; transform: scale(1.07); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
 .debat-arrow-btn:active { transform: translateY(-50%) scale(0.96); }
 .debat-arrow-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 .debat-dots { display: flex; justify-content: center; gap: 9px; margin-top: 14px; }
-#debatPrev { left: -26px; }
-#debatNext { right: -26px; }
+#debatPrev { order: 0; }
+#debatNext { order: 2; }
 .debat-dots .dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: #d6d2cc; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
 .debat-dots .dot.active { background: #c0392b; transform: scale(1.3); }
 .debat-card {
@@ -276,9 +276,7 @@ body { align-items: flex-start; }
 .debat-slide:not(.is-center) .debat-byline,
 .debat-slide:not(.is-center) .debat-cta { display: flex; }
 .debat-headline, .debat-slide.is-center .debat-headline { font-size: 1.3rem; }
-.debat-arrow-btn { width: 36px; height: 36px; }
-  #debatPrev { left: 4px; }
-  #debatNext { right: 4px; }
+.debat-arrow-btn { display: none; }
   .submit-note .om-link { display: block; white-space: normal; margin-top: 2px; }
 }
 .submit-note {
