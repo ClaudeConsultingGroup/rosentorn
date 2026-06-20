@@ -1,4 +1,4 @@
-const CACHE = 'rosentorn-v14';
+const CACHE = 'rosentorn-v15';
 const ASSETS = [
   '/',
   '/index.html',
