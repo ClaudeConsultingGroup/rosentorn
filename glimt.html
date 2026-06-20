@@ -49,20 +49,32 @@ a.back:hover::first-letter { color: #c0392b; }
 /* Carousel */
 .carousel { position:relative; margin-top:18px; display:flex; align-items:center; gap:10px; }
 .carousel-viewport { overflow:hidden; flex:1 1 auto; }
-.carousel-track { display:flex; gap:20px; will-change:transform; }
+.carousel-track { display:flex; gap:20px; will-change:transform; touch-action:pan-y; }
 .carousel-slide { flex:0 0 calc((100% - 40px) / 3); text-align:center; }
-.carousel-slide img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s ease, box-shadow 0.2s ease; cursor:zoom-in; display:block; }
+.carousel-slide img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s ease, box-shadow 0.2s ease; cursor:zoom-in; display:block; -webkit-user-drag:none; user-select:none; }
 .carousel-slide img:hover { transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,0.12); }
 .carousel-btn { flex:0 0 auto; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.08); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; z-index:2; }
 .carousel-btn:hover { background:var(--accent); color:#fff; transform:scale(1.07); box-shadow:0 8px 20px rgba(0,0,0,0.16); }
 .carousel-btn:active { transform:scale(0.96); }
 .carousel-btn svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+.carousel-dots { display:none; }
 @media (max-width:760px) {
 .carousel-slide { flex:0 0 calc((100% - 20px) / 2); }
 }
-@media (max-width:520px) {
-.carousel-slide { flex:0 0 100%; }
+@media (max-width:560px) {
+/* På mobil: ét stort billede ad gangen, pile lagt oven på billedet
+   så selve billedet får hele bredden og bliver stort. */
+.carousel { gap:0; }
 .carousel-track { gap:0; }
+.carousel-slide { flex:0 0 100%; }
+.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); width:42px; height:42px; background:rgba(255,255,255,0.9); -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px); }
+.carousel-btn:hover { transform:translateY(-50%) scale(1.05); }
+.carousel-btn:active { transform:translateY(-50%) scale(0.95); }
+#carPrev { left:8px; }
+#carNext { right:8px; }
+.carousel-dots { display:flex; justify-content:center; gap:8px; margin-top:14px; }
+.carousel-dots .dot { width:8px; height:8px; border-radius:50%; border:none; padding:0; background:#d6d2cc; cursor:pointer; transition:background 0.2s ease, transform 0.2s ease; }
+.carousel-dots .dot.active { background:#c0392b; transform:scale(1.25); }
 }
 .meme-byline { margin-top:30px; text-align:center; font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--muted); }
 .meme-byline strong { color:var(--ink); }
@@ -100,6 +112,7 @@ a.back:hover::first-letter { color: #c0392b; }
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
 </button>
 </div>
+<div class="carousel-dots" id="carDots"></div>
 <p class="meme-byline"><strong>Simon Bødker</strong>, Chefredaktør</p>
 <footer class="site-footer">
 <div class="social">
@@ -131,6 +144,7 @@ var track = document.getElementById("carTrack");
 var viewport = track.parentElement;
 var prevBtn = document.getElementById("carPrev");
 var nextBtn = document.getElementById("carNext");
+var dotsWrap = document.getElementById("carDots");
 
 var lightbox = document.getElementById("lightbox");
 var lightboxImg = document.getElementById("lightboxImg");
@@ -146,10 +160,9 @@ lightbox.classList.remove("open"); lightbox.setAttribute("aria-hidden", "true");
 document.body.style.overflow = "";
 }
 
-var PER_VIEW = 3;
 function perView() {
 var w = window.innerWidth;
-if (w <= 520) return 1;
+if (w <= 560) return 1;
 if (w <= 760) return 2;
 return 3;
 }
@@ -158,7 +171,7 @@ return 3;
 // så hjulet kan rotere uendeligt i begge retninger.
 var buffer = images.length; // nok kloner til at dække en fuld rotation
 var slidesData = [];
-for (var i = 0; i < buffer; i++) slidesData.push(images[(images.length - buffer + i % images.length + images.length) % images.length]);
+for (var i = 0; i < buffer; i++) slidesData.push(images[((images.length - buffer + i) % images.length + images.length) % images.length]);
 for (var j = 0; j < images.length; j++) slidesData.push(images[j]);
 for (var k = 0; k < buffer; k++) slidesData.push(images[k % images.length]);
 
@@ -166,12 +179,26 @@ function makeSlide(item) {
 var slide = document.createElement("div");
 slide.className = "carousel-slide";
 var img = document.createElement("img");
-img.loading = "lazy"; img.src = item.src; img.alt = item.alt;
+img.loading = "lazy"; img.src = item.src; img.alt = item.alt; img.draggable = false;
 img.addEventListener("click", function () { openLightbox(item.src, item.alt); });
 slide.appendChild(img);
 return slide;
 }
 slidesData.forEach(function (item) { track.appendChild(makeSlide(item)); });
+
+// Prik-indikatorer (vises kun på mobil via CSS).
+var dots = [];
+images.forEach(function (_, i) {
+var b = document.createElement("button");
+b.className = "dot"; b.type = "button";
+b.setAttribute("aria-label", "Gå til billede " + (i + 1));
+b.addEventListener("click", function () { goTo(i); });
+dotsWrap.appendChild(b); dots.push(b);
+});
+function updateDots() {
+var real = ((index - buffer) % images.length + images.length) % images.length;
+dots.forEach(function (d, i) { d.classList.toggle("active", i === real); });
+}
 
 var index = buffer; // start ved den første ægte slide
 var animating = false;
@@ -186,10 +213,10 @@ return first.getBoundingClientRect().width + gap;
 function setPosition(animate) {
 track.style.transition = animate ? "transform 0.45s cubic-bezier(0.4,0.0,0.2,1)" : "none";
 track.style.transform = "translateX(" + (-index * slideWidth()) + "px)";
+updateDots();
 }
 
 function normalize() {
-// Hold index inden for de ægte slides, så vi aldrig løber tør for kloner.
 var realCount = images.length;
 if (index >= buffer + realCount) { index -= realCount; setPosition(false); }
 else if (index < buffer) { index += realCount; setPosition(false); }
@@ -202,6 +229,16 @@ index += dir;
 setPosition(true);
 }
 
+function goTo(realIndex) {
+if (animating) return;
+var current = ((index - buffer) % images.length + images.length) % images.length;
+var diff = realIndex - current;
+if (diff === 0) return;
+animating = true;
+index += diff;
+setPosition(true);
+}
+
 track.addEventListener("transitionend", function () {
 animating = false;
 normalize();
@@ -209,6 +246,24 @@ normalize();
 
 nextBtn.addEventListener("click", function () { go(1); });
 prevBtn.addEventListener("click", function () { go(-1); });
+
+// Swipe / træk på mobil.
+var startX = 0, startY = 0, dragging = false, swiped = false;
+viewport.addEventListener("touchstart", function (e) {
+if (e.touches.length !== 1) return;
+startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+dragging = true; swiped = false;
+}, { passive: true });
+viewport.addEventListener("touchmove", function (e) {
+if (!dragging) return;
+var dx = e.touches[0].clientX - startX;
+var dy = e.touches[0].clientY - startY;
+if (!swiped && Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+swiped = true;
+go(dx < 0 ? 1 : -1);
+}
+}, { passive: true });
+viewport.addEventListener("touchend", function () { dragging = false; });
 
 var resizeTimer;
 window.addEventListener("resize", function () {
