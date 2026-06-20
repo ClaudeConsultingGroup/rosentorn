@@ -48,12 +48,13 @@ a.back:hover::first-letter { color: #c0392b; }
 
 /* Carousel */
 .carousel { position:relative; margin-top:18px; display:flex; align-items:center; gap:10px; }
-.carousel-viewport { overflow:hidden; flex:1 1 auto; }
-.carousel-track { display:flex; gap:20px; will-change:transform; touch-action:pan-y; }
-.carousel-slide { flex:0 0 calc((100% - 40px) / 3); text-align:center; }
-.carousel-slide img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s ease, box-shadow 0.2s ease; cursor:zoom-in; display:block; -webkit-user-drag:none; user-select:none; }
-.carousel-slide img:hover { transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,0.12); }
-.carousel-btn { flex:0 0 auto; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.08); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; z-index:2; }
+.carousel-viewport { overflow:hidden; flex:1 1 auto; padding:14px 0; }
+.carousel-track { display:flex; gap:20px; will-change:transform; touch-action:pan-y; align-items:center; }
+.carousel-slide { flex:0 0 calc((100% - 40px) / 3); text-align:center; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s ease; transform:scale(0.86); opacity:0.62; }
+.carousel-slide.is-center { transform:scale(1.06); opacity:1; }
+.carousel-slide img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:box-shadow 0.3s ease; cursor:zoom-in; display:block; -webkit-user-drag:none; user-select:none; }
+.carousel-slide.is-center img { box-shadow:0 10px 28px rgba(0,0,0,0.16); }
+.carousel-btn { flex:0 0 auto; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.10); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; z-index:2; }
 .carousel-btn:hover { background:var(--accent); color:#fff; transform:scale(1.07); box-shadow:0 8px 20px rgba(0,0,0,0.16); }
 .carousel-btn:active { transform:scale(0.96); }
 .carousel-btn svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
@@ -62,16 +63,15 @@ a.back:hover::first-letter { color: #c0392b; }
 .carousel-slide { flex:0 0 calc((100% - 20px) / 2); }
 }
 @media (max-width:560px) {
-/* På mobil: ét stort billede ad gangen, pile lagt oven på billedet
-   så selve billedet får hele bredden og bliver stort. */
-.carousel { gap:0; }
+/* På mobil: ét stort billede ad gangen. Pilene placeres i marginen
+   ved siden af billedet (ikke oven på teksten) og er helt massive. */
+.carousel { gap:6px; }
 .carousel-track { gap:0; }
-.carousel-slide { flex:0 0 100%; }
-.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); width:42px; height:42px; background:rgba(255,255,255,0.9); -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px); }
-.carousel-btn:hover { transform:translateY(-50%) scale(1.05); }
-.carousel-btn:active { transform:translateY(-50%) scale(0.95); }
-#carPrev { left:8px; }
-#carNext { right:8px; }
+.carousel-viewport { padding:8px 0; }
+.carousel-slide { flex:0 0 100%; transform:none; opacity:1; }
+.carousel-slide.is-center { transform:none; }
+.carousel-btn { position:static; flex:0 0 38px; width:38px; height:38px; background:#fff; color:var(--accent); box-shadow:0 3px 10px rgba(0,0,0,0.16); }
+.carousel-btn svg { width:18px; height:18px; }
 .carousel-dots { display:flex; justify-content:center; gap:8px; margin-top:14px; }
 .carousel-dots .dot { width:8px; height:8px; border-radius:50%; border:none; padding:0; background:#d6d2cc; cursor:pointer; transition:background 0.2s ease, transform 0.2s ease; }
 .carousel-dots .dot.active { background:#c0392b; transform:scale(1.25); }
@@ -130,7 +130,6 @@ a.back:hover::first-letter { color: #c0392b; }
 </div>
 <script>
 (function () {
-// Alle billeder i karusellen. Tilføj nye øverst i listen.
 var images = [
 { src: "meme-boligdebatten.png", alt: "Meme: Boligdebatten – venstrefløjen mod højrefløjen." },
 { src: "meme-generationskloeften.png", alt: "Meme: Generationskløften – boomer mod Gen-Z." },
@@ -154,10 +153,12 @@ function openLightbox(src, alt) {
 lightboxImg.src = src; lightboxImg.alt = alt || "";
 lightbox.classList.add("open"); lightbox.setAttribute("aria-hidden", "false");
 document.body.style.overflow = "hidden";
+stopAuto();
 }
 function closeLightbox() {
 lightbox.classList.remove("open"); lightbox.setAttribute("aria-hidden", "true");
 document.body.style.overflow = "";
+restartAuto();
 }
 
 function perView() {
@@ -167,9 +168,7 @@ if (w <= 760) return 2;
 return 3;
 }
 
-// Byg slides: forrige klon-buffer + originaler + efterfølgende klon-buffer,
-// så hjulet kan rotere uendeligt i begge retninger.
-var buffer = images.length; // nok kloner til at dække en fuld rotation
+var buffer = images.length;
 var slidesData = [];
 for (var i = 0; i < buffer; i++) slidesData.push(images[((images.length - buffer + i) % images.length + images.length) % images.length]);
 for (var j = 0; j < images.length; j++) slidesData.push(images[j]);
@@ -185,14 +184,14 @@ slide.appendChild(img);
 return slide;
 }
 slidesData.forEach(function (item) { track.appendChild(makeSlide(item)); });
+var slides = track.children;
 
-// Prik-indikatorer (vises kun på mobil via CSS).
 var dots = [];
 images.forEach(function (_, i) {
 var b = document.createElement("button");
 b.className = "dot"; b.type = "button";
 b.setAttribute("aria-label", "Gå til billede " + (i + 1));
-b.addEventListener("click", function () { goTo(i); });
+b.addEventListener("click", function () { userAction(function(){ goTo(i); }); });
 dotsWrap.appendChild(b); dots.push(b);
 });
 function updateDots() {
@@ -200,7 +199,7 @@ var real = ((index - buffer) % images.length + images.length) % images.length;
 dots.forEach(function (d, i) { d.classList.toggle("active", i === real); });
 }
 
-var index = buffer; // start ved den første ægte slide
+var index = buffer;
 var animating = false;
 
 function slideWidth() {
@@ -210,10 +209,19 @@ var gap = parseFloat(style.columnGap || style.gap || "0") || 0;
 return first.getBoundingClientRect().width + gap;
 }
 
+function updateCenter() {
+var pv = perView();
+var centerOffset = pv === 1 ? 0 : 1;
+for (var s = 0; s < slides.length; s++) slides[s].classList.remove("is-center");
+var centerIdx = index + centerOffset;
+if (slides[centerIdx]) slides[centerIdx].classList.add("is-center");
+}
+
 function setPosition(animate) {
 track.style.transition = animate ? "transform 0.45s cubic-bezier(0.4,0.0,0.2,1)" : "none";
 track.style.transform = "translateX(" + (-index * slideWidth()) + "px)";
 updateDots();
+updateCenter();
 }
 
 function normalize() {
@@ -239,20 +247,34 @@ index += diff;
 setPosition(true);
 }
 
-track.addEventListener("transitionend", function () {
+track.addEventListener("transitionend", function (e) {
+if (e.target !== track || e.propertyName !== "transform") return;
 animating = false;
 normalize();
 });
 
-nextBtn.addEventListener("click", function () { go(1); });
-prevBtn.addEventListener("click", function () { go(-1); });
+var AUTO_MS = 5000;
+var autoTimer = null;
+var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function startAuto() {
+if (prefersReduced || autoTimer) return;
+autoTimer = setInterval(function () { go(1); }, AUTO_MS);
+}
+function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+function restartAuto() { stopAuto(); startAuto(); }
+function userAction(fn) { stopAuto(); fn(); restartAuto(); }
 
-// Swipe / træk på mobil.
+nextBtn.addEventListener("click", function () { userAction(function(){ go(1); }); });
+prevBtn.addEventListener("click", function () { userAction(function(){ go(-1); }); });
+
+viewport.addEventListener("mouseenter", stopAuto);
+viewport.addEventListener("mouseleave", restartAuto);
+
 var startX = 0, startY = 0, dragging = false, swiped = false;
 viewport.addEventListener("touchstart", function (e) {
 if (e.touches.length !== 1) return;
 startX = e.touches[0].clientX; startY = e.touches[0].clientY;
-dragging = true; swiped = false;
+dragging = true; swiped = false; stopAuto();
 }, { passive: true });
 viewport.addEventListener("touchmove", function (e) {
 if (!dragging) return;
@@ -263,7 +285,7 @@ swiped = true;
 go(dx < 0 ? 1 : -1);
 }
 }, { passive: true });
-viewport.addEventListener("touchend", function () { dragging = false; });
+viewport.addEventListener("touchend", function () { dragging = false; restartAuto(); });
 
 var resizeTimer;
 window.addEventListener("resize", function () {
@@ -271,8 +293,7 @@ clearTimeout(resizeTimer);
 resizeTimer = setTimeout(function () { setPosition(false); }, 120);
 });
 
-// Init
-requestAnimationFrame(function () { setPosition(false); });
+requestAnimationFrame(function () { setPosition(false); startAuto(); });
 window.addEventListener("load", function () { setPosition(false); });
 
 lightbox.addEventListener("click", function () { closeLightbox(); });
@@ -280,8 +301,8 @@ closeBtn.addEventListener("click", function (e) { e.stopPropagation(); closeLigh
 lightboxImg.addEventListener("click", function (e) { e.stopPropagation(); closeLightbox(); });
 document.addEventListener("keydown", function (e) {
 if (e.key === "Escape") closeLightbox();
-if (e.key === "ArrowRight") go(1);
-if (e.key === "ArrowLeft") go(-1);
+if (e.key === "ArrowRight") userAction(function(){ go(1); });
+if (e.key === "ArrowLeft") userAction(function(){ go(-1); });
 });
 })();
 if ("serviceWorker" in navigator) {
