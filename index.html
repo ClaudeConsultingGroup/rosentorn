@@ -94,7 +94,7 @@ text-align: center;
 }
 /* Debat-karrusel – coverflow-stil: stort midterkort med fuld tekst,
    små og nedtonede sidekort der kun viser billedet. */
-.debat-carousel { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; max-width: calc(46vh * 4 / 3 + 120px); margin: 0 auto; }
+.debat-carousel { position: relative; display: block; max-width: calc(46vh * 4 / 3); margin: 0 auto; }
 .debat-viewport { overflow: hidden; flex: 1 1 auto; padding: 10px 8px 6px; }
 .debat-track { display: flex; gap: 28px; will-change: transform; touch-action: pan-y; align-items: center; }
 .debat-slide {
@@ -133,7 +133,8 @@ transition: opacity 0.2s ease, transform 0.15s ease, background 0.2s ease, color
 .debat-arrow-btn:hover { background: var(--accent); color: #fff; opacity: 1; transform: scale(1.07); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
 .debat-arrow-btn:active { transform: scale(0.96); }
 .debat-arrow-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
-.debat-dots { display: flex; justify-content: center; gap: 9px; margin-top: 14px; }
+.debat-dots { display: flex; justify-content: center; gap: 9px; margin-top: 0; }
+.debat-nav-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 16px; }
 .debat-dots .dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: #d6d2cc; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
 .debat-dots .dot.active { background: #c0392b; transform: scale(1.3); }
 .debat-card {
@@ -161,10 +162,9 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 object-position: center 22%;
-filter: grayscale(100%);
+filter: none;
 transition: transform 0.5s ease, filter 0.4s ease;
 }
-.debat-card:hover .debat-figure img { filter: grayscale(0%); }
 .debat-card:hover .debat-figure img { transform: scale(1.05); }
 .debat-credit {
 position: absolute;
@@ -267,7 +267,7 @@ body { align-items: flex-start; }
 .debat-slide:not(.is-center) .debat-byline,
 .debat-slide:not(.is-center) .debat-cta { display: flex; }
 .debat-headline, .debat-slide.is-center .debat-headline { font-size: 1.3rem; }
-.debat-arrow-btn { display: none; }
+.debat-arrow-btn { width: 36px; height: 36px; }
 }
 .submit-note {
 font-family: -apple-system, system-ui, sans-serif;
@@ -323,17 +323,19 @@ max-width: 520px;
 <section class="debat">
 <p class="debat-kicker-section">Månedens debatindlæg</p>
 <div class="debat-carousel">
-<button class="debat-arrow-btn" id="debatPrev" type="button" aria-label="Forrige indlæg">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-</button>
 <div class="debat-viewport">
 <div class="debat-track" id="debatTrack"></div>
 </div>
+</div>
+<div class="debat-nav-row">
+<button class="debat-arrow-btn" id="debatPrev" type="button" aria-label="Forrige indlæg">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+</button>
+<div class="debat-dots" id="debatDots"></div>
 <button class="debat-arrow-btn" id="debatNext" type="button" aria-label="Næste indlæg">
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
 </button>
 </div>
-<div class="debat-dots" id="debatDots"></div>
 </section>
 <footer class="site-footer">
 <div class="social">
