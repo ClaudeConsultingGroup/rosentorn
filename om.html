@@ -33,6 +33,7 @@ main { max-width: 620px; width: 100%; }
 nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 18px; padding-top: 12px; padding-bottom: 12px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
+nav.topnav a.active { color: var(--accent); }
 .site-footer { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .social { display: flex; justify-content: center; gap: 22px; }
 .social a { color: var(--muted); display: inline-flex; transition: color 0.2s ease, transform 0.2s ease; }
@@ -165,7 +166,7 @@ a.back:hover::first-letter { color: #c0392b; }
 <a href="podcast.html">Podcast</a>
 <a href="debat.html">Debat</a>
 <a href="memes.html">Glimt</a>
-<a href="om.html">Om</a>
+<a href="om.html" class="active" aria-current="page">Om</a>
 </nav>
 <header class="page-mark">
 <span class="mark-eyebrow">Bag Rosentorn</span>
@@ -173,7 +174,6 @@ a.back:hover::first-letter { color: #c0392b; }
 <div class="om-text">
 <p>Rosentorn er magasinet, der samler landets førende stemmer. Og hvor de næste bliver til.</p>
 <p>Her tager vi samtalen op igen og igen. Krigen. Økonomien. Klimaet. Men også kunsten, poesien og livet selv.</p>
-<p>Vi gør alvor af det alvorlige. Samtidig tror vi på værdien af det menneskelige, det uventede og den latter, der kan bryde igennem en intens debat. For det er netop dér, de bedste samtaler finder sted. I spændet mellem det dybe og det legende.</p>
 </div>
 <blockquote class="manifest">
 <span class="quote-mark">“</span>
