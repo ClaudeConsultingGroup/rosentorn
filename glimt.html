@@ -51,9 +51,9 @@ a.back:hover::first-letter { color: #c0392b; }
 .carousel-viewport { overflow:hidden; flex:1 1 auto; padding:26px 0; }
 .carousel-track { display:flex; gap:20px; will-change:transform; touch-action:pan-y; align-items:center; }
 /* Hvert af de tre synlige felter fylder en tredjedel – intet peeking. */
-.carousel-slide { flex:0 0 calc((100% - 40px) / 3); text-align:center; transition:opacity 0.5s ease; transform:scale(0.66); opacity:0.45; transform-origin:center center; }
+.carousel-slide { flex:0 0 calc((100% - 40px) / 3); text-align:center; transition:opacity 0.5s ease; transform:scale(0.70); opacity:0.45; transform-origin:center center; }
 /* Det midterste billede er størst; siderne er meget mindre. */
-.carousel-slide.is-center { transform:scale(1.08); opacity:1; }
+.carousel-slide.is-center { transform:scale(1.15); opacity:1; }
 .carousel-slide img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 3px 12px rgba(0,0,0,0.05); transition:box-shadow 0.3s ease; cursor:zoom-in; display:block; -webkit-user-drag:none; user-select:none; }
 .carousel-slide.is-center img { box-shadow:0 14px 34px rgba(0,0,0,0.18); }
 .carousel-btn { flex:0 0 auto; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.10); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease; z-index:2; opacity:0.5; }
@@ -103,9 +103,6 @@ nedenunder bruges til navigation i stedet. */
 <a href="/debat">Debat</a>
 <a href="/glimt" class="active" aria-current="page">Glimt</a>
 </nav>
-<header class="page-mark">
-<h1 class="mark-eyebrow">Med glimt i øjet</h1>
-</header>
 <div class="carousel">
 <button class="carousel-btn" id="carPrev" type="button" aria-label="Forrige billede">
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
