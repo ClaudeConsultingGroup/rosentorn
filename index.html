@@ -138,8 +138,8 @@ transition: opacity 0.2s ease, transform 0.15s ease, background 0.2s ease, color
 .debat-arrow-btn:active { transform: translateY(-50%) scale(0.96); }
 .debat-arrow-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 .debat-dots { display: flex; justify-content: center; gap: 9px; margin-top: 14px; }
-#debatPrev { order: 0; }
-#debatNext { order: 2; }
+#debatPrev { order: 0; margin-right: 10px; }
+#debatNext { order: 2; margin-left: 10px; }
 .debat-dots .dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: #d6d2cc; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
 .debat-dots .dot.active { background: #c0392b; transform: scale(1.3); }
 .debat-card {
@@ -430,6 +430,8 @@ dotsWrap.appendChild(b); dots.push(b);
 var startOffset = Math.floor((perView() - 1) / 2);
 var index = buffer - startOffset;
 var animating = false;
+        var animTimer = null;
+        function armAnimTimeout() { clearTimeout(animTimer); animTimer = setTimeout(function () { animating = false; normalize(); }, 700); }
 
 function realIndex() { return ((index - buffer) % posts.length + posts.length) % posts.length; }
 function centerRealIndex() { var off = Math.floor((perView() - 1) / 2); return ((index + off - buffer) % posts.length + posts.length) % posts.length; }
@@ -462,12 +464,12 @@ if (index >= buffer + realCount) { index -= realCount; setPosition(false); }
 else if (index < buffer - startOffset) { index += realCount; setPosition(false); }
 }
 
-function go(dir) { if (animating) return; animating = true; index += dir; setPosition(true); }
-function goTo(real) { if (animating) return; var diff = real - centerRealIndex(); if (diff === 0) return; animating = true; index += diff; setPosition(true); }
+function go(dir) { if (animating) return; animating = true; index += dir; setPosition(true); armAnimTimeout(); }
+function goTo(real) { if (animating) return; var diff = real - centerRealIndex(); if (diff === 0) return; animating = true; index += diff; setPosition(true); armAnimTimeout(); }
 
 track.addEventListener("transitionend", function (e) {
 if (e.target !== track || e.propertyName !== "transform") return;
-animating = false; normalize();
+clearTimeout(animTimer); animating = false; normalize();
 });
 
 var AUTO_MS = 10000;
@@ -505,7 +507,7 @@ resizeTimer = setTimeout(function () { startOffset = Math.floor((perView() - 1) 
 });
 
 requestAnimationFrame(function () { setPosition(false); startAuto(); });
-function recenter() { startOffset = Math.floor((perView() - 1) / 2); index = buffer - startOffset; setPosition(false); }
+function recenter() { if (animating) return; startOffset = Math.floor((perView() - 1) / 2); index = buffer - startOffset; setPosition(false); }
 window.addEventListener("load", function () { recenter(); setTimeout(recenter, 250); });
 setTimeout(recenter, 60);
 })();
