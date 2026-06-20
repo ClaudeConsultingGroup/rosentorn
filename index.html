@@ -88,12 +88,48 @@ color: #c0392b;
 margin-bottom: 14px;
 text-align: center;
 }
-.debat-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 30px;
-align-items: start;
+.debat-scroller {
+position: relative;
 }
+.debat-grid {
+display: flex;
+gap: 30px;
+align-items: stretch;
+overflow-x: auto;
+scroll-behavior: smooth;
+scroll-snap-type: x mandatory;
+-webkit-overflow-scrolling: touch;
+scrollbar-width: none;
+padding-bottom: 4px;
+}
+.debat-grid::-webkit-scrollbar { display: none; }
+.debat-grid > .debat-card {
+flex: 0 0 calc((100% - 60px) / 3);
+min-width: 240px;
+scroll-snap-align: start;
+}
+.debat-arrow-btn {
+position: absolute;
+top: 38%;
+right: -6px;
+transform: translateY(-50%);
+width: 44px;
+height: 44px;
+border-radius: 50%;
+border: 1px solid var(--line);
+background: #fff;
+color: var(--ink);
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+z-index: 5;
+transition: opacity 0.25s ease, transform 0.15s ease, background 0.2s ease;
+}
+.debat-arrow-btn:hover { background: var(--accent); color: #fff; transform: translateY(-50%) scale(1.06); }
+.debat-arrow-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+.debat-arrow-btn[hidden] { display: none; }
 .debat-card {
 display: flex;
 flex-direction: column;
@@ -231,7 +267,7 @@ transition: transform 0.3s ease;
 .debat-card:hover .debat-cta .cta-arrow svg { stroke: #fff; }
 @media (max-width: 640px) {
 body { align-items: flex-start; }
-.debat-grid { grid-template-columns: 1fr; gap: 22px; }
+.debat-grid { gap: 18px; } .debat-grid > .debat-card { flex: 0 0 82%; min-width: 0; }
 }
 .submit-note {
 font-family: -apple-system, system-ui, sans-serif;
@@ -301,6 +337,7 @@ letter-spacing: 0.02em;
 </div>
 <section class="debat">
 <p class="debat-kicker-section">Månedens debatindlæg</p>
+<div class="debat-scroller">
 <div class="debat-grid">
 <a class="debat-card" href="/debatindlaeg-manosfaeren">
 <div class="debat-figure">
@@ -337,6 +374,8 @@ letter-spacing: 0.02em;
 </div>
 </a>
 </div>
+<button type="button" class="debat-arrow-btn" aria-label="Vis flere indlæg" data-debat-arrow><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+</div>
 </section>
 <footer class="site-footer">
 <div class="social">
@@ -354,6 +393,24 @@ window.addEventListener("load", function () {
 navigator.serviceWorker.register("/sw.js").catch(function () {});
 });
 }
+</script>
+<script>
+(function(){
+  var grid = document.querySelector('.debat-grid');
+  var btn = document.querySelector('[data-debat-arrow]');
+  if(!grid || !btn) return;
+  function update(){
+    var max = grid.scrollWidth - grid.clientWidth - 2;
+    if(max <= 0){ btn.hidden = true; return; }
+    btn.hidden = grid.scrollLeft >= max;
+  }
+  btn.addEventListener('click', function(){
+    grid.scrollBy({left: grid.clientWidth * 0.8, behavior: 'smooth'});
+  });
+  grid.addEventListener('scroll', update);
+  window.addEventListener('resize', update);
+  update();
+})();
 </script>
 </body>
 </html>
