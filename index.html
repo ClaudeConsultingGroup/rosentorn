@@ -114,7 +114,9 @@ position: relative;
 z-index: 3;
 }
 .debat-arrow-btn {
-flex: 0 0 auto;
+position: absolute;
+top: calc(10px + 23vh);
+transform: translateY(-50%);
 width: 42px;
 height: 42px;
 border-radius: 50%;
@@ -130,11 +132,12 @@ z-index: 6;
 opacity: 0.5;
 transition: opacity 0.2s ease, transform 0.15s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
-.debat-arrow-btn:hover { background: var(--accent); color: #fff; opacity: 1; transform: scale(1.07); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
-.debat-arrow-btn:active { transform: scale(0.96); }
+.debat-arrow-btn:hover { background: var(--accent); color: #fff; opacity: 1; transform: translateY(-50%) scale(1.07); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
+.debat-arrow-btn:active { transform: translateY(-50%) scale(0.96); }
 .debat-arrow-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
-.debat-dots { display: flex; justify-content: center; gap: 9px; margin-top: 0; }
-.debat-nav-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 16px; }
+.debat-dots { display: flex; justify-content: center; gap: 9px; margin-top: 14px; }
+#debatPrev { left: -54px; }
+#debatNext { right: -54px; }
 .debat-dots .dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: #d6d2cc; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
 .debat-dots .dot.active { background: #c0392b; transform: scale(1.3); }
 .debat-card {
@@ -197,6 +200,11 @@ transition: color 0.25s ease, font-size 0.4s ease;
 /* Sidekort: vis kun billede + dæmpet overskrift, skjul resten så layoutet er rent. */
 .debat-slide:not(.is-center) .debat-byline,
 .debat-slide:not(.is-center) .debat-cta { display: none; }
+.author-arrow { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(42,90,140,0.10); margin-left: 2px; flex: 0 0 auto; transition: transform 0.2s ease, background 0.2s ease; }
+.author-arrow svg { width: 12px; height: 12px; fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.2s ease; }
+.debat-card:hover .author-arrow { background: var(--accent); transform: translateX(3px); }
+.debat-card:hover .author-arrow svg { stroke: #fff; }
+.debat-slide:not(.is-center) .author-arrow { display: none; }
 .debat-slide:not(.is-center) .debat-body { margin-top: 9px; }
 .debat-byline {
 display: flex;
@@ -268,6 +276,8 @@ body { align-items: flex-start; }
 .debat-slide:not(.is-center) .debat-cta { display: flex; }
 .debat-headline, .debat-slide.is-center .debat-headline { font-size: 1.3rem; }
 .debat-arrow-btn { width: 36px; height: 36px; }
+  #debatPrev { left: 4px; }
+  #debatNext { right: 4px; }
 }
 .submit-note {
 font-family: -apple-system, system-ui, sans-serif;
@@ -323,19 +333,17 @@ max-width: 520px;
 <section class="debat">
 <p class="debat-kicker-section">Månedens debatindlæg</p>
 <div class="debat-carousel">
-<div class="debat-viewport">
-<div class="debat-track" id="debatTrack"></div>
-</div>
-</div>
-<div class="debat-nav-row">
 <button class="debat-arrow-btn" id="debatPrev" type="button" aria-label="Forrige indlæg">
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
 </button>
-<div class="debat-dots" id="debatDots"></div>
+<div class="debat-viewport">
+<div class="debat-track" id="debatTrack"></div>
+</div>
 <button class="debat-arrow-btn" id="debatNext" type="button" aria-label="Næste indlæg">
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
 </button>
 </div>
+<div class="debat-dots" id="debatDots"></div>
 </section>
 <footer class="site-footer">
 <div class="social">
@@ -386,8 +394,8 @@ creditHtml +
 '</div>' +
 '<div class="debat-body">' +
 '<p class="debat-headline">' + esc(p.headline) + '</p>' +
-'<p class="debat-byline"><span class="by-label">Af</span><span class="by-dot"></span><span class="author">' + esc(p.author) + '</span>' + byCreditHtml + '</p>' +
-'<span class="debat-cta"><span class="cta-text">Læs indlægget</span><span class="cta-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></span>' +
+'<p class="debat-byline"><span class="by-label">Af</span><span class="by-dot"></span><span class="author">' + esc(p.author) + '</span><span class="author-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>' + byCreditHtml + '</p>' +
+
 '</div>' +
 '</a>';
 return slide;
