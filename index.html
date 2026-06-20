@@ -96,13 +96,13 @@ text-align: center;
 .debat-viewport { overflow: hidden; flex: 1 1 auto; padding: 10px 8px 6px; }
 .debat-track { display: flex; gap: 28px; will-change: transform; touch-action: pan-y; align-items: center; }
 .debat-slide {
-flex: 0 0 calc((100% - 56px) / 3);
+flex: 0 0 100%;
 min-width: 0;
 transition: transform 0.55s cubic-bezier(0.22,0.61,0.36,1), opacity 0.55s ease;
-transform: scale(0.62);
-opacity: 0.42;
+transform: none;
+opacity: 1;
 transform-origin: center center;
-filter: saturate(0.6);
+filter: none;
 }
 .debat-slide.is-center {
 transform: scale(1);
@@ -314,7 +314,7 @@ max-width: 520px;
 <a href="/om">Om</a>
 </nav>
 <div class="brand">
-<h1><a href="/om">Rosentorn</a></h1>
+<h1><a href="/om">Rosentorn Magasin</a></h1>
 </div>
 <section class="debat">
 <p class="debat-kicker-section">Månedens debatindlæg</p>
