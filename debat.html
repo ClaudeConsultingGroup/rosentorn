@@ -55,7 +55,7 @@ nav.topnav a.active { color: var(--accent); }
 .page-mark { text-align:center; margin:6px 0 30px; }
 .page-mark .mark-eyebrow { display:inline-block; font-family:-apple-system,system-ui,sans-serif; font-size:0.95rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#c0392b; }
 
-.page-sub { margin:16px auto 0; max-width:520px; font-size:1.02rem; font-style:italic; color:var(--muted); }
+.page-sub { margin:16px auto 0; max-width:680px; font-size:1.02rem; font-style:italic; color:var(--muted); }
 .debat-list { list-style:none; display:flex; flex-direction:column; gap:22px; }
 .debat-card { position:relative; display:flex; gap:24px; align-items:flex-start; text-decoration:none; color:inherit; padding:26px 32px 22px; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; transition:box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease; }
 .debat-photo { flex:0 0 96px; width:96px; height:96px; border-radius:14px; object-fit:cover; filter:grayscale(100%); box-shadow:0 2px 10px rgba(0,0,0,0.12); transition:filter 0.3s ease; }
@@ -80,10 +80,14 @@ nav.topnav a.active { color: var(--accent); }
 .submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
 .submit-note a:hover { text-decoration:underline; }
 a.back:hover::first-letter { color: #c0392b; }
-.submit-note .om-link { display: inline-flex; align-items: center; gap: 3px; }
-.submit-note .om-arrow { display: inline-block; transition: transform 0.2s ease; }
+.submit-note .om-link { display: inline; white-space: nowrap; }
+.submit-note .om-arrow { display: inline-block; margin-left: 3px; transition: transform 0.2s ease; }
 .submit-note .om-link:hover { text-decoration: none; }
 .submit-note .om-link:hover .om-arrow { transform: translateX(3px); }
+
+@media (max-width: 640px) {
+.submit-note .om-link { display: block; white-space: normal; margin-top: 2px; }
+}
 </style>
 </head>
 <body>
