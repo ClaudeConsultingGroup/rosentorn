@@ -43,9 +43,11 @@ nav.topnav a.active { color:var(--accent); }
 h1 { font-size:3.4rem; letter-spacing:0.01em; font-weight:700; line-height:1.05; text-align:center; }
 h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:20px auto 0; }
 p.intro { margin-top:16px; font-size:1.1rem; color:var(--muted); text-align:center; max-width:520px; margin-left:auto; margin-right:auto; }
+.intro .atilz-link { color:#c0392b; text-decoration:none; font-weight:700; border-bottom:1px solid rgba(192,57,43,0.35); transition:border-color 0.2s ease; }
+.intro .atilz-link:hover { border-bottom-color:#c0392b; }
 .photo-link { display:block; position:relative; }
-.photo-link::after { content:"\25B6 Lyt til seneste afsnit om boligkrisen"; position:absolute; bottom:24px; left:50%; transform:translateX(-50%); background:rgba(29,185,84,0.92); color:#fff; font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; font-weight:600; padding:8px 18px; border-radius:999px; opacity:0; transition:opacity 0.2s ease; pointer-events:none; }
-.photo-link:hover::after { opacity:1; }
+.photo-link::after { content:"\25B6 Lyt til seneste afsnit om boligkrisen"; position:absolute; bottom:24px; left:50%; transform:translateX(-50%); background:rgba(29,185,84,0.55); color:#fff; font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; font-weight:600; padding:8px 18px; border-radius:999px; opacity:1; box-shadow:0 4px 14px rgba(0,0,0,0.18); transition:background 0.25s ease, box-shadow 0.25s ease; pointer-events:none; }
+.photo-link:hover::after { background:rgba(29,185,84,1); box-shadow:0 6px 18px rgba(29,185,84,0.45); }
 .podcast-photo { display:block; width:100%; max-width:360px; margin:18px auto 8px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.12); }
 .photo-caption { font-family:-apple-system,system-ui,sans-serif; font-size:0.82rem; letter-spacing:0.03em; line-height:1.6; color:var(--muted); text-align:center; max-width:520px; margin:0 auto 18px; }
 .actions { display:flex; flex-direction:column; align-items:center; gap:12px; margin:8px 0 12px; }
@@ -81,14 +83,12 @@ a.back:hover::first-letter { color: #c0392b; }
 <header class="page-mark">
 <h1 class="mark-eyebrow">Lyt med</h1>
 </header>
-<p class="intro">A til Z er Netavisen Pios podcast, hvor du kan få et progressivt venstreorienteret blik på tidens aktuelle historier.</p>
+<p class="intro"><a class="atilz-link" href="https://www.instagram.com/a.til.z/" target="_blank" rel="noopener">A til Z</a> er Netavisen Pios podcast, hvor du kan få et progressivt venstreorienteret blik på tidens aktuelle historier.</p>
 <div class="photo-wrap">
 <a class="photo-link" href="https://open.spotify.com/episode/5TIx0jQNMosCmWzW8wdQne?si=31hSYF4ASmSx3cnnTVv9Vg" target="_blank" rel="noopener" aria-label="Lyt til seneste afsnit om boligkrisen på Spotify"><img class="podcast-photo" src="podcast-team.jpg" alt="Podcast-holdet bag A til Z i studiet"></a>
 </div>
 <p class="photo-caption">I dette afsnit tager vi fat i boligkrisen og diskuterer regeringsgrundlaget. Med os har vi Malte Mathies Løcke (S) fra Frederiksberg kommunalbestyrelse og Victoria Helene Olsen (K) fra Roskilde kommunalbestyrelse. Vært er Simon Bødker og Furkan Kadir Yavuz.</p>
 <div class="actions">
-<a class="btn btn-spotify" href="https://open.spotify.com/show/6ixd2OzOrQOkEz2c8xjFxn?si=c8cd778a67ae4d8c" target="_blank" rel="noopener" aria-label="Lyt til A til Z på Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.586 14.424a.622.622 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.622.622 0 11-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 01.207.857zm1.224-2.723a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 11-.452-1.493c3.632-1.102 8.147-.568 11.232 1.329a.78.78 0 01.257 1.073zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 11-.542-1.79c3.532-1.072 9.404-.865 13.115 1.337a.936.936 0 01-.955 1.609z"></path></svg><span>Lyt på Spotify</span></a>
-<a class="btn btn-ig" href="https://www.instagram.com/a.til.z/" target="_blank" rel="noopener" aria-label="Følg A til Z på Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 5.84a4 4 0 100 8 4 4 0 000-8zm0 6.6a2.6 2.6 0 110-5.2 2.6 2.6 0 010 5.2zm5.11-6.76a.94.94 0 11-1.87 0 .94.94 0 011.87 0z"></path></svg><span>Følg på Instagram</span></a>
 <span class="handle">@a.til.z</span>
 </div>
 <footer class="site-footer">
