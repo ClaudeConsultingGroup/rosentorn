@@ -76,7 +76,7 @@ nedenunder bruges til navigation i stedet. */
 .carousel-slide.is-center { transform:none; }
 .carousel-btn { display:none; }
 }
-.submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); margin:18px auto 0; max-width:520px; }
+.submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); margin:18px auto 0; max-width:680px; }
 .submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
 .submit-note a:hover { text-decoration:underline; }
 .lightbox { position:fixed; inset:0; background:rgba(20,18,16,0.88); display:flex; align-items:center; justify-content:center; padding:4vh 4vw; z-index:1000; opacity:0; visibility:hidden; transition:opacity 0.25s ease, visibility 0.25s ease; cursor:zoom-out; }
@@ -85,10 +85,14 @@ nedenunder bruges til navigation i stedet. */
 .lightbox.open img { transform:scale(1); }
 .lightbox-close { position:absolute; top:18px; right:24px; width:44px; height:44px; border:none; border-radius:50%; background:rgba(255,255,255,0.12); color:#fff; font-size:1.6rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s ease; }
 .lightbox-close:hover { background:rgba(255,255,255,0.25); }
-.submit-note .om-link { display: inline-flex; align-items: center; gap: 3px; }
-.submit-note .om-arrow { display: inline-block; transition: transform 0.2s ease; }
+.submit-note .om-link { display: inline; white-space: nowrap; }
+.submit-note .om-arrow { display: inline-block; margin-left: 3px; transition: transform 0.2s ease; }
 .submit-note .om-link:hover { text-decoration: none; }
 .submit-note .om-link:hover .om-arrow { transform: translateX(3px); }
+
+@media (max-width: 640px) {
+.submit-note .om-link { display: block; white-space: normal; margin-top: 2px; }
+}
 </style>
 </head>
 <body>
