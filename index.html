@@ -6,6 +6,7 @@
 <title>Rosentorn Magasin</title>
 <meta name="description" content="Rosentorn er magasinet, der samler landets førende stemmer – og hvor de næste bliver til. Debat, podcast og glimt om tidens største spørgsmål.">
 <link rel="canonical" href="https://rosentorn.dk/">
+  <link rel="preload" as="image" href="/rasmus-dm-debat.jpg" fetchpriority="high">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rosentorn">
 <meta property="og:locale" content="da_DK">
@@ -403,7 +404,7 @@ var styleAttr = p.imgStyle ? ' style="' + p.imgStyle + '"' : '';
 slide.innerHTML =
 '<a class="debat-card" href="' + p.href + '">' +
 '<div class="debat-figure">' +
-'<img loading="lazy"' + styleAttr + ' src="' + p.img + '" alt="' + esc(p.alt) + '">' +
+'<img ' + (p.img === posts[0].img ? 'loading="eager" fetchpriority="high" ' : 'loading="lazy" ') + styleAttr + ' src="' + p.img + '" alt="' + esc(p.alt) + '">' +
 creditHtml +
 '</div>' +
 '<div class="debat-body">' +
