@@ -56,8 +56,8 @@ a.back:hover::first-letter { color: #c0392b; }
 .carousel-slide.is-center { transform:scale(1.08); opacity:1; }
 .carousel-slide img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 3px 12px rgba(0,0,0,0.05); transition:box-shadow 0.3s ease; cursor:zoom-in; display:block; -webkit-user-drag:none; user-select:none; }
 .carousel-slide.is-center img { box-shadow:0 14px 34px rgba(0,0,0,0.18); }
-.carousel-btn { flex:0 0 auto; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.10); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; z-index:2; }
-.carousel-btn:hover { background:var(--accent); color:#fff; transform:scale(1.07); box-shadow:0 8px 20px rgba(0,0,0,0.16); }
+.carousel-btn { flex:0 0 auto; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.10); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease; z-index:2; opacity:0.92; }
+.carousel-btn:hover { background:var(--accent); color:#fff; transform:scale(1.07); box-shadow:0 8px 20px rgba(0,0,0,0.16); opacity:0.55; }
 .carousel-btn:active { transform:scale(0.96); }
 .carousel-btn svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
 .carousel-dots { display:flex; justify-content:center; gap:9px; margin-top:22px; }
@@ -67,15 +67,14 @@ a.back:hover::first-letter { color: #c0392b; }
 .carousel-slide { flex:0 0 calc((100% - 18px) / 2); }
 }
 @media (max-width:560px) {
-/* På mobil: ét stort billede ad gangen. Pilene står ved siden af billedet
-   (ikke oven på teksten) og er helt massive. */
-.carousel { gap:6px; }
+/* På mobil: ét stort billede ad gangen. Pilene skjules – de røde prikker
+nedenunder bruges til navigation i stedet. */
+.carousel { gap:0; }
 .carousel-track { gap:0; }
 .carousel-viewport { padding:8px 0; }
 .carousel-slide { flex:0 0 100%; transform:none; opacity:1; }
 .carousel-slide.is-center { transform:none; }
-.carousel-btn { position:static; flex:0 0 38px; width:38px; height:38px; background:#fff; color:var(--accent); box-shadow:0 3px 10px rgba(0,0,0,0.16); }
-.carousel-btn svg { width:18px; height:18px; }
+.carousel-btn { display:none; }
 }
 .submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); margin:18px auto 0; max-width:520px; }
 .submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
@@ -208,12 +207,9 @@ function slideWidth() {
 var first = track.children[0];
 var style = getComputedStyle(track);
 var gap = parseFloat(style.columnGap || style.gap || "0") || 0;
-// offsetWidth ignorerer CSS-transform (scale), så vi får den sande layout-bredde.
 return first.offsetWidth + gap;
 }
 
-// Fremhæv det midterste synlige billede. index = det første (venstre) synlige
-// felt, så midten er index + (antal synlige-1)/2.
 function updateCenter() {
 var pv = perView();
 var centerOffset = Math.floor((pv - 1) / 2);
@@ -257,7 +253,6 @@ animating = false;
 normalize();
 });
 
-// --- Auto-afspilning: skifter selv hvert 10. sekund, pause ved aktivitet ---
 var AUTO_MS = 10000;
 var autoTimer = null;
 var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
