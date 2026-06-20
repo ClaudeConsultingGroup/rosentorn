@@ -148,7 +148,11 @@ height: auto;
 margin: 0 auto;
 border-radius: 8px;
 filter: grayscale(100%);
+transition: filter 0.4s ease;
 box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.profile img:hover {
+filter: grayscale(0%);
 }
 .profile .name { font-size: 1.3rem; font-weight: 700; margin-top: 16px; }
 .profile .role {
