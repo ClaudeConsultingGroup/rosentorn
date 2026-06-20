@@ -104,12 +104,14 @@ flex: 0 0 auto;
 height: calc(46vh + 116px);
 width: calc(46vh * 4 / 3 * 0.32);
 min-width: 0;
-transition: opacity 0.45s ease, filter 0.4s ease;
+transition: filter 0.4s ease;
 transform: none;
 opacity: 0.5;
 transform-origin: center center;
 filter: none;
 }
+.debat-slide:not(.is-center) { display: flex; flex-direction: column; justify-content: center; }
+.debat-slide:not(.is-center) .debat-card { flex: 0 0 auto; }
 .debat-slide.is-center {
 transform: scale(1);
 opacity: 1;
