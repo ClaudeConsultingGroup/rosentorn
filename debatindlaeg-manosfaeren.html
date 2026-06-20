@@ -135,6 +135,42 @@ letter-spacing: 0.06em;
 text-transform: uppercase;
 color: var(--muted);
 }
+
+.byline-top {
+margin-top: 18px;
+font-family: -apple-system, system-ui, sans-serif;
+}
+.byline-top .author-name {
+font-weight: 700;
+font-size: 0.95rem;
+color: var(--ink);
+letter-spacing: 0.01em;
+}
+.byline-top .author-title {
+font-size: 0.82rem;
+color: var(--muted);
+margin-top: 2px;
+font-style: italic;
+}
+article figure {
+margin: 34px 0 10px;
+}
+article figure img {
+display: block;
+width: 100%;
+height: auto;
+border-radius: 12px;
+filter: grayscale(100%);
+box-shadow: 0 6px 22px rgba(0,0,0,0.10);
+}
+article figure figcaption {
+margin-top: 8px;
+font-family: -apple-system, system-ui, sans-serif;
+font-size: 0.78rem;
+color: var(--muted);
+letter-spacing: 0.01em;
+line-height: 1.5;
+}
 </style>
 </head>
 <body>
@@ -148,9 +184,18 @@ color: var(--muted);
 </nav>
 <article>
 <h1>Vi udskammer unge mænd, der bare søger svar</h1>
+<div class="byline-top">
+<div class="author-name">Rasmus Jungersen Emborg</div>
+<div class="author-title">Vinder af DM i Debat 2026</div>
+</div>
 <p class="dato">20.06.2026</p>
 <p class="manchet">Efter jeg vandt DM i Debat, har jeg valgt at åbne op om noget, jeg har holdt hemmeligt i mange år. En personlig fortælling om social angst, skam og hvordan vi taber de unge mænd, der bare søger svar.</p>
 <p>Efter jeg vandt DM i Debat, har jeg tænkt rigtig meget over, hvad jeg egentlig vil bruge min stemme til. Det er blevet til et meget personligt interview i Politiken, som du kan læse i dag.</p>
+
+<figure>
+<img src="rasmus-politiken-avis.jpg" alt="Rasmus Jungersen Emborgs debatindlæg på forsiden af Politikens debatsektion" loading="lazy">
+<figcaption>Indlægget på forsiden af Politikens debatsektion, lørdag den 20. juni 2026.</figcaption>
+</figure>
 <p>Jeg har nemlig valgt at åbne op for noget, jeg har holdt hemmeligt i mange år, fordi jeg har været bange for omverdens reaktion og ramt af skam.</p>
 <p>Da jeg gik i gymnasiet, fik jeg konstateret social angst. Jeg var så bange for at tale med piger (og andre), at jeg kunne finde på at bunde en halv flaske vodka derhjemme, bare for at turde sætte mig på cyklen og sætte kursen mod en fest. Nogle gange vendte jeg endda om på vejen.</p>
 <p>I de år ledte jeg desperat efter en vej ud af mit hoved, og det ledte mig forbi alt fra ”The Game” af Neil Strauss og Jordan Petersson. Der tror jeg egentlig mange unge mænd har været, men vi taler nok ikke så højt om det.</p>
@@ -158,6 +203,10 @@ color: var(--muted);
 <p>Jeg endte på danske onlineforums i hvad nogle i dag nok vil kalde manosfæren. Jeg oplevede dem dog ikke som hverken hadfulde eller farlige. Jeg så snarere en samling af mænd, der forsøgte at få et bedre liv gennem selvterapi, skriblerier og broderskab med andre i en lignende situation. De fleste skrev anonymt. Nok fordi de var bange for at blive stemplet af dem derhjemme.</p>
 <p>Her fandt jeg støtte og gode råd til at arbejde med mig selv, og min redning blev et 30-dages program, hvor jeg hver dag skulle gøre noget jeg var bange for. Tale med ALLE til festen, gå i byen helt alene eller invitere fremmede ud på date. Jeg har efterhånden prøvet det meste.</p>
 <p>Med tiden fik jeg det bedre. Nok fordi jeg lærte, at jeg ikke døde af en afvisning og fandt ud af, at så længe man behandler den anden med respekt, så oplevede jeg faktisk kun at blive taget godt imod. De fleste synes sgu det er et kompliment, at nogen synes du ser sød ud eller, at et fremmed menneske sludrer med dig i bussen.</p>
+<figure>
+<img src="rasmus-studenterhue.jpg" alt="Rasmus Jungersen Emborg som ung student" loading="lazy">
+<figcaption>Rasmus Jungersen Emborg. Privatfoto.</figcaption>
+</figure>
 <p class="pullquote">Du risikerer nemt at blive stemplet som klam eller højreradikal, bare fordi du forsøger at overvinde din sociale akavethed med det andet køn.</p>
 <p>Men når jeg følger med i den offentlige debat i dag, får jeg en knude i maven. Jeg oplever, at vi er endt et sted, hvor vi kaster om os med begreber som ”manosfæren” og bruger det som et dovent mærkat på alt muligt, der overhovedet ikke har noget med radikalisering eller grænseoverskridende adfærd at gøre.</p>
 <p>Et sted hvor du nemt risikerer at blive stemplet som klam, instrumentalistisk eller højreradikal, bare fordi du forsøger at overvinde din sociale akavethed med det andet køn.</p>
@@ -170,7 +219,7 @@ color: var(--muted);
 <p>I dag er algoritmerne bare endnu voldsommere end da jeg gik i gymnasiet. Derfor har vi et så meget større ansvar for at rumme de her unge usikre mænd og give dem klare svar, inden amerikanske populistiske stemmer gør det før os.</p>
 <p>Jeg tror, at hvis vi skal undgå at flere unge mænd ender i den rigtige manosfære, så skal vi blive bedre til at rumme og omfavne alle dem, der blot søger svar på en helt naturlig fase af livet. Det kræver et opgør med hvordan vi taler om det her emne på og at vi tør gå ind i nuancerne.</p>
 <p>Den debat håber jeg at kunne være med til at starte. Jeg håber du vil læse med i Politiken i dag.</p>
-<p class="signatur">Rasmus Jungersen Emborg, vinder af DM i Debat 2026</p>
+
 </article>
 
 <footer class="site-footer">
