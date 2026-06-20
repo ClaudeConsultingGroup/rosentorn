@@ -42,30 +42,33 @@ nav.topnav a.active { color:var(--accent); }
 .page-mark .mark-eyebrow { display:inline-block; font-family:-apple-system,system-ui,sans-serif; font-size:0.95rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#c0392b; }
 h1 { font-size:3.4rem; letter-spacing:0.01em; font-weight:700; line-height:1.05; text-align:center; }
 h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:14px auto 0; }
-p.intro { margin-top:16px; font-size:1.1rem; }
 .back { display:block; text-align:center; margin:0 auto 12px; font-family:Georgia,'Times New Roman',serif; font-size:1.4rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
 .back:hover { text-decoration:underline; }
-.meme-gallery { margin-top:18px; display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:20px; }
-.meme { flex:1 1 300px; max-width:340px; text-align:center; opacity:0; animation:memeIn 0.45s ease forwards; }
-.meme img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s ease, box-shadow 0.2s ease; cursor:zoom-in; }
-.meme img:hover { transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,0.12); }
-@keyframes memeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
-.gallery-controls { display:flex; flex-direction:column; align-items:center; gap:14px; margin-top:26px; }
-.gallery-arrow { width:48px; height:48px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); font-size:1.3rem; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.07); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; }
-.gallery-arrow:hover { background:var(--accent); color:#fff; transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,0.16); }
-.gallery-arrow:active { transform:translateY(0); }
-.thumb-strip { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
-.thumb { width:74px; height:74px; border-radius:8px; overflow:hidden; border:1px solid var(--line); background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.06); cursor:pointer; padding:0; transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
-.thumb:hover { transform:translateY(-3px); box-shadow:0 8px 18px rgba(0,0,0,0.14); border-color:#e0c9c5; }
-.thumb-label { font-family:-apple-system,system-ui,sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+a.back:hover::first-letter { color: #c0392b; }
+
+/* Carousel */
+.carousel { position:relative; margin-top:18px; display:flex; align-items:center; gap:10px; }
+.carousel-viewport { overflow:hidden; flex:1 1 auto; }
+.carousel-track { display:flex; gap:20px; will-change:transform; }
+.carousel-slide { flex:0 0 calc((100% - 40px) / 3); text-align:center; }
+.carousel-slide img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s ease, box-shadow 0.2s ease; cursor:zoom-in; display:block; }
+.carousel-slide img:hover { transform:translateY(-4px); box-shadow:0 8px 22px rgba(0,0,0,0.12); }
+.carousel-btn { flex:0 0 auto; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.08); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; z-index:2; }
+.carousel-btn:hover { background:var(--accent); color:#fff; transform:scale(1.07); box-shadow:0 8px 20px rgba(0,0,0,0.16); }
+.carousel-btn:active { transform:scale(0.96); }
+.carousel-btn svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+@media (max-width:760px) {
+.carousel-slide { flex:0 0 calc((100% - 20px) / 2); }
+}
+@media (max-width:520px) {
+.carousel-slide { flex:0 0 100%; }
+.carousel-track { gap:0; }
+}
 .meme-byline { margin-top:30px; text-align:center; font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; color:var(--muted); }
 .meme-byline strong { color:var(--ink); }
 .submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); margin:18px auto 0; max-width:520px; }
 .submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
 .submit-note a:hover { text-decoration:underline; }
-.page-title { font-size:1.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; }
-a.back:hover::first-letter { color: #c0392b; }
 .lightbox { position:fixed; inset:0; background:rgba(20,18,16,0.88); display:flex; align-items:center; justify-content:center; padding:4vh 4vw; z-index:1000; opacity:0; visibility:hidden; transition:opacity 0.25s ease, visibility 0.25s ease; cursor:zoom-out; }
 .lightbox.open { opacity:1; visibility:visible; }
 .lightbox img { max-width:100%; max-height:92vh; width:auto; height:auto; border-radius:8px; box-shadow:0 18px 50px rgba(0,0,0,0.5); transform:scale(0.96); transition:transform 0.25s ease; }
@@ -86,11 +89,16 @@ a.back:hover::first-letter { color: #c0392b; }
 <header class="page-mark">
 <h1 class="mark-eyebrow">Med glimt i øjet</h1>
 </header>
-<div class="meme-gallery" id="memeGallery"></div>
-<div class="gallery-controls">
-<button class="gallery-arrow" id="galleryArrow" type="button" aria-label="Vis de næste billeder">&uarr;</button>
-<div class="thumb-label">Tidligere glimt</div>
-<div class="thumb-strip" id="thumbStrip"></div>
+<div class="carousel">
+<button class="carousel-btn" id="carPrev" type="button" aria-label="Forrige billede">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+</button>
+<div class="carousel-viewport">
+<div class="carousel-track" id="carTrack"></div>
+</div>
+<button class="carousel-btn" id="carNext" type="button" aria-label="Næste billede">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+</button>
 </div>
 <p class="meme-byline"><strong>Simon Bødker</strong>, Chefredaktør</p>
 <footer class="site-footer">
@@ -109,99 +117,117 @@ a.back:hover::first-letter { color: #c0392b; }
 </div>
 <script>
 (function () {
-// Hvert "sæt" består af tre billeder. Det første sæt vises stort,
-// resten ligger som miniaturer. Tilføj nye sæt øverst i listen,
-// så bliver de automatisk de tre store billeder, og de gamle
-// rykker ned som miniaturer.
-var sets = [
-[
+// Alle billeder i karusellen. Tilføj nye øverst i listen.
+var images = [
 { src: "meme-boligdebatten.png", alt: "Meme: Boligdebatten – venstrefløjen mod højrefløjen." },
 { src: "meme-generationskloeften.png", alt: "Meme: Generationskløften – boomer mod Gen-Z." },
-{ src: "meme-den-moderne-mand.png", alt: "Meme: Den moderne mand – venstrefløjens mod højrefløjens mænd." }
-],
-[
+{ src: "meme-den-moderne-mand.png", alt: "Meme: Den moderne mand – venstrefløjens mod højrefløjens mænd." },
 { src: "meme-priserne-stikker-af.png", alt: "Meme: graf der viser boligpriser stiger meget hurtigere end din løn." },
 { src: "meme-droemmen-om-eget-hjem.png", alt: "Meme: kamel i ørkenen siger Vi er der næsten foran en boligblok til 5,4 mio." },
 { src: "meme-vejen-ind-paa-boligmarkedet.png", alt: "Meme: flowchart over vejen ind på boligmarkedet." }
-]
 ];
 
-var current = 0;
-var gallery = document.getElementById("memeGallery");
-var strip = document.getElementById("thumbStrip");
-var arrow = document.getElementById("galleryArrow");
+var track = document.getElementById("carTrack");
+var viewport = track.parentElement;
+var prevBtn = document.getElementById("carPrev");
+var nextBtn = document.getElementById("carNext");
 
 var lightbox = document.getElementById("lightbox");
 var lightboxImg = document.getElementById("lightboxImg");
 var closeBtn = document.getElementById("lightboxClose");
 
 function openLightbox(src, alt) {
-lightboxImg.src = src;
-lightboxImg.alt = alt || "";
-lightbox.classList.add("open");
-lightbox.setAttribute("aria-hidden", "false");
+lightboxImg.src = src; lightboxImg.alt = alt || "";
+lightbox.classList.add("open"); lightbox.setAttribute("aria-hidden", "false");
 document.body.style.overflow = "hidden";
 }
 function closeLightbox() {
-lightbox.classList.remove("open");
-lightbox.setAttribute("aria-hidden", "true");
+lightbox.classList.remove("open"); lightbox.setAttribute("aria-hidden", "true");
 document.body.style.overflow = "";
 }
 
-function render() {
-// Store billeder = det aktive sæt
-gallery.innerHTML = "";
-sets[current].forEach(function (item, i) {
-var fig = document.createElement("figure");
-fig.className = "meme";
-fig.style.animationDelay = (i * 0.06) + "s";
-var img = document.createElement("img");
-img.loading = "lazy";
-img.src = item.src;
-img.alt = item.alt;
-img.addEventListener("click", function () { openLightbox(item.src, item.alt); });
-fig.appendChild(img);
-gallery.appendChild(fig);
-});
-
-// Miniaturer = alle de øvrige sæt, fladet ud
-strip.innerHTML = "";
-sets.forEach(function (set, setIndex) {
-if (setIndex === current) return;
-set.forEach(function (item) {
-var btn = document.createElement("button");
-btn.type = "button";
-btn.className = "thumb";
-btn.setAttribute("aria-label", "Forstør: " + item.alt);
-var img = document.createElement("img");
-img.loading = "lazy";
-img.src = item.src;
-img.alt = item.alt;
-btn.appendChild(img);
-btn.addEventListener("click", function () {
-current = setIndex;
-render();
-});
-strip.appendChild(btn);
-});
-});
-
-arrow.style.display = sets.length > 1 ? "flex" : "none";
+var PER_VIEW = 3;
+function perView() {
+var w = window.innerWidth;
+if (w <= 520) return 1;
+if (w <= 760) return 2;
+return 3;
 }
 
-arrow.addEventListener("click", function () {
-current = (current + 1) % sets.length;
-render();
+// Byg slides: forrige klon-buffer + originaler + efterfølgende klon-buffer,
+// så hjulet kan rotere uendeligt i begge retninger.
+var buffer = images.length; // nok kloner til at dække en fuld rotation
+var slidesData = [];
+for (var i = 0; i < buffer; i++) slidesData.push(images[(images.length - buffer + i % images.length + images.length) % images.length]);
+for (var j = 0; j < images.length; j++) slidesData.push(images[j]);
+for (var k = 0; k < buffer; k++) slidesData.push(images[k % images.length]);
+
+function makeSlide(item) {
+var slide = document.createElement("div");
+slide.className = "carousel-slide";
+var img = document.createElement("img");
+img.loading = "lazy"; img.src = item.src; img.alt = item.alt;
+img.addEventListener("click", function () { openLightbox(item.src, item.alt); });
+slide.appendChild(img);
+return slide;
+}
+slidesData.forEach(function (item) { track.appendChild(makeSlide(item)); });
+
+var index = buffer; // start ved den første ægte slide
+var animating = false;
+
+function slideWidth() {
+var first = track.children[0];
+var style = getComputedStyle(track);
+var gap = parseFloat(style.columnGap || style.gap || "0") || 0;
+return first.getBoundingClientRect().width + gap;
+}
+
+function setPosition(animate) {
+track.style.transition = animate ? "transform 0.45s cubic-bezier(0.4,0.0,0.2,1)" : "none";
+track.style.transform = "translateX(" + (-index * slideWidth()) + "px)";
+}
+
+function normalize() {
+// Hold index inden for de ægte slides, så vi aldrig løber tør for kloner.
+var realCount = images.length;
+if (index >= buffer + realCount) { index -= realCount; setPosition(false); }
+else if (index < buffer) { index += realCount; setPosition(false); }
+}
+
+function go(dir) {
+if (animating) return;
+animating = true;
+index += dir;
+setPosition(true);
+}
+
+track.addEventListener("transitionend", function () {
+animating = false;
+normalize();
 });
+
+nextBtn.addEventListener("click", function () { go(1); });
+prevBtn.addEventListener("click", function () { go(-1); });
+
+var resizeTimer;
+window.addEventListener("resize", function () {
+clearTimeout(resizeTimer);
+resizeTimer = setTimeout(function () { setPosition(false); }, 120);
+});
+
+// Init
+requestAnimationFrame(function () { setPosition(false); });
+window.addEventListener("load", function () { setPosition(false); });
 
 lightbox.addEventListener("click", function () { closeLightbox(); });
 closeBtn.addEventListener("click", function (e) { e.stopPropagation(); closeLightbox(); });
 lightboxImg.addEventListener("click", function (e) { e.stopPropagation(); closeLightbox(); });
 document.addEventListener("keydown", function (e) {
 if (e.key === "Escape") closeLightbox();
+if (e.key === "ArrowRight") go(1);
+if (e.key === "ArrowLeft") go(-1);
 });
-
-render();
 })();
 if ("serviceWorker" in navigator) {
 window.addEventListener("load", function () {
