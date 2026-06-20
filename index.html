@@ -94,18 +94,18 @@ text-align: center;
    små og nedtonede sidekort der kun viser billedet. */
 .debat-carousel { position: relative; display: flex; align-items: center; gap: 4px; }
 .debat-viewport { overflow: hidden; flex: 1 1 auto; padding: 10px 8px 6px; }
-.debat-track { display: flex; gap: 28px; will-change: transform; touch-action: pan-y; align-items: flex-start; }
+.debat-track { display: flex; gap: 28px; will-change: transform; touch-action: pan-y; align-items: center; }
 .debat-slide {
 flex: 0 0 calc((100% - 56px) / 3);
 min-width: 0;
 transition: transform 0.55s cubic-bezier(0.22,0.61,0.36,1), opacity 0.55s ease;
-transform: scale(0.7);
+transform: scale(0.62);
 opacity: 0.42;
-transform-origin: center top;
+transform-origin: center center;
 filter: saturate(0.6);
 }
 .debat-slide.is-center {
-transform: scale(1.16);
+transform: scale(1);
 opacity: 1;
 filter: none;
 position: relative;
@@ -131,7 +131,7 @@ transition: opacity 0.2s ease, transform 0.15s ease, background 0.2s ease, color
 .debat-arrow-btn:hover { background: var(--accent); color: #fff; opacity: 1; transform: scale(1.07); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
 .debat-arrow-btn:active { transform: scale(0.96); }
 .debat-arrow-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
-.debat-dots { display: flex; justify-content: center; gap: 9px; margin-top: 6px; }
+.debat-dots { display: flex; justify-content: center; gap: 9px; margin-top: 14px; }
 .debat-dots .dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: #d6d2cc; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
 .debat-dots .dot.active { background: #c0392b; transform: scale(1.3); }
 .debat-card {
