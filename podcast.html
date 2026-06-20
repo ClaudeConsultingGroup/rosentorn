@@ -64,12 +64,16 @@ p.intro { margin-top:16px; font-size:1.1rem; color:var(--muted); text-align:cent
 .submit-note a:hover { text-decoration:underline; }
 .page-title { font-size:1.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; }
 a.back:hover::first-letter { color: #c0392b; }
+.submit-note .om-link { display: inline-flex; align-items: center; gap: 3px; }
+.submit-note .om-arrow { display: inline-block; transition: transform 0.2s ease; }
+.submit-note .om-link:hover { text-decoration: none; }
+.submit-note .om-link:hover .om-arrow { transform: translateX(3px); }
 </style>
 </head>
 <body>
 <main>
 <a class="back" href="/">Rosentorn</a>
-<nav class="topnav"><a href="/podcast" class="active" aria-current="page">Podcast</a><a href="/debat">Debat</a><a href="/glimt">Glimt</a><a href="/om">Om</a></nav>
+<nav class="topnav"><a href="/podcast" class="active" aria-current="page">Podcast</a><a href="/debat">Debat</a><a href="/glimt">Glimt</a></nav>
 <header class="page-mark">
 <h1 class="mark-eyebrow">Lyt med</h1>
 </header>
@@ -90,7 +94,7 @@ a.back:hover::first-letter { color: #c0392b; }
 <a href="https://www.tiktok.com/@rosentorn" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 01-1.06-2.82h-3.2v12.84a2.45 2.45 0 01-2.45 2.34 2.45 2.45 0 01-2.45-2.45 2.45 2.45 0 012.45-2.45c.25 0 .5.04.73.11v-3.3a5.73 5.73 0 00-.73-.05A5.74 5.74 0 003.4 15.73a5.74 5.74 0 005.74 5.74 5.74 5.74 0 005.74-5.74V9.01a7.45 7.45 0 004.35 1.39V7.2a4.28 4.28 0 01-2.63-1.38z"></path></svg></a>
 <a href="https://www.linkedin.com/company/rosentorn/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.81a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zm11.34 9.53v-4.58c0-2.45-1.31-3.59-3.06-3.59a2.64 2.64 0 00-2.39 1.31v-1.13h-2.67v8.35h2.67v-4.41c0-1.16.22-2.29 1.66-2.29 1.42 0 1.44 1.33 1.44 2.36v4.34h2.67z"></path></svg></a>
 </div>
-<div class="submit-note">Har du et indlæg? Send det til <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a></div>
+<div class="submit-note">Indlæg modtages på <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a>. Læs mere om rosentorn <a href="/om" class="om-link">her<span class="om-arrow" aria-hidden="true">→</span></a></div>
 </footer>
 </main>
 <script>
