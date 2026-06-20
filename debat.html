@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Debat — Rosentorn</title>
+<meta name="description" content="Stemmer fra torvet. Læs månedens debatindlæg på Rosentorn – skarpe perspektiver på teknologi, samfund og livet selv.">
+<link rel="canonical" href="https://rosentorn.dk/debat.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rosentorn">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="Debat — Rosentorn">
+<meta property="og:description" content="Stemmer fra torvet. Læs månedens debatindlæg på Rosentorn – skarpe perspektiver på teknologi, samfund og livet selv.">
+<meta property="og:url" content="https://rosentorn.dk/debat.html">
+<meta property="og:image" content="https://rosentorn.dk/simon-eu.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Debat — Rosentorn">
+<meta name="twitter:description" content="Stemmer fra torvet. Læs månedens debatindlæg på Rosentorn – skarpe perspektiver på teknologi, samfund og livet selv.">
+<meta name="twitter:image" content="https://rosentorn.dk/simon-eu.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23fbfbf9%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2240%22%20font-weight%3D%22700%22%20fill%3D%22%23c0392b%22%20text-anchor%3D%22middle%22%3ER%3C%2Ftext%3E%3C%2Fsvg%3E">
 <meta name="theme-color" content="#c0392b">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -33,6 +46,7 @@ main { max-width: 680px; width: 100%; }
 nav.topnav { display: flex; justify-content: center; gap: 28px; margin-bottom: 18px; padding-top: 12px; padding-bottom: 12px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: -apple-system, system-ui, sans-serif; }
 nav.topnav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
 nav.topnav a:hover { color: var(--accent); }
+nav.topnav a.active { color: var(--accent); }
 .site-footer { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .social { display: flex; justify-content: center; gap: 22px; }
 .social a { color: var(--muted); display: inline-flex; transition: color 0.2s ease, transform 0.2s ease; }
@@ -72,17 +86,17 @@ a.back:hover::first-letter { color: #c0392b; }
 <a class="back" href="index.html">Rosentorn</a>
 <nav class="topnav">
 <a href="podcast.html">Podcast</a>
-<a href="debat.html">Debat</a>
+<a href="debat.html" class="active" aria-current="page">Debat</a>
 <a href="memes.html">Glimt</a>
 <a href="om.html">Om</a>
 </nav>
 <header class="page-mark">
-<span class="mark-eyebrow">Stemmer fra torvet</span>
+<h1 class="mark-eyebrow">Stemmer fra torvet</h1>
 </header>
 <ul class="debat-list">
 <li class="debat-item">
 <a class="debat-card" href="debatindlaeg-ai.html">
-<img class="debat-photo" src="simon-eu.jpg" alt="Simon Bødker">
+<img loading="lazy" class="debat-photo" src="simon-eu.jpg" alt="Simon Bødker">
 <div class="debat-body">
 <span class="debat-tag">Teknologi</span>
 <h2 class="debat-title">Gud døde med Nietzsche og genopstod med AI</h2>
@@ -96,7 +110,7 @@ a.back:hover::first-letter { color: #c0392b; }
 </li>
 <li class="debat-item">
 <a class="debat-card" href="debatindlaeg.html">
-<img class="debat-photo" src="simon-mikrofon.jpg" alt="Simon Bødker">
+<img loading="lazy" class="debat-photo" src="simon-mikrofon.jpg" alt="Simon Bødker">
 <div class="debat-body">
 <span class="debat-tag">Samfund</span>
 <h2 class="debat-title">Drømmen om eget hjem er blevet et fatamorgana</h2>
