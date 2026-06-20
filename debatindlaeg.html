@@ -108,7 +108,7 @@ a.back:hover::first-letter { color: #c0392b; }
 .social a { color: var(--muted); display: inline-flex; transition: color 0.2s ease, transform 0.2s ease; }
 .social a:hover { color: #c0392b; transform: translateY(-2px); }
 .social svg { width: 20px; height: 20px; fill: currentColor; }
-.submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); max-width:520px; }
+.submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); max-width:680px; }
 .submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
 .submit-note a:hover { text-decoration:underline; }
 
@@ -120,10 +120,14 @@ letter-spacing: 0.06em;
 text-transform: uppercase;
 color: var(--muted);
 }
-.submit-note .om-link { display: inline-flex; align-items: center; gap: 3px; }
-.submit-note .om-arrow { display: inline-block; transition: transform 0.2s ease; }
+.submit-note .om-link { display: inline; white-space: nowrap; }
+.submit-note .om-arrow { display: inline-block; margin-left: 3px; transition: transform 0.2s ease; }
 .submit-note .om-link:hover { text-decoration: none; }
 .submit-note .om-link:hover .om-arrow { transform: translateX(3px); }
+
+@media (max-width: 640px) {
+.submit-note .om-link { display: block; white-space: normal; margin-top: 2px; }
+}
 </style>
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Rosentorn">
