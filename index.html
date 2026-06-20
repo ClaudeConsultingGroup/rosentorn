@@ -505,7 +505,9 @@ resizeTimer = setTimeout(function () { startOffset = Math.floor((perView() - 1) 
 });
 
 requestAnimationFrame(function () { setPosition(false); startAuto(); });
-window.addEventListener("load", function () { setPosition(false); });
+function recenter() { startOffset = Math.floor((perView() - 1) / 2); index = buffer - startOffset; setPosition(false); }
+window.addEventListener("load", function () { recenter(); setTimeout(recenter, 250); });
+setTimeout(recenter, 60);
 })();
 if ("serviceWorker" in navigator) {
 window.addEventListener("load", function () {
