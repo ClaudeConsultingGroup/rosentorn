@@ -161,7 +161,11 @@ width: 100%;
 height: auto;
 border-radius: 12px;
 filter: grayscale(100%);
+transition: filter 0.4s ease;
 box-shadow: 0 6px 22px rgba(0,0,0,0.10);
+}
+article figure img:hover {
+filter: grayscale(0%);
 }
 article figure figcaption {
 margin-top: 8px;
