@@ -18,8 +18,8 @@
 <meta name="twitter:description" content="Bag Rosentorn. Lær magasinet at kende – en torveplads for tanker, hvor de bedste samtaler finder sted.">
 <meta name="twitter:image" content="https://rosentorn.dk/simon-mikrofon.jpg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-  <link rel="apple-touch-icon" href="/favicon.png">
-  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
 <meta name="theme-color" content="#c0392b">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -142,7 +142,21 @@ padding-top: 24px;
 border-top: 1px solid var(--line);
 text-align: center;
 }
-.profile img {
+.people {
+display: flex;
+justify-content: center;
+gap: 28px;
+flex-wrap: wrap;
+}
+.person {
+flex: 1 1 0;
+min-width: 200px;
+max-width: 260px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.person img {
 display: block;
 width: 100%;
 max-width: 240px;
@@ -153,9 +167,7 @@ filter: grayscale(100%);
 transition: filter 0.4s ease;
 box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
-.profile img:hover {
-filter: grayscale(0%);
-}
+.person img:hover { filter: grayscale(0%); }
 .profile .name { font-size: 1.3rem; font-weight: 700; margin-top: 16px; }
 .profile .role {
 font-family: -apple-system, system-ui, sans-serif;
@@ -165,13 +177,58 @@ text-transform: uppercase;
 letter-spacing: 0.08em;
 margin-top: 4px;
 }
-.profile .contact {
+.infobox {
+margin: 26px auto 0;
+max-width: 420px;
+background: #fff;
+border: 1px solid var(--line);
+border-radius: 12px;
+padding: 20px 24px;
+box-shadow: 0 2px 14px rgba(0,0,0,0.06);
 font-family: -apple-system, system-ui, sans-serif;
-font-size: 1rem;
-margin-top: 14px;
+text-align: left;
 }
-.profile .contact a { color: var(--accent); text-decoration: none; }
-.profile .contact a:hover { text-decoration: underline; }
+.infobox .infobox-title {
+font-family: -apple-system, system-ui, sans-serif;
+font-size: 0.78rem;
+font-weight: 700;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: #c0392b;
+margin-bottom: 14px;
+text-align: center;
+}
+.infobox .info-row {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 9px 0;
+}
+.infobox .info-row + .info-row { border-top: 1px solid var(--line); }
+.infobox .info-icon {
+flex: 0 0 34px;
+width: 34px; height: 34px;
+border-radius: 50%;
+background: rgba(192,57,43,0.08);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+.infobox .info-icon svg { width: 17px; height: 17px; fill: #c0392b; }
+.infobox .info-label {
+display: block;
+font-size: 0.72rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(--muted);
+}
+.infobox .info-row a {
+font-size: 1rem;
+color: var(--ink);
+text-decoration: none;
+font-weight: 600;
+}
+.infobox .info-row a:hover { color: var(--accent); text-decoration: underline; }
 .back { display:block; text-align:center; margin:0 auto 12px; font-family:Georgia,'Times New Roman',serif; font-size:1.4rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
 .back:hover { text-decoration:underline; }
 .submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); margin:18px auto 0; max-width:520px; }
@@ -207,13 +264,29 @@ a.back:hover::first-letter { color: #c0392b; }
 <p>Visionen rækker længere end den enkelte samtale. Tror du på, at demokrati kan flytte noget, så er Rosentorn også dit. Her træner vi den næste generation i at finde ord der bærer.</p>
 </div>
 <section class="profile">
+<div class="people">
+<div class="person">
+<img loading="lazy" src="mikael-omportraet.jpg" alt="Mikael Freitag Pedersen">
+<p class="name">Mikael Freitag Pedersen</p>
+<p class="role">Klummeskribent</p>
+</div>
+<div class="person">
 <img loading="lazy" src="simon-mikrofon.jpg" alt="Simon Bødker">
 <p class="name">Simon Bødker</p>
 <p class="role">Chefredaktør</p>
-<p class="contact">
-<a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a><br>
-<a href="tel:+4522225844">+45 22 22 58 44</a>
-</p>
+</div>
+</div>
+<div class="infobox">
+<div class="infobox-title">Kontakt Mikael</div>
+<div class="info-row">
+<span class="info-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg></span>
+<span><span class="info-label">E-mail</span><a href="mailto:Mikaelpedersen1502@gmail.com">Mikaelpedersen1502@gmail.com</a></span>
+</div>
+<div class="info-row">
+<span class="info-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.53 15.53 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.21 2.21z"></path></svg></span>
+<span><span class="info-label">Telefon</span><a href="tel:+4552667310">+45 52 66 73 10</a></span>
+</div>
+</div>
 </section>
 <footer class="site-footer">
 <div class="social">
