@@ -185,6 +185,62 @@ line-height: 1.7;
 }
 .profile .contact a { color: var(--accent); text-decoration: none; }
 .profile .contact a:hover { text-decoration: underline; }
+.bio-toggle {
+  max-width: 300px;
+  margin: 16px auto 0;
+  text-align: left;
+}
+.bio-toggle > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #c0392b;
+  background: #fbf2f1;
+  border: 1px solid #ecd3cf;
+  border-radius: 999px;
+  padding: 9px 16px;
+  transition: background 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+.bio-toggle > summary::-webkit-details-marker { display: none; }
+.bio-toggle > summary:hover {
+  background: #f6e6e3;
+  box-shadow: 0 2px 8px rgba(192,57,43,0.13);
+}
+.bio-chevron {
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #c0392b;
+  border-bottom: 2px solid #c0392b;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  margin-bottom: 2px;
+  flex: none;
+}
+.bio-toggle[open] .bio-chevron { transform: rotate(-135deg); margin-top: 4px; margin-bottom: 0; }
+.bio-toggle .bio {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-top: 12px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  border-left: 3px solid #c0392b;
+  border-radius: 10px;
+  padding: 16px 18px;
+  animation: bioReveal 0.28s ease;
+}
+.bio-toggle .bio p { margin: 0 0 0.8em; }
+.bio-toggle .bio p:last-child { margin-bottom: 0; }
+@keyframes bioReveal { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 .back { display:block; text-align:center; margin:0 auto 12px; font-family:Georgia,'Times New Roman',serif; font-size:1.4rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
 .back:hover { text-decoration:underline; }
 .submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); margin:18px auto 0; max-width:520px; }
@@ -228,6 +284,14 @@ a.back:hover::first-letter { color: #c0392b; }
 <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a><br>
 <a href="tel:+4522225844">+45 22 22 58 44</a>
 </p>
+<details class="bio-toggle">
+<summary><span class="bio-toggle-label">Læs mere om Simon</span><span class="bio-chevron" aria-hidden="true"></span></summary>
+<div class="bio">
+<p>Simon Bødker er chefredaktør og skribent med fokus på økonomisk politik, europæisk sikkerhed og digital suverænitet.</p>
+<p>Han skriver om EU og europæisk samarbejde, om klima og grøn omstilling og om de arbejdsmarkedspolitiske valg, der former samfundet. Han har behandlet USAs toldpolitik og dens økonomiske bagslag, Europas afhængighed af teknologi udefra og de strategiske valg, der afgør kontinentets fremtid. I sit bachelorprojekt undersøgte han Anders Fogh Rasmussens udenrigspolitiske taler for at forstå den danske mobilisering til krigene i Irak og Afghanistan.</p>
+<p>Som chefredaktør for Rosentorn samler han nye og etablerede stemmer i den danske debat.</p>
+</div>
+</details>
 </div>
 <div class="person">
 <img loading="lazy" src="mikael-omportraet.jpg" alt="Mikael Freitag Pedersen">
@@ -237,6 +301,14 @@ a.back:hover::first-letter { color: #c0392b; }
 <a href="mailto:Mikaelpedersen1502@gmail.com">mikaelpedersen1502@gmail.com</a><br>
 <a href="tel:+4552667310">+45 52 66 73 10</a>
 </p>
+<details class="bio-toggle">
+<summary><span class="bio-toggle-label">Læs mere om Mikael</span><span class="bio-chevron" aria-hidden="true"></span></summary>
+<div class="bio">
+<p>Mikael Freitag Pedersen er skribent med fokus på international politik, demokrati og europæisk samarbejde.</p>
+<p>Han har gennem en årrække arbejdet med internationale ungdoms- og demokratiprojekter på tværs af Europa. Gennem sit engagement i civilsamfundet har han beskæftiget sig med valgobservation, demokratisk udvikling og politisk samarbejde i blandt andet Østeuropa, Kaukasus og Afrika.</p>
+<p>Han skriver særligt om europæisk integration, sikkerhedspolitik og de politiske og kulturelle strømninger, der former morgendagens Europa.</p>
+</div>
+</details>
 </div>
 </div>
 </section>
