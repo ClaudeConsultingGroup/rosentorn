@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI er en eksistentiel trussel - Alfred Broe Petersen</title>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
+<meta name="theme-color" content="#c0392b">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Rosentorn">
+<meta name="mobile-web-app-capable" content="yes">
+<style>
+:root {
+--ink: #1a1a1a;
+--muted: #666;
+--accent: #2a5d9f;
+--line: #e6e6e6;
+--bg: #fafafa;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+font-family: Georgia, 'Times New Roman', serif;
+color: var(--ink);
+background: var(--bg);
+line-height: 1.7;
+display: flex;
+justify-content: center;
+padding: 8vh 24px;
+}
+main { max-width: 680px; width: 100%; }
+
+h1 {
+font-size: 2.1rem;
+letter-spacing: 0.02em;
+font-weight: 700;
+line-height: 1.25;
+}
+.manchet {
+margin-top: 20px;
+font-size: 1.15rem;
+font-style: italic;
+color: #333;
+text-align: justify;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+article p {
+margin-top: 20px;
+font-size: 1.08rem;
+text-align: justify;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+.signatur {
+margin-top: 28px;
+font-style: italic;
+color: var(--muted);
+}
+.byline-top {
+margin-top: 18px;
+font-family: -apple-system, system-ui, sans-serif;
+}
+.byline-top .author-name {
+font-weight: 700;
+font-size: 0.95rem;
+color: var(--ink);
+letter-spacing: 0.01em;
+}
+.byline-top .author-title {
+font-size: 0.82rem;
+color: var(--muted);
+margin-top: 2px;
+font-style: italic;
+}
+nav.topnav { display:flex; justify-content:center; gap:28px; margin-bottom:40px; padding-top:16px; padding-bottom:16px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-family:-apple-system,system-ui,sans-serif; }
+nav.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95rem; color:var(--ink); text-decoration:none; }
+nav.topnav a:hover { color:var(--accent); }
+.back { display:block; text-align:center; margin:0 auto 22px; font-family:Georgia,'Times New Roman',serif; font-size:1.6rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
+.back:hover { text-decoration:underline; }
+.pullquote {
+position: relative;
+margin: 38px 0;
+padding-left: 30px;
+font-family: -apple-system, system-ui, sans-serif;
+font-size: 1.5rem;
+line-height: 1.3;
+font-weight: 700;
+color: var(--ink);
+letter-spacing: -0.01em;
+}
+.pullquote::before {
+content: "\201D";
+position: absolute;
+left: 0;
+top: -0.15em;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 2.6rem;
+line-height: 1;
+font-weight: 700;
+color: #c0392b;
+}
+@media (max-width: 600px) {
+.pullquote { font-size: 1.25rem; }
+}
+a.back:hover::first-letter { color: #c0392b; }
+.site-footer { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.social { display: flex; justify-content: center; gap: 22px; }
+.social a { color: var(--muted); display: inline-flex; transition: color 0.2s ease, transform 0.2s ease; }
+.social a:hover { color: #c0392b; transform: translateY(-2px); }
+.social svg { width: 20px; height: 20px; fill: currentColor; }
+.submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); max-width:680px; }
+.submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
+.submit-note a:hover { text-decoration:underline; }
+
+.dato {
+margin-top: 14px;
+font-family: -apple-system, system-ui, sans-serif;
+font-size: 0.78rem;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+color: var(--muted);
+}
+.submit-note .om-link { display: inline; white-space: nowrap; }
+.submit-note .om-arrow { display: inline-block; margin-left: 3px; transition: transform 0.2s ease; }
+.submit-note .om-link:hover { text-decoration: none; }
+.submit-note .om-link:hover .om-arrow { transform: translateX(3px); }
+
+@media (max-width: 640px) {
+.submit-note .om-link { display: block; white-space: normal; margin-top: 2px; }
+}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rosentorn">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="AI er en eksistentiel trussel - Alfred Broe Petersen">
+<meta property="og:description" content="Verdens stærkeste AI-systemer kan slukkes med et brev fra en fremmed regering. Vi må tage demokratisk kontrol over teknologien, før den tager kontrollen over os.">
+<meta property="og:url" content="https://rosentorn.dk/debatindlaeg-ai-trussel">
+<meta property="og:image" content="https://rosentorn.dk/alfred-plakat.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI er en eksistentiel trussel - Alfred Broe Petersen">
+<meta name="twitter:description" content="Verdens stærkeste AI-systemer kan slukkes med et brev fra en fremmed regering. Vi må tage demokratisk kontrol over teknologien, før den tager kontrollen over os.">
+<meta name="twitter:image" content="https://rosentorn.dk/alfred-plakat.jpg">
+<link rel="canonical" href="https://rosentorn.dk/debatindlaeg-ai-trussel">
+</head>
+<body>
+<main>
+<a class="back" href="/">Rosentorn Magasin</a>
+<nav class="topnav">
+<a href="/podcast">Podcast</a>
+<a href="/debat">Debat</a>
+<a href="/glimt">Glimt</a>
+</nav>
+<article>
+<h1>AI er en eksistentiel trussel</h1>
+<div class="byline-top">
+<div class="author-name">Alfred Broe Petersen</div>
+<div class="author-title">cand.scient.pol</div>
+</div>
+<p class="dato">24.06.2026</p>
+<p class="manchet">Verdens stærkeste AI-systemer kan slukkes med et brev fra en fremmed regering, og samtidig overlader vi dem vores arbejde, vores forsvar og vores dømmekraft. Hvis vi ikke tager demokratisk kontrol over teknologien nu, kommer den til at styre os.</p>
+<p>Ved det seneste G7-møde var det ikke kun verdens lederne, der sad omkring bordet. Blandt deltagerne var også de magtfulde personer bag AI-selskaberne Anthropic og OpenAI: Dario Amodei og Sam Altman. Derudover deltog en række andre af den slags selskaber. Det understreger, hvor stor betydning kunstig intelligens har fået, og hvor intenst det globale AI-kapløb er blevet. Spørgsmålet er ikke længere, om AI vil forme fremtiden, men hvem der kommer til at kontrollere udviklingen.</p>
+<p>Lige nu er USA førende, men Kina er ikke langt bagefter. Trump-administrationen besluttede for nylig, at Anthropics nyeste model af hensyn til den nationale sikkerhed ikke måtte gøres tilgængelig for resten af verden, men kun for amerikanere. Det viser, at AI allerede betragtes som en strategisk ressource på linje med militær teknologi.</p>
+<p>Kunstig intelligens kommer til at forandre vores verden fundamentalt. Nogle beskriver den kommende omvæltning som lige så betydningsfuld som den industrielle revolution. Men ligesom den industrielle revolution ikke kun havde positive konsekvenser, må vi også forholde os kritisk til AI's udvikling.</p>
+<p>Den industrielle revolution bidrog til at bryde gamle adelige magtstrukturer, fremme demokratiske bevægelser, skabe økonomisk vækst og forbedre levestandarden for millioner af mennesker. Samtidig førte urbaniseringen til omfattende slumdannelse, ekstrem fattigdom, alvorlige miljø- og sundhedsproblemer, udbredt børnearbejde, umenneskelige arbejdsforhold og nye skæve magtforhold.</p>
+<p class="pullquote">Spørgsmålet er ikke længere, om AI vil forme fremtiden, men hvem der kommer til at kontrollere udviklingen.</p>
+<p>Vi må passe på, at teknologioptimismen ikke forblænder os, så vi ukritisk accepterer de negative konsekvenser af kunstig intelligens. AI kan blive banebrydende for arbejdsmarkedet. Produktiviteten kan stige så markant, at vi får mere fritid og større velstand. Men teknologien rummer også en række alvorlige risici.</p>
+<p>For det første risikerer AI at devaluere menneskelig værdi. Arbejde, læring og udvikling er centrale kilder til mening og anerkendelse i menneskers liv. Hvis AI fører til massearbejdsløshed og øget fattigdom, vil det være en enorm social omkostning.</p>
+<p>For det andet spiller AI allerede en voksende rolle i militære systemer. Det udgør en alvorlig trussel mod både fred og menneskelig kontrol over fremtiden. Alene det faktum, at kunstig intelligens, "Lethal Autonomous Weapons Systems" (LAWS) kan træffe beslutninger om at dræbe mennesker, rejser dybt problematiske etiske spørgsmål. Bør en robot kunne træffe beslutninger om menneskeliv. Jeg mener selv det svaret er nej. Det er umuligt at ansvarligholde robotter og så undergraver det menneskelig værdi at lade robotter træffe den slags beslutninger.</p>
+<p>Derudover har AI betydelige miljømæssige konsekvenser. De store datacentre kræver enorme mængder energi og kan belaste både lokalmiljøer og energisystemer. Samtidig står vi allerede midt i en klimakrise, hvor store dele af verdens energiforbrug stadig er baseret på fossile brændsler. Det voksende energibehov fra AI risikerer derfor at øge drivhusgasudledningerne yderligere.</p>
+<p class="pullquote">Det er os der bør styre teknologien, ikke teknologien som skal styre os.</p>
+<p>Mange af disse problemer kan stadig forebygges, hvis vi som samfund tager kontrol over udviklingen. Regulering og nationalisering bør være en central del af løsningen. For det første må der indføres klare regler for de etiske og samfundsmæssige konsekvenser af AI. For det andet må vi forhindre, at udviklingen koncentreres på hænderne af nogle få teknologigiganter med enorm økonomisk og politisk magt.</p>
+<p>Hvis det ikke er muligt at bryde monopolerne op gennem traditionel konkurrencepolitik, må man overveje nationalisering. De virksomheder, der udvikler de mest magtfulde AI-systemer, bør arbejde for fællesskabets interesser under demokratisk kontrol frem for alene at tjene private profitmotiver.</p>
+<p>Vi skal ikke lave samme fejl som ved sociale medier, hvor vi i alt for høj grad har ladet vores samfund styre af grådige tech-oligarker, som har gjort børn afhængige og vores demokratier svagere. Det er os der bør styre teknologien, ikke teknologien som skal styre os.</p>
+<p class="signatur">Alfred Broe Petersen, cand.scient.pol</p>
+</article>
+<footer class="site-footer">
+<div class="social">
+<a href="https://www.facebook.com/profile.php?id=61590837159475" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"></path></svg></a>
+<a href="https://www.instagram.com/rosentorn.dk/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 5.84a4 4 0 100 8 4 4 0 000-8zm0 6.6a2.6 2.6 0 110-5.2 2.6 2.6 0 010 5.2zm5.11-6.76a.94.94 0 11-1.87 0 .94.94 0 011.87 0z"></path></svg></a>
+<a href="https://www.tiktok.com/@rosentorn" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 01-1.06-2.82h-3.2v12.84a2.45 2.45 0 01-2.45 2.34 2.45 2.45 0 01-2.45-2.45 2.45 2.45 0 012.45-2.45c.25 0 .5.04.73.11v-3.3a5.73 5.73 0 00-.73-.05A5.74 5.74 0 003.4 15.73a5.74 5.74 0 005.74 5.74 5.74 5.74 0 005.74-5.74V9.01a7.45 7.45 0 004.35 1.39V7.2a4.28 4.28 0 01-2.63-1.38z"></path></svg></a>
+<a href="https://www.linkedin.com/company/rosentorn/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.81a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zm11.34 9.53v-4.58c0-2.45-1.31-3.59-3.06-3.59a2.64 2.64 0 00-2.39 1.31v-1.13h-2.67v8.35h2.67v-4.41c0-1.16.22-2.29 1.66-2.29 1.42 0 1.44 1.33 1.44 2.36v4.34h2.67z"></path></svg></a>
+</div>
+<div class="submit-note">Deltag i samtalen på <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a> &middot; <a href="/om" class="om-link">Om Rosentorn Magasin<span class="om-arrow" aria-hidden="true">→</span></a></div>
+</footer>
+</main>
+<script>
+if ("serviceWorker" in navigator) {
+window.addEventListener("load", function () {
+navigator.serviceWorker.register("/sw.js").catch(function () {});
+});
+}
+</script>
+</body>
+</html>
