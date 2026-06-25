@@ -26,6 +26,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rosentorn.dk/om-simon</loc>
+    <lastmod>2026-06-25</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rosentorn.dk/om-mikael</loc>
+    <lastmod>2026-06-25</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://rosentorn.dk/debatindlaeg</loc>
     <lastmod>2026-06-20</lastmod>
     <priority>0.6</priority>
