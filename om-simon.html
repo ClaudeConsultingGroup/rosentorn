@@ -31,8 +31,10 @@ main { max-width:760px; margin:0 auto; padding:32px 20px 64px; }
 .back-link { display:inline-flex; align-items:center; gap:8px; margin-top:36px; font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; font-weight:600; color:var(--accent); background:#f7f3ec; border:1px solid #e3dccf; border-radius:999px; padding:9px 16px; text-decoration:none; transition:background 0.2s; }
 .back-link:hover { background:#efe8dc; }
 .back-arrow { color:var(--accent); font-weight:700; }
-.site-footer { text-align:center; padding:32px 20px; border-top:1px solid var(--line); margin-top:48px; font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; color:var(--muted); }
-.social { display: flex; justify-content: center; gap: 22px;}.social a { color: var(--muted); display: inline-flex; transition: color 0.2s ease, transform 0.2s ease;}.social a:hover { color: #c0392b; transform: translateY(-2px);}.social svg { width: 20px; height: 20px; fill: currentColor;}</style>
+.site-footer { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 18px;}
+.social { display: flex; justify-content: center; gap: 22px;}.social a { color: var(--muted); display: inline-flex; transition: color 0.2s ease, transform 0.2s ease;}.social a:hover { color: #c0392b; transform: translateY(-2px);}.social svg { width: 20px; height: 20px; fill: currentColor;}.submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); max-width:680px;}.submit-note a { color:var(--accent); text-decoration:none; font-weight:600;}.submit-note a:hover { text-decoration:underline;}.submit-note .om-link { display: inline; white-space: nowrap;}.submit-note .om-arrow { display: inline-block; margin-left: 3px; transition: transform 0.2s ease;}.submit-note .om-link:hover { text-decoration: none;}.submit-note .om-link:hover .om-arrow { transform: translateX(3px);}@media (max-width: 640px) {
+.submit-note .om-link { display: block; white-space: normal; margin-top: 2px; }
+}</style>
 </head>
 <body>
 <main>
@@ -57,9 +59,7 @@ main { max-width:760px; margin:0 auto; padding:32px 20px 64px; }
 <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a><br>
 <a href="tel:+4522225844">+45 22 22 58 44</a>
 </p>
-<div style="text-align:center;">
-<a class="back-link" href="/om"><span class="back-arrow">&larr;</span>Tilbage til Om</a>
-</div>
+
 </main>
 <footer class="site-footer">
 <div class="social">
@@ -68,7 +68,7 @@ main { max-width:760px; margin:0 auto; padding:32px 20px 64px; }
 <a href="https://www.tiktok.com/@rosentorn" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 01-1.06-2.82h-3.2v12.84a2.45 2.45 0 01-2.45 2.34 2.45 2.45 0 01-2.45-2.45 2.45 2.45 0 012.45-2.45c.25 0 .5.04.73.11v-3.3a5.73 5.73 0 00-.73-.05A5.74 5.74 0 003.4 15.73a5.74 5.74 0 005.74 5.74 5.74 5.74 0 005.74-5.74V9.01a7.45 7.45 0 004.35 1.39V7.2a4.28 4.28 0 01-2.63-1.38z"></path></svg></a>
 <a href="https://www.linkedin.com/company/rosentorn/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.81a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zm11.34 9.53v-4.58c0-2.45-1.31-3.59-3.06-3.59a2.64 2.64 0 00-2.39 1.31v-1.13h-2.67v8.35h2.67v-4.41c0-1.16.22-2.29 1.66-2.29 1.42 0 1.44 1.33 1.44 2.36v4.34h2.67z"></path></svg></a>
 </div>
-<div class="submit-note">Deltag i samtalen på <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a></div>
+<div class="submit-note">Deltag i samtalen på <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a> &middot; <a class="om-link" href="/om"><span class="om-arrow">←</span> Tilbage til Om</a></div>
 </footer>
 </body>
 </html>
