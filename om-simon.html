@@ -14,10 +14,12 @@
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:#fff; line-height:1.7; }
 main { max-width:760px; margin:0 auto; padding:32px 20px 64px; }
-.back { display:inline-block; font-family:-apple-system,system-ui,sans-serif; font-size:0.95rem; font-weight:700; letter-spacing:0.04em; color:var(--ink); text-decoration:none; }
-.topnav { display:flex; gap:18px; justify-content:center; margin:14px 0 28px; font-family:-apple-system,system-ui,sans-serif; font-size:0.9rem; }
-.topnav a { color:var(--muted); text-decoration:none; }
-.topnav a:hover { color:var(--ink); }
+.back { display:block; text-align:center; margin:0 auto 12px; font-family:Georgia,'Times New Roman',serif; font-size:1.4rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
+.back:hover { text-decoration:underline; }
+.back:hover::first-letter { color:#c0392b; }
+.topnav { display:flex; justify-content:center; gap:28px; margin-bottom:18px; padding-top:12px; padding-bottom:12px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-family:-apple-system,system-ui,sans-serif; }
+.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95rem; color:var(--ink); text-decoration:none; }
+.topnav a:hover { color:var(--accent); }
 .profile-hero { text-align:center; margin-top:8px; }
 .profile-hero img { width:100%; max-width:320px; height:auto; border-radius:10px; box-shadow:0 2px 14px rgba(0,0,0,0.12); margin:0 auto; display:block; }
 .profile-name { font-size:2rem; margin-top:24px; }
