@@ -27,6 +27,10 @@
 <meta name="apple-mobile-web-app-title" content="Rosentorn">
 <meta name="mobile-web-app-capable" content="yes">
 <style>
+  .bio-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;max-width:300px;margin:16px auto 0;font-family:-apple-system,system-ui,sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.02em;color:var(--accent);background:#f7f3ec;border:1px solid #e3dccf;border-radius:999px;padding:9px 16px;text-decoration:none;transition:background .2s,box-shadow .2s}
+  .bio-link:hover{background:#efe8dc;box-shadow:0 2px 8px rgba(42,93,159,.15)}
+  .bio-arrow{color:var(--accent);font-weight:700;transition:transform .2s ease}
+  .bio-link:hover .bio-arrow{transform:translateX(3px)}
 :root {
 --ink: #1a1a1a;
 --muted: #666;
@@ -280,40 +284,24 @@ a.back:hover::first-letter { color: #c0392b; }
 <section class="profile">
 <div class="people">
 <div class="person">
-<img loading="lazy" src="simon-omportraet.jpg" alt="Simon Bødker">
+<img loading="lazy" src="simon-indlaeg.jpg" alt="Simon Bødker">
 <p class="name">Simon Bødker</p>
 <p class="role">Chefredaktør</p>
 <p class="contact">
 <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a><br>
 <a href="tel:+4522225844">+45 22 22 58 44</a>
 </p>
-<details class="bio-toggle">
-<summary><span class="bio-toggle-label">Læs mere om Simon</span><span class="bio-chevron" aria-hidden="true"></span></summary>
-<div class="bio">
-<p>Simon Bødker er chefredaktør og skribent med fokus på økonomisk politik, europæisk sikkerhed og digital suverænitet.</p>
-<p>Han skriver om EU og europæisk samarbejde, om klima og grøn omstilling og om de arbejdsmarkedspolitiske valg, der former samfundet.</p>
-<p>Han har behandlet USAs toldpolitik og dens økonomiske bagslag, Europas afhængighed af teknologi udefra og de strategiske valg, der afgør kontinentets fremtid.</p>
-<p>I sit bachelorprojekt undersøgte han Anders Fogh Rasmussens udenrigspolitiske taler for at forstå den danske mobilisering til krigene i Irak og Afghanistan.</p>
-</div>
-</details>
+<a class="bio-link" href="/om-simon">Læs mere om Simon<span class="bio-arrow" aria-hidden="true">→</span></a>
 </div>
 <div class="person">
-<img loading="lazy" src="mikael-omportraet.jpg" alt="Mikael Freitag Pedersen">
+<img loading="lazy" src="mikael-indlaeg.jpg" alt="Mikael Freitag Pedersen">
 <p class="name">Mikael Freitag Pedersen</p>
 <p class="role">Klummeskribent</p>
 <p class="contact">
 <a href="mailto:Mikaelpedersen1502@gmail.com">mikaelpedersen1502@gmail.com</a><br>
 <a href="tel:+4552667310">+45 52 66 73 10</a>
 </p>
-<details class="bio-toggle">
-<summary><span class="bio-toggle-label">Læs mere om Mikael</span><span class="bio-chevron" aria-hidden="true"></span></summary>
-<div class="bio">
-<p>Mikael Freitag Pedersen er skribent med fokus på international politik, demokrati og europæisk samarbejde.</p>
-<p>Han har gennem en årrække arbejdet med internationale ungdoms- og demokratiprojekter på tværs af Europa.</p>
-<p>Gennem sit engagement i civilsamfundet har han beskæftiget sig med valgobservation, demokratisk udvikling og politisk samarbejde i blandt andet Østeuropa, Kaukasus og Afrika.</p>
-<p>Han skriver særligt om europæisk integration, sikkerhedspolitik og de politiske og kulturelle strømninger, der former morgendagens Europa.</p>
-</div>
-</details>
+<a class="bio-link" href="/om-mikael">Læs mere om Mikael<span class="bio-arrow" aria-hidden="true">→</span></a>
 </div>
 </div>
 </section>
