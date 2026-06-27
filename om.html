@@ -170,6 +170,9 @@ border-radius: 8px;
 box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 .person-photo{display:block;width:100%;cursor:pointer}
+  .person-photo{border-radius:10px;overflow:hidden;transition:box-shadow 0.3s, transform 0.3s}
+  .person-photo img{display:block;width:100%;height:auto;border-radius:10px;object-fit:cover;transition:transform 0.4s, box-shadow 0.4s}
+  .person-photo:hover img,.person-photo:focus-visible img{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.18)}
 .profile .name { font-size: 1.3rem; font-weight: 700; margin-top: 16px; }
 .profile .role {
 font-family: -apple-system, system-ui, sans-serif;
