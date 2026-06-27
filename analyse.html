@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analyse - Rosentorn Magasin</title>
+<meta name="description" content="Analyse fra Rosentorn Magasin.">
+<link rel="canonical" href="https://rosentorn.dk/analyse">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rosentorn">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="Analyse - Rosentorn Magasin">
+<meta property="og:description" content="Analyse fra Rosentorn Magasin.">
+<meta property="og:url" content="https://rosentorn.dk/analyse">
+<meta property="og:image" content="https://rosentorn.dk/simon-iran-plakat.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Analyse - Rosentorn Magasin">
+<meta name="twitter:description" content="Analyse fra Rosentorn Magasin.">
+<meta name="twitter:image" content="https://rosentorn.dk/simon-iran-plakat.jpg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+<meta name="theme-color" content="#c0392b">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Rosentorn">
+<meta name="mobile-web-app-capable" content="yes">
+<style>
+:root { --ink:#1a1a1a; --muted:#666; --accent:#2a5d9f; --line:#e6e6e6; --bg:#fafafa; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--bg); line-height:1.6; display:flex; justify-content:center; padding:10px 24px; }
+main { max-width:1100px; width:100%; }
+nav.topnav { display:flex; justify-content:center; gap:28px; margin-bottom:18px; padding-top:12px; padding-bottom:12px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-family:-apple-system,system-ui,sans-serif; }
+nav.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95rem; color:var(--ink); text-decoration:none; }
+nav.topnav a:hover { color:var(--accent); }
+nav.topnav a.active { color:var(--accent); }
+.site-footer { margin-top:22px; padding-top:20px; border-top:1px solid var(--line); display:flex; flex-direction:column; align-items:center; gap:10px; }
+.social { display:flex; justify-content:center; gap:22px; }
+.social a { color:var(--muted); display:inline-flex; transition:color 0.2s ease, transform 0.2s ease; }
+.social a:hover { color:#c0392b; transform:translateY(-2px); }
+.social svg { width:20px; height:20px; fill:currentColor; }
+.page-mark { text-align:center; margin:6px 0 24px; }
+.page-mark .mark-eyebrow { display:inline-block; font-family:-apple-system,system-ui,sans-serif; font-size:0.95rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#c0392b; }
+h1 { font-size:3.4rem; letter-spacing:0.01em; font-weight:700; line-height:1.05; text-align:center; }
+h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:14px auto 0; }
+.back { display:block; text-align:center; margin:0 auto 12px; font-family:Georgia,'Times New Roman',serif; font-size:1.4rem; font-weight:700; letter-spacing:0.01em; color:var(--ink); text-decoration:none; }
+.back:hover { text-decoration:underline; }
+a.back:hover::first-letter { color: #c0392b; }
+
+/* Carousel */
+.carousel { position:relative; margin-top:10px; display:flex; align-items:center; gap:10px; }
+.carousel-viewport { overflow:hidden; flex:1 1 auto; padding:82px 0; }
+.carousel-track { display:flex; gap:20px; will-change:transform; touch-action:pan-y; align-items:center; }
+/* Hvert af de tre synlige felter fylder en tredjedel – intet peeking. */
+.carousel-slide { flex:0 0 calc((100% - 40px) / 3); text-align:center; transition:opacity 0.5s ease; transform:scale(0.60); opacity:0.45; transform-origin:center center; }
+/* Det midterste billede er størst; siderne er meget mindre. */
+.carousel-slide.is-center { transform:scale(1.50); opacity:1; }
+.carousel-slide img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; box-shadow:0 3px 12px rgba(0,0,0,0.05); transition:box-shadow 0.3s ease; cursor:zoom-in; display:block; -webkit-user-drag:none; user-select:none; }
+.carousel-slide.is-center img { box-shadow:0 14px 34px rgba(0,0,0,0.18); }
+.carousel-btn { flex:0 0 auto; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:#fff; color:var(--accent); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.10); transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease; z-index:2; opacity:0.5; }
+.carousel-btn:hover { background:var(--accent); color:#fff; transform:scale(1.07); box-shadow:0 8px 20px rgba(0,0,0,0.16); opacity:1; }
+.carousel-btn:active { transform:scale(0.96); }
+.carousel-btn svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+.carousel-dots { display:flex; justify-content:center; gap:9px; margin-top:22px; }
+.carousel-dots .dot { width:8px; height:8px; border-radius:50%; border:none; padding:0; background:#d6d2cc; cursor:pointer; transition:background 0.2s ease, transform 0.2s ease; }
+.carousel-dots .dot.active { background:#c0392b; transform:scale(1.3); }
+@media (max-width:760px) {
+.carousel-slide { flex:0 0 calc((100% - 18px) / 2); }
+}
+@media (max-width:560px) {
+/* På mobil: ét stort billede ad gangen. Pilene skjules – de røde prikker
+nedenunder bruges til navigation i stedet. */
+.carousel { gap:0; }
+.carousel-track { gap:0; }
+.carousel-viewport { padding:8px 0; }
+.carousel-slide { flex:0 0 100%; transform:none; opacity:1; }
+.carousel-slide.is-center { transform:none; }
+.carousel-btn { display:none; }
+}
+.submit-note { font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; text-align:center; color:var(--muted); margin:18px auto 0; max-width:680px; }
+.submit-note a { color:var(--accent); text-decoration:none; font-weight:600; }
+.submit-note a:hover { text-decoration:underline; }
+.lightbox { position:fixed; inset:0; background:rgba(20,18,16,0.88); display:flex; align-items:center; justify-content:center; padding:4vh 4vw; z-index:1000; opacity:0; visibility:hidden; transition:opacity 0.25s ease, visibility 0.25s ease; cursor:zoom-out; }
+.lightbox.open { opacity:1; visibility:visible; }
+.lightbox img { max-width:100%; max-height:92vh; width:auto; height:auto; border-radius:8px; box-shadow:0 18px 50px rgba(0,0,0,0.5); transform:scale(0.96); transition:transform 0.25s ease; }
+.lightbox.open img { transform:scale(1); }
+.lightbox-close { position:absolute; top:18px; right:24px; width:44px; height:44px; border:none; border-radius:50%; background:rgba(255,255,255,0.12); color:#fff; font-size:1.6rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s ease; }
+.lightbox-close:hover { background:rgba(255,255,255,0.25); }
+.submit-note .om-link { display: inline; white-space: nowrap; }
+.submit-note .om-arrow { display: inline-block; margin-left: 3px; transition: transform 0.2s ease; }
+.submit-note .om-link:hover { text-decoration: none; }
+.submit-note .om-link:hover .om-arrow { transform: translateX(3px); }
+
+@media (max-width: 640px) {
+.submit-note .om-link { display: block; white-space: normal; margin-top: 2px; }
+}
+
+.analyse-wrap{display:flex;justify-content:center;padding:24px 20px 8px;}
+.analyse-card{display:block;max-width:480px;width:100%;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);transition:transform .25s ease, box-shadow .25s ease;}
+.analyse-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.18);}
+.analyse-card img{display:block;width:100%;height:auto;}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="/">Rosentorn Magasin</a>
+<nav class="topnav">
+<a href="/podcast">Podcast</a>
+<a href="/debat">Debat</a>
+<a href="/analyse" class="active" aria-current="page">Analyse</a>
+</nav>
+<div class="analyse-wrap">
+<a class="analyse-card" href="/analyse-generalernes-iran" aria-label="Generalernes Iran – Simon Bødker">
+<img src="simon-iran-plakat.jpg" alt="Generalernes Iran – Simon Bødker" loading="lazy">
+</a>
+</div>
+<div class="carousel-dots" id="carDots"></div>
+<footer class="site-footer">
+<div class="social">
+<a href="https://www.facebook.com/profile.php?id=61590837159475" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"></path></svg></a>
+<a href="https://www.instagram.com/rosentorn.dk/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 5.84a4 4 0 100 8 4 4 0 000-8zm0 6.6a2.6 2.6 0 110-5.2 2.6 2.6 0 010 5.2zm5.11-6.76a.94.94 0 11-1.87 0 .94.94 0 011.87 0z"></path></svg></a>
+<a href="https://www.tiktok.com/@rosentorn" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 01-1.06-2.82h-3.2v12.84a2.45 2.45 0 01-2.45 2.34 2.45 2.45 0 01-2.45-2.45 2.45 2.45 0 012.45-2.45c.25 0 .5.04.73.11v-3.3a5.73 5.73 0 00-.73-.05A5.74 5.74 0 003.4 15.73a5.74 5.74 0 005.74 5.74 5.74 5.74 0 005.74-5.74V9.01a7.45 7.45 0 004.35 1.39V7.2a4.28 4.28 0 01-2.63-1.38z"></path></svg></a>
+<a href="https://www.linkedin.com/company/rosentorn/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.81a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zm11.34 9.53v-4.58c0-2.45-1.31-3.59-3.06-3.59a2.64 2.64 0 00-2.39 1.31v-1.13h-2.67v8.35h2.67v-4.41c0-1.16.22-2.29 1.66-2.29 1.42 0 1.44 1.33 1.44 2.36v4.34h2.67z"></path></svg></a>
+</div>
+<div class="submit-note">Deltag i samtalen på <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a> &middot; <a href="/om" class="om-link">Om Rosentorn Magasin<span class="om-arrow" aria-hidden="true">→</span></a></div>
+</footer>
+</main>
+
+</body>
+</html>
