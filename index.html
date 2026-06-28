@@ -6,7 +6,7 @@
 <title>Rosentorn Magasin</title>
 <meta name="description" content="Rosentorn er magasinet, der samler landets førende stemmer – og hvor de næste bliver til. Debat, podcast og analyse om tidens største spørgsmål.">
 <link rel="canonical" href="https://rosentorn.dk/">
-<link rel="preload" as="image" href="/alfred-plakat.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="/mikael-armenien-plakat.jpg" fetchpriority="high">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rosentorn">
 <meta property="og:locale" content="da_DK">
@@ -84,7 +84,7 @@ margin-top: 12px;
 padding-top: 12px;
 border-top: 1px solid var(--line);
 }
-.debat-list { list-style:none; display:flex; flex-direction:row; flex-wrap:nowrap; gap:20px; max-width:1100px; margin:0 auto; align-items:flex-start; justify-content:center; }
+.debat-list { list-style:none; display:flex; flex-direction:row; flex-wrap:wrap; gap:20px; max-width:1100px; margin:0 auto; align-items:flex-start; justify-content:center; }
 .debat-item { flex:1 1 0; min-width:0; }
 .debat-card { position:relative; display:block; text-decoration:none; color:inherit; padding:0; background:transparent; border:none; border-radius:10px; overflow:hidden; transition:box-shadow 0.3s ease, transform 0.3s ease; }
 .debat-photo { display:block; width:100%; height:auto; border-radius:10px; object-fit:cover; transition:transform 0.4s ease, box-shadow 0.4s ease; }
@@ -153,8 +153,17 @@ body { align-items: flex-start; }
 <section class="debat">
 <ul class="debat-list">
 <li class="debat-item">
+<a class="debat-card" href="/debatindlaeg-armenien">
+<img loading="eager" fetchpriority="high" class="debat-photo" src="mikael-armenien-plakat.jpg" alt="Mikael Freitag Pedersen – 78 unge observerede et valg, Rusland forsøgte at stjæle">
+<div class="debat-body">
+<h2 class="debat-title">78 unge observerede et valg, Rusland forsøgte at stjæle</h2>
+<p class="debat-byline">Mikael Freitag Pedersen · Klummeskribent, Rosentorn Magasin · 29.06.2026</p>
+</div>
+</a>
+</li>
+<li class="debat-item">
 <a class="debat-card" href="/analyse-generalernes-iran">
-<img loading="eager" fetchpriority="high" class="debat-photo" src="simon-iran-plakat.jpg" alt="Simon Bødker – Generalernes Iran">
+<img loading="lazy" class="debat-photo" src="simon-iran-plakat.jpg" alt="Simon Bødker – Generalernes Iran">
 <div class="debat-body">
 <h2 class="debat-title">Generalernes Iran</h2>
 <p class="debat-byline">Simon Bødker · Chefredaktør, Rosentorn Magasin · 28.06.2026</p>
@@ -167,15 +176,6 @@ body { align-items: flex-start; }
 <div class="debat-body">
 <h2 class="debat-title">AI er en eksistentiel trussel</h2>
 <p class="debat-byline">Alfred Broe Petersen · cand.scient.pol · 24.06.2026</p>
-</div>
-</a>
-</li>
-<li class="debat-item">
-<a class="debat-card" href="/debatindlaeg-norden">
-<img loading="lazy" class="debat-photo" src="mikael-plakat.jpg" alt="Mikael Freitag Pedersen – Vi voksede op med en løgn">
-<div class="debat-body">
-<h2 class="debat-title">Vi voksede op med en løgn</h2>
-<p class="debat-byline">Mikael Freitag Pedersen · Borgerlig debattør · 22.06.2026</p>
 </div>
 </a>
 </li>
