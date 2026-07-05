@@ -16,13 +16,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rosentorn.dk/om</loc>
+    <loc>https://rosentorn.dk/podcast</loc>
     <lastmod>2026-07-05</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rosentorn.dk/podcast</loc>
-    <lastmod>2026-06-20</lastmod>
+    <loc>https://rosentorn.dk/om</loc>
+    <lastmod>2026-07-05</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
