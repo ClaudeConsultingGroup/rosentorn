@@ -18,8 +18,8 @@
 <meta name="twitter:description" content="Lyt med på Rosentorns podcast, hvor vi tager tidens aktuelle historier op til debat med skiftende gæster.">
 <meta name="twitter:image" content="https://rosentorn.dk/podcast-team.jpg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-  <link rel="apple-touch-icon" href="/favicon.png">
-  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
 <meta name="theme-color" content="#c0392b">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,13 +29,13 @@
 <style>
 :root { --ink:#1a1a1a; --muted:#666; --accent:#2a5d9f; --line:#e6e6e6; --bg:#fafafa; }
 * { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--bg); line-height:1.6; display:flex; justify-content:center; padding:2.5vh 24px; }
+body { font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--bg); line-height:1.6; display:flex; justify-content:center; padding:2vh 24px; }
 main { max-width:620px; width:100%; }
-nav.topnav { display:flex; justify-content:center; gap:28px; margin-bottom:18px; padding-top:12px; padding-bottom:12px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-family:-apple-system,system-ui,sans-serif; }
+nav.topnav { display:flex; justify-content:center; gap:28px; margin-bottom:14px; padding-top:10px; padding-bottom:10px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-family:-apple-system,system-ui,sans-serif; }
 nav.topnav a { text-transform:uppercase; letter-spacing:0.08em; font-size:0.95rem; color:var(--ink); text-decoration:none; }
 nav.topnav a:hover { color:var(--accent); }
 nav.topnav a.active { color:var(--accent); }
-.site-footer { margin-top:32px; padding-top:20px; border-top:1px solid var(--line); display:flex; flex-direction:column; align-items:center; gap:10px; }
+.site-footer { margin-top:20px; padding-top:14px; border-top:1px solid var(--line); display:flex; flex-direction:column; align-items:center; gap:10px; }
 .social { display:flex; justify-content:center; gap:22px; }
 .social a { color:var(--muted); display:inline-flex; transition:color 0.2s ease, transform 0.2s ease; }
 .social a:hover { color:#c0392b; transform:translateY(-2px); }
@@ -44,13 +44,13 @@ nav.topnav a.active { color:var(--accent); }
 .page-mark .mark-eyebrow { display:inline-block; font-family:-apple-system,system-ui,sans-serif; font-size:0.95rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#c0392b; }
 h1 { font-size:3.4rem; letter-spacing:0.01em; font-weight:700; line-height:1.05; text-align:center; }
 h1::after { content:""; display:block; width:56px; height:3px; background:#c0392b; margin:20px auto 0; }
-p.intro { margin-top:16px; font-size:1.1rem; color:var(--muted); text-align:center; max-width:520px; margin-left:auto; margin-right:auto; }
+p.intro { margin-top:10px; font-size:0.98rem; line-height:1.45; color:var(--muted); text-align:center; max-width:540px; margin-left:auto; margin-right:auto; }
 .intro .atilz-link { color:#c0392b; text-decoration:none; font-weight:700; border-bottom:1px solid rgba(192,57,43,0.35); transition:border-color 0.2s ease; }
 .intro .atilz-link:hover { border-bottom-color:#c0392b; }
 .photo-link { display:block; position:relative; }
 .photo-link::after { content:"\25B6 Lyt til A til Z"; position:absolute; bottom:24px; left:50%; transform:translateX(-50%); background:rgba(29,185,84,0.55); color:#fff; font-family:-apple-system,system-ui,sans-serif; font-size:0.85rem; font-weight:600; padding:8px 18px; border-radius:999px; opacity:1; box-shadow:0 4px 14px rgba(0,0,0,0.18); transition:background 0.25s ease, box-shadow 0.25s ease; pointer-events:none; }
 .photo-link:hover::after { background:rgba(29,185,84,1); box-shadow:0 6px 18px rgba(29,185,84,0.45); }
-.podcast-photo { display:block; width:auto; height:min(440px, calc(100vh - 360px)); max-width:92vw; margin:18px auto 8px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.12); }
+.podcast-photo { display:block; width:auto; height:min(400px, calc(100vh - 430px)); max-width:92vw; margin:12px auto 6px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.12); }
 .photo-caption { font-family:-apple-system,system-ui,sans-serif; font-size:0.82rem; letter-spacing:0.03em; line-height:1.6; color:var(--muted); text-align:center; max-width:520px; margin:0 auto 18px; }
 .actions { display:flex; flex-direction:column; align-items:center; gap:12px; margin:8px 0 12px; }
 .btn { display:inline-flex; align-items:center; gap:12px; font-family:-apple-system,system-ui,sans-serif; font-size:1.05rem; font-weight:600; text-decoration:none; color:#fff; padding:12px 26px; border-radius:999px; transition:transform 0.15s ease, box-shadow 0.15s ease; }
@@ -87,7 +87,7 @@ a.back:hover::first-letter { color: #c0392b; }
 <a href="/analyse">Analyse</a>
 <a href="/podcast" class="active" aria-current="page">Podcast</a>
 </nav>
-<p class="intro"><a class="atilz-link" href="https://www.instagram.com/a.til.z/" target="_blank" rel="noopener">A til Z</a> er Netavisen Pios podcast, hvor du kan få et progressivt venstreorienteret blik på tidens aktuelle historier.</p>
+<p class="intro"><a class="atilz-link" href="https://www.instagram.com/a.til.z/" target="_blank" rel="noopener">A til Z</a> er Netavisen Pios podcast, hvor du kan få et progressivt venstreorienteret blik på tidens aktuelle historier. Vi inviterer regelmæssigt debattører fra det øvrige politiske spektrum ind for at udfordre os – og lytterne – på vores holdninger. Har du lyst til at deltage i podcasten? Skriv til <a href="mailto:redaktion@rosentorn.dk">redaktion@rosentorn.dk</a>. Chefredaktør for Rosentorn Magasin, Simon Bødker, er programchef for podcasten.</p>
 <div class="photo-wrap">
 <a class="photo-link" href="https://open.spotify.com/show/6ixd2OzOrQOkEz2c8xjFxn?si=f063e560ca6648a1" target="_blank" rel="noopener" aria-label="Lyt til A til Z på Spotify"><img class="podcast-photo" src="podcast-team.jpg" alt="Podcast-holdet bag A til Z i studiet"></a>
 </div>
@@ -110,4 +110,3 @@ navigator.serviceWorker.register("/sw.js").catch(function () {});
 </script>
 </body>
 </html>
-
