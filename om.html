@@ -27,10 +27,10 @@
 <meta name="apple-mobile-web-app-title" content="Rosentorn">
 <meta name="mobile-web-app-capable" content="yes">
 <style>
-  .bio-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin:12px auto 4px;font-family:-apple-system,system-ui,sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:color .2s}
-  .bio-link:hover{text-decoration:underline}
-  .bio-arrow{color:var(--accent);font-weight:700;transition:transform .2s ease}
-  .bio-link:hover .bio-arrow{transform:translateX(3px)}
+.bio-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin:12px auto 4px;font-family:-apple-system,system-ui,sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:color .2s}
+.bio-link:hover{text-decoration:underline}
+.bio-arrow{color:var(--accent);font-weight:700;transition:transform .2s ease}
+.bio-link:hover .bio-arrow{transform:translateX(3px)}
 :root {
 --ink: #1a1a1a;
 --muted: #666;
@@ -156,6 +156,10 @@ max-width: 980px;
 margin-left: 50%;
 transform: translateX(-50%);
 }
+.people.people-second {
+justify-content: flex-start;
+margin-top: 24px;
+}
 .person {
 flex: 1 1 0;
 min-width: 200px;
@@ -174,9 +178,9 @@ border-radius: 8px;
 box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 .person-photo{display:block;width:100%;cursor:pointer}
-  .person-photo{border-radius:10px;overflow:hidden;transition:box-shadow 0.3s, transform 0.3s}
-  .person-photo img{display:block;width:100%;height:auto;border-radius:10px;object-fit:cover;transition:transform 0.4s, box-shadow 0.4s}
-  .person-photo:hover img,.person-photo:focus-visible img{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.18)}
+.person-photo{border-radius:10px;overflow:hidden;transition:box-shadow 0.3s, transform 0.3s}
+.person-photo img{display:block;width:100%;height:auto;border-radius:10px;object-fit:cover;transition:transform 0.4s, box-shadow 0.4s}
+.person-photo:hover img,.person-photo:focus-visible img{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.18)}
 .profile .name { font-size: 1.3rem; font-weight: 700; margin-top: 16px; }
 .profile .role {
 font-family: -apple-system, system-ui, sans-serif;
@@ -195,60 +199,60 @@ line-height: 1.7;
 .profile .contact a { color: var(--accent); text-decoration: none; }
 .profile .contact a:hover { text-decoration: underline; }
 .bio-toggle {
-  max-width: 300px;
-  margin: 16px auto 0;
-  text-align: left;
+max-width: 300px;
+margin: 16px auto 0;
+text-align: left;
 }
 .bio-toggle > summary {
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  font-family: -apple-system, system-ui, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #8a7a66;
-  background: #f7f3ec;
-  border: 1px solid #e3dccf;
-  border-radius: 999px;
-  padding: 9px 16px;
-  transition: background 0.2s, box-shadow 0.2s;
-  user-select: none;
+list-style: none;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 8px;
+font-family: -apple-system, system-ui, sans-serif;
+font-size: 0.9rem;
+font-weight: 600;
+letter-spacing: 0.02em;
+color: #8a7a66;
+background: #f7f3ec;
+border: 1px solid #e3dccf;
+border-radius: 999px;
+padding: 9px 16px;
+transition: background 0.2s, box-shadow 0.2s;
+user-select: none;
 }
 .bio-toggle > summary::-webkit-details-marker { display: none; }
 .bio-toggle > summary:hover {
-  background: #efe8dc;
-  box-shadow: 0 2px 8px rgba(138,122,102,0.13);
+background: #efe8dc;
+box-shadow: 0 2px 8px rgba(138,122,102,0.13);
 }
 .bio-chevron {
-  width: 9px;
-  height: 9px;
-  border-right: 2px solid #8a7a66;
-  border-bottom: 2px solid #8a7a66;
-  transform: rotate(45deg);
-  transition: transform 0.25s ease;
-  margin-bottom: 2px;
-  flex: none;
+width: 9px;
+height: 9px;
+border-right: 2px solid #8a7a66;
+border-bottom: 2px solid #8a7a66;
+transform: rotate(45deg);
+transition: transform 0.25s ease;
+margin-bottom: 2px;
+flex: none;
 }
 .bio-toggle[open] .bio-chevron { transform: rotate(-135deg); margin-top: 4px; margin-bottom: 0; }
 .bio-toggle .bio {
-  text-align: justify;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: var(--ink);
-  margin-top: 12px;
-  background: #fafafa;
-  border: 1px solid #e6e6e6;
-  border-left: 3px solid #8a7a66;
-  border-radius: 10px;
-  padding: 16px 18px;
-  animation: bioReveal 0.28s ease;
+text-align: justify;
+-webkit-hyphens: auto;
+hyphens: auto;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 0.98rem;
+line-height: 1.7;
+color: var(--ink);
+margin-top: 12px;
+background: #fafafa;
+border: 1px solid #e6e6e6;
+border-left: 3px solid #8a7a66;
+border-radius: 10px;
+padding: 16px 18px;
+animation: bioReveal 0.28s ease;
 }
 .bio-toggle .bio p { margin: 0 0 0.8em; }
 .bio-toggle .bio p:last-child { margin-bottom: 0; }
@@ -313,6 +317,14 @@ a.back:hover::first-letter { color: #c0392b; }
 <a href="mailto:alextoftbork@gmail.com">alextoftbork@gmail.com</a><br>
 <a href="tel:+4530258112">+45 30 25 81 12</a>
 </p>
+</div>
+</div>
+<div class="people people-second">
+<div class="person">
+<a class="person-photo" href="/om-peter"><img loading="lazy" src="peter-indlaeg.jpg" alt="Peter Bitsch Hjortshøj"></a>
+<a class="bio-link" href="/om-peter">Læs mere om Peter<span class="bio-arrow" aria-hidden="true">→</span></a>
+<p class="name">Peter Bitsch Hjortshøj</p>
+<p class="role">Klummeskribent</p>
 </div>
 </div>
 </section>
