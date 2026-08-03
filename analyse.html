@@ -96,11 +96,16 @@ nedenunder bruges til navigation i stedet. */
 .submit-note .om-link { display: block; white-space: normal; margin-top: 2px; }
 }
 
-.analyse-wrap{display:flex;justify-content:center;padding:24px 20px 8px;gap:20px;
+.analyse-wrap{display:flex;flex-wrap:wrap;justify-content:center;padding:24px 20px 8px;gap:20px;
 }
 .analyse-card{display:block;max-width:420px;width:fit-content;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);transition:transform .25s ease, box-shadow .25s ease;}
 .analyse-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.18);}
 .analyse-card img{display:block;width:auto;max-width:100%;max-height:calc(100vh - 304px);height:auto;}
+@media (max-width:820px){
+.analyse-wrap{flex-direction:column;align-items:center;padding:24px 20px 8px;}
+.analyse-card{width:100%;max-width:420px;}
+.analyse-card img{width:100%;max-width:100%;height:auto;max-height:none;}
+}
 </style>
 </head>
 <body>
