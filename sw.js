@@ -1,10 +1,10 @@
-const CACHE = 'rosentorn-v31';
+const CACHE = 'rosentorn-v32';
 const ASSETS = [
   '/',
   '/index.html',
   '/debat.html',
-  '/debatindlaeg-fatamorgana.html',
-  '/debatindlaeg-manosfaeren.html',
+  '/debat-fatamorgana.html',
+  '/debat-manosfaeren.html',
   '/podcast.html',
   '/glimt.html',
   '/om.html',
