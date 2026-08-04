@@ -90,15 +90,15 @@ text-align: center;
 .quote-link blockquote { font-size: 1.15rem; font-style: italic; line-height: 1.35; letter-spacing: 0.01em; }
 .quote-meta { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; margin-top: 10px; }
 .quote-source { font-family: -apple-system, system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+.quote-source::after { content: "·"; margin: 0 10px; color: var(--muted); }
 .quote-cta { font-family: -apple-system, system-ui, sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
-.quote-cta::before { content: "·"; margin: 0 10px; font-weight: 400; color: var(--muted); }
 .quote-arrow { display: inline-block; margin-left: 4px; transition: transform 0.2s ease; }
 .quote-link:hover { background: rgba(0,0,0,0.03); }
 .quote-link:hover .quote-cta { text-decoration: underline; }
 .quote-link:hover .quote-arrow { transform: translateX(3px); }
 .quote-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 640px) { .quote-link blockquote { font-size: 1.02rem; } }
-@media (max-width: 560px) { .quote-meta { flex-direction: column; gap: 6px; } .quote-cta::before { display: none; } }
+@media (max-width: 560px) { .quote-meta { flex-direction: column; gap: 6px; } .quote-source::after { display: none; } }
 .debat {
 margin-top: 12px;
 padding-top: 12px;
