@@ -88,14 +88,17 @@ text-align: center;
 }
 .quote-link { display: block; max-width: 820px; margin: 0 auto; padding: 6px 12px 8px; border-radius: 10px; text-decoration: none; color: inherit; transition: background 0.25s ease; }
 .quote-link blockquote { font-size: 1.15rem; font-style: italic; line-height: 1.35; letter-spacing: 0.01em; }
-.quote-source { display: block; margin-top: 9px; font-family: -apple-system, system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
-.quote-cta { display: inline-block; margin-top: 7px; font-family: -apple-system, system-ui, sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+.quote-meta { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; margin-top: 10px; }
+.quote-source { font-family: -apple-system, system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+.quote-cta { font-family: -apple-system, system-ui, sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+.quote-cta::before { content: "·"; margin: 0 10px; font-weight: 400; color: var(--muted); }
 .quote-arrow { display: inline-block; margin-left: 4px; transition: transform 0.2s ease; }
 .quote-link:hover { background: rgba(0,0,0,0.03); }
 .quote-link:hover .quote-cta { text-decoration: underline; }
 .quote-link:hover .quote-arrow { transform: translateX(3px); }
 .quote-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 640px) { .quote-link blockquote { font-size: 1.02rem; } }
+@media (max-width: 560px) { .quote-meta { flex-direction: column; gap: 6px; } .quote-cta::before { display: none; } }
 .debat {
 margin-top: 12px;
 padding-top: 12px;
@@ -203,8 +206,10 @@ body { align-items: flex-start; }
 <div class="quote-band">
 <a class="quote-link" href="/debat-kulturlivet">
 <blockquote cite="https://rosentorn.dk/debat-kulturlivet">“Min kærlighed til civilsamfundet er ganske enkelt langt større end mit had til staten.”</blockquote>
+<span class="quote-meta">
 <span class="quote-source">Ezekiel Rohde · Formand for LA Ungdom</span>
 <span class="quote-cta">Læs indlægget<span class="quote-arrow">→</span></span>
+</span>
 </a>
 </div>
 <footer class="site-footer">
